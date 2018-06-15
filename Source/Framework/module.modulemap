@@ -1,5 +1,5 @@
-framework module KSCrash {
-	umbrella header "KSCrashFramework.h"
+framework module FYCrash {
+	umbrella header "FYCrashFramework.h"
 	
 	export *
 	module * { export * }

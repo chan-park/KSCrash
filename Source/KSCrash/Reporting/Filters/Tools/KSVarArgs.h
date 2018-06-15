@@ -1,5 +1,5 @@
 //
-//  KSVarArgs.h
+//  FYVarArgs.h
 //
 //  Created by Karl Stenerud on 2012-08-19.
 //
@@ -25,40 +25,40 @@
 //
 
 
-/* KSVarArgs is a set of macros designed to make dealing with variable arguments
+/* FYVarArgs is a set of macros designed to make dealing with variable arguments
  * easier in Objective-C. All macros assume that the varargs list contains only
  * objective-c objects or object-like structures (assignable to type id).
  *
- * The base macro ksva_iterate_list() iterates over the variable arguments,
+ * The base macro fyva_iterate_list() iterates over the variable arguments,
  * invoking a block for each argument, until it encounters a terminating nil.
  *
  * The other macros are for convenience when converting to common collections.
  */
 
 
-/** Block type used by ksva_iterate_list.
+/** Block type used by fyva_iterate_list.
  *
  * @param entry The current argument in the vararg list.
  */
-typedef void (^KSVA_Block)(id entry);
+typedef void (^FYVA_Block)(id entry);
 
 
 /**
  * Iterate over a va_list, executing the specified code block for each entry.
  *
  * @param FIRST_ARG_NAME The name of the first argument in the vararg list.
- * @param BLOCK A code block of type KSVA_Block.
+ * @param BLOCK A code block of type FYVA_Block.
  */
-#define ksva_iterate_list(FIRST_ARG_NAME, BLOCK) \
+#define fyva_iterate_list(FIRST_ARG_NAME, BLOCK) \
 { \
-    KSVA_Block ksva_block = BLOCK; \
-    va_list ksva_args; \
-    va_start(ksva_args,FIRST_ARG_NAME); \
-    for(id ksva_arg = FIRST_ARG_NAME; ksva_arg != nil; ksva_arg = va_arg(ksva_args, id)) \
+    FYVA_Block fyva_block = BLOCK; \
+    va_list fyva_args; \
+    va_start(fyva_args,FIRST_ARG_NAME); \
+    for(id fyva_arg = FIRST_ARG_NAME; fyva_arg != nil; fyva_arg = va_arg(fyva_args, id)) \
     { \
-        ksva_block(ksva_arg); \
+        fyva_block(fyva_arg); \
     } \
-    va_end(ksva_args); \
+    va_end(fyva_args); \
 }
 
 /**
@@ -68,9 +68,9 @@ typedef void (^KSVA_Block)(id entry);
  * @param FIRST_ARG_NAME The name of the first argument in the vararg list.
  * @param ARRAY_NAME The name of the array to create in the current scope.
  */
-#define ksva_list_to_nsarray(FIRST_ARG_NAME, ARRAY_NAME) \
+#define fyva_list_to_nsarray(FIRST_ARG_NAME, ARRAY_NAME) \
     NSMutableArray* ARRAY_NAME = [NSMutableArray array]; \
-    ksva_iterate_list(FIRST_ARG_NAME, ^(id entry) \
+    fyva_iterate_list(FIRST_ARG_NAME, ^(id entry) \
     { \
         [ARRAY_NAME addObject:entry]; \
     })
@@ -84,20 +84,20 @@ typedef void (^KSVA_Block)(id entry);
  * @param FIRST_ARG_NAME The name of the first argument in the vararg list.
  * @param DICT_NAME The name of the dictionary to create in the current scope.
  */
-#define ksva_list_to_nsdictionary(FIRST_ARG_NAME, DICT_NAME) \
+#define fyva_list_to_nsdictionary(FIRST_ARG_NAME, DICT_NAME) \
     NSMutableDictionary* DICT_NAME = [NSMutableDictionary dictionary]; \
     { \
-        __block id ksva_object = nil; \
-        ksva_iterate_list(FIRST_ARG_NAME, ^(id entry) \
+        __block id fyva_object = nil; \
+        fyva_iterate_list(FIRST_ARG_NAME, ^(id entry) \
         { \
-            if(ksva_object == nil) \
+            if(fyva_object == nil) \
             { \
-                ksva_object = entry; \
+                fyva_object = entry; \
             } \
             else \
             { \
-                [DICT_NAME setObject:ksva_object forKey:entry]; \
-                ksva_object = nil; \
+                [DICT_NAME setObject:fyva_object forKey:entry]; \
+                fyva_object = nil; \
             } \
         }); \
     }
