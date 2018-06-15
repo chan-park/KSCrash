@@ -1,19 +1,19 @@
 //
-//  KSCrashReportFixer_Tests.m
-//  KSCrash-iOS
+//  FYCrashReportFixer_Tests.m
+//  FYCrash-iOS
 //
 //  Created by Karl on 2016-11-07.
 //  Copyright © 2016 Karl Stenerud. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "KSCrashReportFixer.h"
+#import "FYCrashReportFixer.h"
 
-@interface KSCrashReportFixer_Tests : XCTestCase
+@interface FYCrashReportFixer_Tests : XCTestCase
 
 @end
 
-@implementation KSCrashReportFixer_Tests
+@implementation FYCrashReportFixer_Tests
 
 - (void)setUp {
     [super setUp];
@@ -30,7 +30,7 @@
     NSBundle* bundle = [NSBundle bundleForClass:[self class]];
     NSString* rawPath = [bundle pathForResource:@"raw" ofType:@"json"];
     NSData* rawData = [NSData dataWithContentsOfFile:rawPath];
-    char* fixedBytes = kscrf_fixupCrashReport(rawData.bytes);
+    char* fixedBytes = fycrf_fixupCrashReport(rawData.bytes);
 //    NSLog(@"%@", [[NSString alloc] initWithData:[NSData dataWithBytes:fixedBytes length:strlen(fixedBytes)] encoding:NSUTF8StringEncoding]);
     NSData* fixedData = [NSData dataWithBytesNoCopy:fixedBytes length:strlen(fixedBytes)];
     NSError* error = nil;

@@ -26,7 +26,7 @@
 
 
 #import "FileBasedTestCase.h"
-#import "XCTestCase+KSCrash.h"
+#import "XCTestCase+FYCrash.h"
 
 
 @implementation FileBasedTestCase

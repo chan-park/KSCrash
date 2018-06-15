@@ -1,5 +1,5 @@
 //
-//  KSCrashReportFilter_Tests.m
+//  FYCrashReportFilter_Tests.m
 //
 //  Created by Karl Stenerud on 2012-05-12.
 //
@@ -27,26 +27,26 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCrashReportFilter.h"
-#import "KSCrashReportFilterBasic.h"
-#import "KSCrashReportFilterGZip.h"
-#import "KSCrashReportFilterJSON.h"
+#import "FYCrashReportFilter.h"
+#import "FYCrashReportFilterBasic.h"
+#import "FYCrashReportFilterGZip.h"
+#import "FYCrashReportFilterJSON.h"
 #import "NSData+GZip.h"
 #import "NSError+SimpleConstructor.h"
 
 
-@interface KSCrash_TestNilFilter: NSObject <KSCrashReportFilter>
+@interface FYCrash_TestNilFilter: NSObject <FYCrashReportFilter>
 
 @end
 
-@implementation KSCrash_TestNilFilter
+@implementation FYCrash_TestNilFilter
 
-+ (KSCrash_TestNilFilter*) filter
++ (FYCrash_TestNilFilter*) filter
 {
     return [[self alloc] init];
 }
 
-- (void) filterReports:(__unused NSArray*) reports onCompletion:(KSCrashReportFilterCompletion) onCompletion
+- (void) filterReports:(__unused NSArray*) reports onCompletion:(FYCrashReportFilterCompletion) onCompletion
 {
     onCompletion(nil, YES, nil);
 }
@@ -54,18 +54,18 @@
 @end
 
 
-@interface KSCrash_TestFilter: NSObject <KSCrashReportFilter>
+@interface FYCrash_TestFilter: NSObject <FYCrashReportFilter>
 
 @property(nonatomic,readwrite,assign) NSTimeInterval delay;
 @property(nonatomic,readwrite,assign) BOOL completed;
 @property(nonatomic,readwrite,retain) NSError* error;
 @property(nonatomic,readwrite,retain) NSTimer* timer;
 @property(nonatomic,readwrite,retain) NSArray* reports;
-@property(nonatomic,readwrite,copy) KSCrashReportFilterCompletion onCompletion;
+@property(nonatomic,readwrite,copy) FYCrashReportFilterCompletion onCompletion;
 
 @end
 
-@implementation KSCrash_TestFilter
+@implementation FYCrash_TestFilter
 
 @synthesize delay = _delay;
 @synthesize completed = _completed;
@@ -74,7 +74,7 @@
 @synthesize timer = _timer;
 @synthesize onCompletion = _onCompletion;
 
-+ (KSCrash_TestFilter*) filterWithDelay:(NSTimeInterval) delay
++ (FYCrash_TestFilter*) filterWithDelay:(NSTimeInterval) delay
                               completed:(BOOL) completed
                                   error:(NSError*) error
 {
@@ -95,7 +95,7 @@
 }
 
 - (void) filterReports:(NSArray*) reports
-          onCompletion:(KSCrashReportFilterCompletion) onCompletion
+          onCompletion:(FYCrashReportFilterCompletion) onCompletion
 {
     self.reports = reports;
     self.onCompletion = onCompletion;
@@ -111,15 +111,15 @@
 
 - (void) onTimeUp
 {
-    kscrash_callCompletion(self.onCompletion, self.reports, self.completed, self.error);
+    fycrash_callCompletion(self.onCompletion, self.reports, self.completed, self.error);
 }
 
 @end
 
 
-@interface KSCrashReportFilter_Tests : XCTestCase @end
+@interface FYCrashReportFilter_Tests : XCTestCase @end
 
-@implementation KSCrashReportFilter_Tests
+@implementation FYCrashReportFilter_Tests
 
 #if __has_feature(objc_arc)
 
@@ -128,7 +128,7 @@
     __block NSArray* reports = [NSArray arrayWithObject:@""];
     __weak id weakRef = reports;
 
-    __block KSCrashReportFilterPassthrough* filter = [KSCrashReportFilterPassthrough filter];
+    __block FYCrashReportFilterPassthrough* filter = [FYCrashReportFilterPassthrough filter];
     [filter filterReports:reports
              onCompletion:^(__unused NSArray* filteredReports,
                             __unused BOOL completed,
@@ -146,9 +146,9 @@
 - (void) testPipeline
 {
     NSArray* expected = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterPipeline filterWithFilters:
-                                      [KSCrashReportFilterPassthrough filter],
-                                      [KSCrashReportFilterPassthrough filter],
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterPipeline filterWithFilters:
+                                      [FYCrashReportFilterPassthrough filter],
+                                      [FYCrashReportFilterPassthrough filter],
                                       nil];
     
     [filter filterReports:expected onCompletion:^(NSArray* filteredReports,
@@ -164,9 +164,9 @@
 - (void) testPipelineInit
 {
     NSArray* expected = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
-    id<KSCrashReportFilter> filter = [[KSCrashReportFilterPipeline alloc] initWithFilters:
-                                      [KSCrashReportFilterPassthrough filter],
-                                      [KSCrashReportFilterPassthrough filter],
+    id<FYCrashReportFilter> filter = [[FYCrashReportFilterPipeline alloc] initWithFilters:
+                                      [FYCrashReportFilterPassthrough filter],
+                                      [FYCrashReportFilterPassthrough filter],
                                       nil];
     filter = filter;
     
@@ -183,7 +183,7 @@
 - (void) testPipelineNoFilters
 {
     NSArray* expected = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterPipeline filterWithFilters:
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterPipeline filterWithFilters:
                                       nil];
     
     [filter filterReports:expected onCompletion:^(NSArray* filteredReports,
@@ -199,8 +199,8 @@
 - (void) testFilterPipelineIncomplete
 {
     NSArray* expected1 = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterPipeline filterWithFilters:
-                                      [KSCrash_TestFilter filterWithDelay:0 completed:NO error:nil],
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterPipeline filterWithFilters:
+                                      [FYCrash_TestFilter filterWithDelay:0 completed:NO error:nil],
                                       nil];
     
     [filter filterReports:expected1 onCompletion:^(NSArray* filteredReports,
@@ -216,8 +216,8 @@
 - (void) testFilterPipelineNilReports
 {
     NSArray* expected1 = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterPipeline filterWithFilters:
-                                      [KSCrash_TestNilFilter filter],
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterPipeline filterWithFilters:
+                                      [FYCrash_TestNilFilter filter],
                                       nil];
     
     [filter filterReports:expected1 onCompletion:^(NSArray* filteredReports,
@@ -233,12 +233,12 @@
 - (void) testPiplelineLeak1
 {
     __block NSArray* reports = [NSArray arrayWithObjects:@"one", @"two", nil];
-    __block id<KSCrashReportFilter> filter = [KSCrash_TestFilter filterWithDelay:0.1 completed:YES error:nil];
+    __block id<FYCrashReportFilter> filter = [FYCrash_TestFilter filterWithDelay:0.1 completed:YES error:nil];
 
     __weak id weakReports = reports;
     __weak id weakFilter = filter;
 
-    __block KSCrashReportFilterPipeline* pipeline = [KSCrashReportFilterPipeline filterWithFilters:filter, nil];
+    __block FYCrashReportFilterPipeline* pipeline = [FYCrashReportFilterPipeline filterWithFilters:filter, nil];
     [pipeline filterReports:reports
                onCompletion:^(__unused NSArray* filteredReports,
                               __unused BOOL completed,
@@ -259,12 +259,12 @@
 - (void) testPiplelineLeak2
 {
     __block NSArray* reports = [NSArray arrayWithObjects:@"one", @"two", nil];
-    __block id<KSCrashReportFilter> filter = [KSCrash_TestFilter filterWithDelay:0.1 completed:NO error:nil];
+    __block id<FYCrashReportFilter> filter = [FYCrash_TestFilter filterWithDelay:0.1 completed:NO error:nil];
 
     __weak id weakReports = reports;
     __weak id weakFilter = filter;
 
-    __block KSCrashReportFilterPipeline* pipeline = [KSCrashReportFilterPipeline filterWithFilters:filter, nil];
+    __block FYCrashReportFilterPipeline* pipeline = [FYCrashReportFilterPipeline filterWithFilters:filter, nil];
     [pipeline filterReports:reports
                onCompletion:^(__unused NSArray* filteredReports,
                               __unused BOOL completed,
@@ -287,7 +287,7 @@
 - (void) testFilterPassthrough
 {
     NSArray* expected = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterPassthrough filter];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterPassthrough filter];
 
     [filter filterReports:expected onCompletion:^(NSArray* filteredReports,
                                                   BOOL completed,
@@ -307,7 +307,7 @@
                          (id _Nonnull)[@"2" dataUsingEncoding:NSUTF8StringEncoding],
                          (id _Nonnull)[@"3" dataUsingEncoding:NSUTF8StringEncoding],
                          nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterStringToData filter];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterStringToData filter];
 
     [filter filterReports:source onCompletion:^(NSArray* filteredReports,
                                                 BOOL completed,
@@ -327,7 +327,7 @@
                        (id _Nonnull)[@"3" dataUsingEncoding:NSUTF8StringEncoding],
                        nil];
     NSArray* expected = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterDataToString filter];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterDataToString filter];
 
     [filter filterReports:source onCompletion:^(NSArray* filteredReports,
                                                 BOOL completed,
@@ -342,9 +342,9 @@
 - (void) testFilterPipeline
 {
     NSArray* expected = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterPipeline filterWithFilters:
-                                      [KSCrashReportFilterStringToData filter],
-                                      [KSCrashReportFilterDataToString filter],
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterPipeline filterWithFilters:
+                                      [FYCrashReportFilterStringToData filter],
+                                      [FYCrashReportFilterDataToString filter],
                                       nil];
 
     [filter filterReports:expected onCompletion:^(NSArray* filteredReports,
@@ -365,10 +365,10 @@
                           (id _Nonnull)[@"2" dataUsingEncoding:NSUTF8StringEncoding],
                           (id _Nonnull)[@"3" dataUsingEncoding:NSUTF8StringEncoding],
                           nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterCombine filterWithFiltersAndKeys:
-                                      [KSCrashReportFilterPassthrough filter],
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterCombine filterWithFiltersAndKeys:
+                                      [FYCrashReportFilterPassthrough filter],
                                       @"normal",
-                                      [KSCrashReportFilterStringToData filter],
+                                      [FYCrashReportFilterStringToData filter],
                                       @"data",
                                       nil];
 
@@ -399,10 +399,10 @@
                           (id _Nonnull)[@"2" dataUsingEncoding:NSUTF8StringEncoding],
                           (id _Nonnull)[@"3" dataUsingEncoding:NSUTF8StringEncoding],
                           nil];
-    id<KSCrashReportFilter> filter = [[KSCrashReportFilterCombine alloc] initWithFiltersAndKeys:
-                                      [KSCrashReportFilterPassthrough filter],
+    id<FYCrashReportFilter> filter = [[FYCrashReportFilterCombine alloc] initWithFiltersAndKeys:
+                                      [FYCrashReportFilterPassthrough filter],
                                       @"normal",
-                                      [KSCrashReportFilterStringToData filter],
+                                      [FYCrashReportFilterStringToData filter],
                                       @"data",
                                       nil];
     filter = filter;
@@ -429,7 +429,7 @@
 - (void) testFilterCombineNoFilters
 {
     NSArray* expected1 = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterCombine filterWithFiltersAndKeys:
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterCombine filterWithFiltersAndKeys:
                                       nil];
     
     [filter filterReports:expected1 onCompletion:^(NSArray* filteredReports,
@@ -450,8 +450,8 @@
 - (void) testFilterCombineIncomplete
 {
     NSArray* expected1 = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterCombine filterWithFiltersAndKeys:
-                                      [KSCrash_TestFilter filterWithDelay:0 completed:NO error:nil],
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterCombine filterWithFiltersAndKeys:
+                                      [FYCrash_TestFilter filterWithDelay:0 completed:NO error:nil],
                                       @"Blah",
                                       nil];
     
@@ -468,8 +468,8 @@
 - (void) testFilterCombineNilReports
 {
     NSArray* expected1 = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterCombine filterWithFiltersAndKeys:
-                                      [KSCrash_TestNilFilter filter],
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterCombine filterWithFiltersAndKeys:
+                                      [FYCrash_TestNilFilter filter],
                                       @"Blah",
                                       nil];
     
@@ -491,10 +491,10 @@
                           (id _Nonnull)[@"2" dataUsingEncoding:NSUTF8StringEncoding],
                           (id _Nonnull)[@"3" dataUsingEncoding:NSUTF8StringEncoding],
                           nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterCombine filterWithFiltersAndKeys:
-                                      [NSArray arrayWithObject:[KSCrashReportFilterPassthrough filter]],
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterCombine filterWithFiltersAndKeys:
+                                      [NSArray arrayWithObject:[FYCrashReportFilterPassthrough filter]],
                                       @"normal",
-                                      [NSArray arrayWithObject:[KSCrashReportFilterStringToData filter]],
+                                      [NSArray arrayWithObject:[FYCrashReportFilterStringToData filter]],
                                       @"data",
                                       nil];
     
@@ -520,10 +520,10 @@
 - (void) testFilterCombineMissingKey
 {
     NSArray* expected1 = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterCombine filterWithFiltersAndKeys:
-                                      [KSCrashReportFilterPassthrough filter],
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterCombine filterWithFiltersAndKeys:
+                                      [FYCrashReportFilterPassthrough filter],
                                       @"normal",
-                                      [KSCrashReportFilterStringToData filter],
+                                      [FYCrashReportFilterStringToData filter],
                                       // Missing key
                                       nil];
     
@@ -544,7 +544,7 @@
                         [NSDictionary dictionaryWithObject:expected forKey:key],
                         nil];
     
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterObjectForKey filterWithKey:key allowNotFound:NO];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterObjectForKey filterWithKey:key allowNotFound:NO];
 
     [filter filterReports:reports onCompletion:^(__unused NSArray* filteredReports,
                                                  BOOL completed,
@@ -564,7 +564,7 @@
                         [NSDictionary dictionaryWithObject:expected forKey:key],
                         nil];
     
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterObjectForKey filterWithKey:key allowNotFound:NO];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterObjectForKey filterWithKey:key allowNotFound:NO];
     
     [filter filterReports:reports onCompletion:^(__unused NSArray* filteredReports,
                                                  BOOL completed,
@@ -584,7 +584,7 @@
                         [NSDictionary dictionaryWithObject:expected forKey:key],
                         nil];
     
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterObjectForKey filterWithKey:@"someOtherKey" allowNotFound:YES];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterObjectForKey filterWithKey:@"someOtherKey" allowNotFound:YES];
     
     [filter filterReports:reports onCompletion:^(__unused NSArray* filteredReports,
                                                  BOOL completed,
@@ -605,7 +605,7 @@
                         [NSDictionary dictionaryWithObject:expected forKey:key],
                         nil];
     
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterObjectForKey filterWithKey:@"someOtherKey" allowNotFound:NO];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterObjectForKey filterWithKey:@"someOtherKey" allowNotFound:NO];
     
     [filter filterReports:reports onCompletion:^(__unused NSArray* filteredReports,
                                                  BOOL completed,
@@ -625,7 +625,7 @@
                          nil],
                         nil];
     NSString* expected = @"1,a";
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterConcatenate filterWithSeparatorFmt:@","
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterConcatenate filterWithSeparatorFmt:@","
                                                                                        keys:@"first", @"second", nil];
     
     [filter filterReports:reports onCompletion:^(NSArray* filteredReports,
@@ -647,7 +647,7 @@
                          nil],
                         nil];
     NSString* expected = @"1,a";
-    id<KSCrashReportFilter> filter = [[KSCrashReportFilterConcatenate alloc] initWithSeparatorFmt:@","
+    id<FYCrashReportFilter> filter = [[FYCrashReportFilterConcatenate alloc] initWithSeparatorFmt:@","
                                                                                              keys:@"first", @"second", nil];
     filter = filter;
     
@@ -674,7 +674,7 @@
                               @"1", @"first",
                               @"b", @"third",
                               nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterSubset filterWithKeys:@"first", @"third", nil];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterSubset filterWithKeys:@"first", @"third", nil];
     
     [filter filterReports:reports onCompletion:^(NSArray* filteredReports,
                                                  BOOL completed,
@@ -695,7 +695,7 @@
                          @"b", @"third",
                          nil],
                         nil];
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterSubset filterWithKeys:@"first", @"aaa", nil];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterSubset filterWithKeys:@"first", @"aaa", nil];
     
     [filter filterReports:reports onCompletion:^(__unused NSArray* filteredReports,
                                                  BOOL completed,
@@ -719,7 +719,7 @@
                               @"1", @"first",
                               @"b", @"third",
                               nil];
-    id<KSCrashReportFilter> filter = [[KSCrashReportFilterSubset alloc] initWithKeys:@"first", @"third", nil];
+    id<FYCrashReportFilter> filter = [[FYCrashReportFilterSubset alloc] initWithKeys:@"first", @"third", nil];
     filter = filter;
     
     [filter filterReports:reports onCompletion:^(NSArray* filteredReports,

@@ -1,5 +1,5 @@
 //
-//  SenTestCase+KSCrash.m
+//  SenTestCase+FYCrash.m
 //
 //  Created by Karl Stenerud on 2012-02-11.
 //
@@ -25,10 +25,10 @@
 //
 
 
-#import "XCTestCase+KSCrash.h"
+#import "XCTestCase+FYCrash.h"
 
 
-@implementation XCTestCase (XCTestCase_KSCrash)
+@implementation XCTestCase (XCTestCase_FYCrash)
 
 - (NSString*) createTempPath
 {

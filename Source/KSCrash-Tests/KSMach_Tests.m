@@ -1,5 +1,5 @@
 //
-//  KSMach_Tests.m
+//  FYMach_Tests.m
 //
 //  Created by Karl Stenerud on 2012-03-03.
 //
@@ -27,40 +27,40 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSMach.h"
+#import "FYMach.h"
 #include <mach/exception_types.h>
 #include <mach/kern_return.h>
 
 
-@interface KSMach_Tests : XCTestCase @end
+@interface FYMach_Tests : XCTestCase @end
 
-@implementation KSMach_Tests
+@implementation FYMach_Tests
 
 - (void) testExceptionName
 {
     NSString* expected = @"EXC_ARITHMETIC";
-    NSString* actual = [NSString stringWithCString:ksmach_exceptionName(EXC_ARITHMETIC)
+    NSString* actual = [NSString stringWithCString:fymach_exceptionName(EXC_ARITHMETIC)
                                           encoding:NSUTF8StringEncoding];
     XCTAssertEqualObjects(actual, expected, @"");
 }
 
 - (void) testVeryHighExceptionName
 {
-    const char* result = ksmach_exceptionName(100000);
+    const char* result = fymach_exceptionName(100000);
     XCTAssertTrue(result == NULL, @"");
 }
 
 - (void) testKernReturnCodeName
 {
     NSString* expected = @"KERN_FAILURE";
-    NSString* actual = [NSString stringWithCString:ksmach_kernelReturnCodeName(KERN_FAILURE)
+    NSString* actual = [NSString stringWithCString:fymach_kernelReturnCodeName(KERN_FAILURE)
                                           encoding:NSUTF8StringEncoding];
     XCTAssertEqualObjects(actual, expected, @"");
 }
 
 - (void) testVeryHighKernReturnCodeName
 {
-    const char* result = ksmach_kernelReturnCodeName(100000);
+    const char* result = fymach_kernelReturnCodeName(100000);
     XCTAssertTrue(result == NULL, @"");
 }
 
@@ -101,13 +101,13 @@
 
 - (void) assertMachException:(int) exception code:(int) code matchesSignal:(int) signal
 {
-    int result = ksmach_signalForMachException(exception, code);
+    int result = fymach_signalForMachException(exception, code);
     XCTAssertEqual(result, signal, @"");
 }
 
 - (void) assertSignal:(int) signal matchesMachException:(int) exception
 {
-    int result = ksmach_machExceptionForSignal(signal);
+    int result = fymach_machExceptionForSignal(signal);
     XCTAssertEqual(result, exception, @"");
 }
 

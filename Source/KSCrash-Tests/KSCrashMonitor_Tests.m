@@ -1,5 +1,5 @@
 //
-//  KSCrashMonitor_Tests.m
+//  FYCrashMonitor_Tests.m
 //
 //  Created by Karl Stenerud on 2013-03-09.
 //
@@ -27,25 +27,25 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCrashMonitor.h"
-#import "KSCrashMonitorContext.h"
+#import "FYCrashMonitor.h"
+#import "FYCrashMonitorContext.h"
 
-@interface KSCrashMonitor_Tests : XCTestCase @end
+@interface FYCrashMonitor_Tests : XCTestCase @end
 
-@implementation KSCrashMonitor_Tests
+@implementation FYCrashMonitor_Tests
 
 - (void) testInstallUninstall
 {
-    kscm_setActiveMonitors(KSCrashMonitorTypeAll);
-    kscm_setActiveMonitors(KSCrashMonitorTypeNone);
+    fycm_setActiveMonitors(FYCrashMonitorTypeAll);
+    fycm_setActiveMonitors(FYCrashMonitorTypeNone);
 }
 
 - (void) testSuspendResumeThreads
 {
-    ksmc_suspendEnvironment();
-    ksmc_suspendEnvironment();
-    ksmc_resumeEnvironment();
-    ksmc_resumeEnvironment();
+    fymc_suspendEnvironment();
+    fymc_suspendEnvironment();
+    fymc_resumeEnvironment();
+    fymc_resumeEnvironment();
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  KSThread_Tests.m
+//  FYThread_Tests.m
 //
 //  Created by Karl Stenerud on 2012-03-03.
 //
@@ -27,13 +27,13 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSThread.h"
+#import "FYThread.h"
 #import "TestThread.h"
 
 
-@interface KSThread_Tests : XCTestCase @end
+@interface FYThread_Tests : XCTestCase @end
 
-@implementation KSThread_Tests
+@implementation FYThread_Tests
 
 // TODO: Disabling this until I figure out what's wrong with queue names.
 //- (void) testGetQueueName
@@ -51,7 +51,7 @@
 //    for(mach_msg_type_number_t i = 0; i < numThreads; i++)
 //    {
 //        thread_t thread = threads[i];
-//        if(ksthread_getQueueName(thread, buffer, sizeof(buffer)))
+//        if(fythread_getQueueName(thread, buffer, sizeof(buffer)))
 //        {
 //            success = true;
 //            break;

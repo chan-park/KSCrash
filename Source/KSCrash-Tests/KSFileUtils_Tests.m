@@ -1,5 +1,5 @@
 //
-//  KSFileUtils_Tests.m
+//  FYFileUtils_Tests.m
 //
 //  Created by Karl Stenerud on 2012-01-28.
 //
@@ -29,13 +29,13 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-#import "KSFileUtils.h"
+#import "FYFileUtils.h"
 
 
-@interface KSFileUtils_Tests : FileBasedTestCase @end
+@interface FYFileUtils_Tests : FileBasedTestCase @end
 
 
-@implementation KSFileUtils_Tests
+@implementation FYFileUtils_Tests
 
 - (void) testReadBuffered_EmptyFile
 {
@@ -46,15 +46,15 @@
     NSString* fileContents = @"";
     NSString* expectedDataRead = @"";
     char readBuffer[readBufferSize];
-    KSBufferedReader reader;
+    FYBufferedReader reader;
     NSString* path = [self generateFileWithString:fileContents];
-    XCTAssertTrue(ksfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
+    XCTAssertTrue(fyfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
     char dstBuffer[dstBufferSize + 1];
-    int bytesRead = ksfu_readBufferedReader(&reader, dstBuffer, readSize);
+    int bytesRead = fyfu_readBufferedReader(&reader, dstBuffer, readSize);
     XCTAssertEqual(bytesRead, expectedBytesRead);
     dstBuffer[bytesRead] = '\0';
     XCTAssertEqualObjects([NSString stringWithUTF8String:dstBuffer], expectedDataRead);
-    ksfu_closeBufferedReader(&reader);
+    fyfu_closeBufferedReader(&reader);
 }
 
 - (void) testReadBuffered_SameSize
@@ -66,15 +66,15 @@
     NSString* fileContents = @"12345";
     NSString* expectedDataRead = @"12345";
     char readBuffer[readBufferSize];
-    KSBufferedReader reader;
+    FYBufferedReader reader;
     NSString* path = [self generateFileWithString:fileContents];
-    XCTAssertTrue(ksfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
+    XCTAssertTrue(fyfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
     char dstBuffer[dstBufferSize + 1];
-    int bytesRead = ksfu_readBufferedReader(&reader, dstBuffer, readSize);
+    int bytesRead = fyfu_readBufferedReader(&reader, dstBuffer, readSize);
     XCTAssertEqual(bytesRead, expectedBytesRead);
     dstBuffer[bytesRead] = '\0';
     XCTAssertEqualObjects([NSString stringWithUTF8String:dstBuffer], expectedDataRead);
-    ksfu_closeBufferedReader(&reader);
+    fyfu_closeBufferedReader(&reader);
 }
 
 - (void) testReadBuffered_FileIsBigger
@@ -86,15 +86,15 @@
     NSString* fileContents = @"123456789";
     NSString* expectedDataRead = @"12345";
     char readBuffer[readBufferSize];
-    KSBufferedReader reader;
+    FYBufferedReader reader;
     NSString* path = [self generateFileWithString:fileContents];
-    XCTAssertTrue(ksfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
+    XCTAssertTrue(fyfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
     char dstBuffer[dstBufferSize + 1];
-    int bytesRead = ksfu_readBufferedReader(&reader, dstBuffer, readSize);
+    int bytesRead = fyfu_readBufferedReader(&reader, dstBuffer, readSize);
     XCTAssertEqual(bytesRead, expectedBytesRead);
     dstBuffer[bytesRead] = '\0';
     XCTAssertEqualObjects([NSString stringWithUTF8String:dstBuffer], expectedDataRead);
-    ksfu_closeBufferedReader(&reader);
+    fyfu_closeBufferedReader(&reader);
 }
 
 - (void) testReadBuffered_ReadBufferIsSmaller
@@ -106,15 +106,15 @@
     NSString* fileContents = @"12345";
     NSString* expectedDataRead = @"12345";
     char readBuffer[readBufferSize];
-    KSBufferedReader reader;
+    FYBufferedReader reader;
     NSString* path = [self generateFileWithString:fileContents];
-    XCTAssertTrue(ksfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
+    XCTAssertTrue(fyfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
     char dstBuffer[dstBufferSize + 1];
-    int bytesRead = ksfu_readBufferedReader(&reader, dstBuffer, readSize);
+    int bytesRead = fyfu_readBufferedReader(&reader, dstBuffer, readSize);
     XCTAssertEqual(bytesRead, expectedBytesRead);
     dstBuffer[bytesRead] = '\0';
     XCTAssertEqualObjects([NSString stringWithUTF8String:dstBuffer], expectedDataRead);
-    ksfu_closeBufferedReader(&reader);
+    fyfu_closeBufferedReader(&reader);
 }
 
 - (void) testReadBuffered_ReadBufferIsMuchSmaller
@@ -126,15 +126,15 @@
     NSString* fileContents = @"1234567890abcdef";
     NSString* expectedDataRead = @"1234567890abcdef";
     char readBuffer[readBufferSize];
-    KSBufferedReader reader;
+    FYBufferedReader reader;
     NSString* path = [self generateFileWithString:fileContents];
-    XCTAssertTrue(ksfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
+    XCTAssertTrue(fyfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
     char dstBuffer[dstBufferSize + 1];
-    int bytesRead = ksfu_readBufferedReader(&reader, dstBuffer, readSize);
+    int bytesRead = fyfu_readBufferedReader(&reader, dstBuffer, readSize);
     XCTAssertEqual(bytesRead, expectedBytesRead);
     dstBuffer[bytesRead] = '\0';
     XCTAssertEqualObjects([NSString stringWithUTF8String:dstBuffer], expectedDataRead);
-    ksfu_closeBufferedReader(&reader);
+    fyfu_closeBufferedReader(&reader);
 }
 
 - (void) testReadBufferedUntilChar_Halfway
@@ -147,16 +147,16 @@
     int expectedBytesRead = (int)expectedDataRead.length;
     int bytesRead = dstBufferSize;
     char readBuffer[readBufferSize];
-    KSBufferedReader reader;
+    FYBufferedReader reader;
     NSString* path = [self generateFileWithString:fileContents];
-    XCTAssertTrue(ksfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
+    XCTAssertTrue(fyfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
     char dstBuffer[dstBufferSize + 1];
-    bool result = ksfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
+    bool result = fyfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
     XCTAssertTrue(result);
     XCTAssertEqual(bytesRead, expectedBytesRead);
     dstBuffer[bytesRead] = '\0';
     XCTAssertEqualObjects([NSString stringWithUTF8String:dstBuffer], expectedDataRead);
-    ksfu_closeBufferedReader(&reader);
+    fyfu_closeBufferedReader(&reader);
 }
 
 - (void) testReadBufferedUntilChar_Beginning
@@ -169,16 +169,16 @@
     int expectedBytesRead = (int)expectedDataRead.length;
     int bytesRead = dstBufferSize;
     char readBuffer[readBufferSize];
-    KSBufferedReader reader;
+    FYBufferedReader reader;
     NSString* path = [self generateFileWithString:fileContents];
-    XCTAssertTrue(ksfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
+    XCTAssertTrue(fyfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
     char dstBuffer[dstBufferSize + 1];
-    bool result = ksfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
+    bool result = fyfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
     XCTAssertTrue(result);
     XCTAssertEqual(bytesRead, expectedBytesRead);
     dstBuffer[bytesRead] = '\0';
     XCTAssertEqualObjects([NSString stringWithUTF8String:dstBuffer], expectedDataRead);
-    ksfu_closeBufferedReader(&reader);
+    fyfu_closeBufferedReader(&reader);
 }
 
 - (void) testReadBufferedUntilChar_End
@@ -191,16 +191,16 @@
     int expectedBytesRead = (int)expectedDataRead.length;
     int bytesRead = dstBufferSize;
     char readBuffer[readBufferSize];
-    KSBufferedReader reader;
+    FYBufferedReader reader;
     NSString* path = [self generateFileWithString:fileContents];
-    XCTAssertTrue(ksfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
+    XCTAssertTrue(fyfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
     char dstBuffer[dstBufferSize + 1];
-    bool result = ksfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
+    bool result = fyfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
     XCTAssertTrue(result);
     XCTAssertEqual(bytesRead, expectedBytesRead);
     dstBuffer[bytesRead] = '\0';
     XCTAssertEqualObjects([NSString stringWithUTF8String:dstBuffer], expectedDataRead);
-    ksfu_closeBufferedReader(&reader);
+    fyfu_closeBufferedReader(&reader);
 }
 
 - (void) testReadBufferedUntilChar_SmallDstBuffer
@@ -213,16 +213,16 @@
     int expectedBytesRead = (int)expectedDataRead.length;
     int bytesRead = dstBufferSize;
     char readBuffer[readBufferSize];
-    KSBufferedReader reader;
+    FYBufferedReader reader;
     NSString* path = [self generateFileWithString:fileContents];
-    XCTAssertTrue(ksfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
+    XCTAssertTrue(fyfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
     char dstBuffer[dstBufferSize + 1];
-    bool result = ksfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
+    bool result = fyfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
     XCTAssertTrue(result);
     XCTAssertEqual(bytesRead, expectedBytesRead);
     dstBuffer[bytesRead] = '\0';
     XCTAssertEqualObjects([NSString stringWithUTF8String:dstBuffer], expectedDataRead);
-    ksfu_closeBufferedReader(&reader);
+    fyfu_closeBufferedReader(&reader);
 }
 
 - (void) testReadBufferedUntilChar_SmallReadBuffer
@@ -235,16 +235,16 @@
     int expectedBytesRead = (int)expectedDataRead.length;
     int bytesRead = dstBufferSize;
     char readBuffer[readBufferSize];
-    KSBufferedReader reader;
+    FYBufferedReader reader;
     NSString* path = [self generateFileWithString:fileContents];
-    XCTAssertTrue(ksfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
+    XCTAssertTrue(fyfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
     char dstBuffer[dstBufferSize + 1];
-    bool result = ksfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
+    bool result = fyfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
     XCTAssertTrue(result);
     XCTAssertEqual(bytesRead, expectedBytesRead);
     dstBuffer[bytesRead] = '\0';
     XCTAssertEqualObjects([NSString stringWithUTF8String:dstBuffer], expectedDataRead);
-    ksfu_closeBufferedReader(&reader);
+    fyfu_closeBufferedReader(&reader);
 }
 
 - (void) testReadBufferedUntilChar_NotFound
@@ -257,16 +257,16 @@
     int expectedBytesRead = (int)expectedDataRead.length;
     int bytesRead = dstBufferSize;
     char readBuffer[readBufferSize];
-    KSBufferedReader reader;
+    FYBufferedReader reader;
     NSString* path = [self generateFileWithString:fileContents];
-    XCTAssertTrue(ksfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
+    XCTAssertTrue(fyfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
     char dstBuffer[dstBufferSize + 1];
-    bool result = ksfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
+    bool result = fyfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
     XCTAssertFalse(result);
     XCTAssertEqual(bytesRead, expectedBytesRead);
     dstBuffer[bytesRead] = '\0';
     XCTAssertEqualObjects([NSString stringWithUTF8String:dstBuffer], expectedDataRead);
-    ksfu_closeBufferedReader(&reader);
+    fyfu_closeBufferedReader(&reader);
 }
 
 - (void) testReadBufferedUntilChar_NotFound_LargeFile
@@ -279,16 +279,16 @@
     int expectedBytesRead = (int)expectedDataRead.length;
     int bytesRead = dstBufferSize;
     char readBuffer[readBufferSize];
-    KSBufferedReader reader;
+    FYBufferedReader reader;
     NSString* path = [self generateFileWithString:fileContents];
-    XCTAssertTrue(ksfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
+    XCTAssertTrue(fyfu_openBufferedReader(&reader, path.UTF8String, readBuffer, readBufferSize));
     char dstBuffer[dstBufferSize + 1];
-    bool result = ksfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
+    bool result = fyfu_readBufferedReaderUntilChar(&reader, ch, dstBuffer, &bytesRead);
     XCTAssertFalse(result);
     XCTAssertEqual(bytesRead, expectedBytesRead);
     dstBuffer[bytesRead] = '\0';
     XCTAssertEqualObjects([NSString stringWithUTF8String:dstBuffer], expectedDataRead);
-    ksfu_closeBufferedReader(&reader);
+    fyfu_closeBufferedReader(&reader);
 }
 
 - (void) testWriteBuffered
@@ -297,11 +297,11 @@
     int writeSize = 5;
     NSString* fileContents = @"12345";
     char writeBuffer[writeBufferSize];
-    KSBufferedWriter writer;
+    FYBufferedWriter writer;
     NSString* path = [self generateTempFilePath];
-    XCTAssertTrue(ksfu_openBufferedWriter(&writer, path.UTF8String, writeBuffer, writeBufferSize));
-    XCTAssertTrue(ksfu_writeBufferedWriter(&writer, fileContents.UTF8String, writeSize));
-    ksfu_closeBufferedWriter(&writer);
+    XCTAssertTrue(fyfu_openBufferedWriter(&writer, path.UTF8String, writeBuffer, writeBufferSize));
+    XCTAssertTrue(fyfu_writeBufferedWriter(&writer, fileContents.UTF8String, writeSize));
+    fyfu_closeBufferedWriter(&writer);
     NSError* error = nil;
     NSString* actualFileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     XCTAssertNil(error);
@@ -314,16 +314,16 @@
     int writeSize = 5;
     NSString* fileContents = @"12345";
     char writeBuffer[writeBufferSize];
-    KSBufferedWriter writer;
+    FYBufferedWriter writer;
     NSString* path = [self generateTempFilePath];
-    XCTAssertTrue(ksfu_openBufferedWriter(&writer, path.UTF8String, writeBuffer, writeBufferSize));
-    XCTAssertTrue(ksfu_writeBufferedWriter(&writer, fileContents.UTF8String, writeSize));
-    ksfu_flushBufferedWriter(&writer);
+    XCTAssertTrue(fyfu_openBufferedWriter(&writer, path.UTF8String, writeBuffer, writeBufferSize));
+    XCTAssertTrue(fyfu_writeBufferedWriter(&writer, fileContents.UTF8String, writeSize));
+    fyfu_flushBufferedWriter(&writer);
     NSError* error = nil;
     NSString* actualFileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     XCTAssertNil(error);
     XCTAssertEqualObjects(actualFileContents, fileContents);
-    ksfu_closeBufferedWriter(&writer);
+    fyfu_closeBufferedWriter(&writer);
 }
 
 - (void) testWriteBuffered_BufferIsSmaller
@@ -332,11 +332,11 @@
     int writeSize = 10;
     NSString* fileContents = @"1234567890";
     char writeBuffer[writeBufferSize];
-    KSBufferedWriter writer;
+    FYBufferedWriter writer;
     NSString* path = [self generateTempFilePath];
-    XCTAssertTrue(ksfu_openBufferedWriter(&writer, path.UTF8String, writeBuffer, writeBufferSize));
-    XCTAssertTrue(ksfu_writeBufferedWriter(&writer, fileContents.UTF8String, writeSize));
-    ksfu_closeBufferedWriter(&writer);
+    XCTAssertTrue(fyfu_openBufferedWriter(&writer, path.UTF8String, writeBuffer, writeBufferSize));
+    XCTAssertTrue(fyfu_writeBufferedWriter(&writer, fileContents.UTF8String, writeSize));
+    fyfu_closeBufferedWriter(&writer);
     NSError* error = nil;
     NSString* actualFileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     XCTAssertNil(error);
@@ -349,11 +349,11 @@
     int writeSize = 3;
     NSString* fileContents = @"123";
     char writeBuffer[writeBufferSize];
-    KSBufferedWriter writer;
+    FYBufferedWriter writer;
     NSString* path = [self generateTempFilePath];
-    XCTAssertTrue(ksfu_openBufferedWriter(&writer, path.UTF8String, writeBuffer, writeBufferSize));
-    XCTAssertTrue(ksfu_writeBufferedWriter(&writer, fileContents.UTF8String, writeSize));
-    ksfu_closeBufferedWriter(&writer);
+    XCTAssertTrue(fyfu_openBufferedWriter(&writer, path.UTF8String, writeBuffer, writeBufferSize));
+    XCTAssertTrue(fyfu_writeBufferedWriter(&writer, fileContents.UTF8String, writeSize));
+    fyfu_closeBufferedWriter(&writer);
     NSError* error = nil;
     NSString* actualFileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     XCTAssertNil(error);
@@ -364,7 +364,7 @@
 {
     NSString* path = @"some/kind/of/path";
     NSString* expected = @"path";
-    NSString* actual = [NSString stringWithCString:ksfu_lastPathEntry([path cStringUsingEncoding:NSUTF8StringEncoding])
+    NSString* actual = [NSString stringWithCString:fyfu_lastPathEntry([path cStringUsingEncoding:NSUTF8StringEncoding])
                                           encoding:NSUTF8StringEncoding];
     XCTAssertEqualObjects(actual, expected, @"");
 }
@@ -378,7 +378,7 @@
 
     int fd = open([path UTF8String], O_RDWR | O_CREAT | O_EXCL, 0644);
     XCTAssertTrue(fd >= 0, @"");
-    bool result = ksfu_writeBytesToFD(fd, [expected cStringUsingEncoding:NSUTF8StringEncoding], stringLength);
+    bool result = fyfu_writeBytesToFD(fd, [expected cStringUsingEncoding:NSUTF8StringEncoding], stringLength);
     XCTAssertTrue(result, @"");
     NSString* actual = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     XCTAssertNil(error, @"");
@@ -399,7 +399,7 @@
 
     int fd = open([path UTF8String], O_RDWR | O_CREAT | O_EXCL, 0644);
     XCTAssertTrue(fd >= 0, @"");
-    bool result = ksfu_writeBytesToFD(fd, [expected bytes], length);
+    bool result = fyfu_writeBytesToFD(fd, [expected bytes], length);
     XCTAssertTrue(result, @"");
     NSMutableData* actual = [NSMutableData dataWithContentsOfFile:path options:0 error:&error];
     XCTAssertNil(error, @"");
@@ -418,7 +418,7 @@
     int fd = open([path UTF8String], O_RDONLY);
     XCTAssertTrue(fd >= 0, @"");
     NSMutableData* data = [NSMutableData dataWithLength:(NSUInteger)stringLength];
-    bool result = ksfu_readBytesFromFD(fd, [data mutableBytes], stringLength);
+    bool result = fyfu_readBytesFromFD(fd, [data mutableBytes], stringLength);
     XCTAssertTrue(result, @"");
     NSString* actual = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     XCTAssertNil(error, @"");
@@ -442,7 +442,7 @@
     int fd = open([path UTF8String], O_RDONLY);
     XCTAssertTrue(fd >= 0, @"");
     NSMutableData* actual = [NSMutableData dataWithLength:(NSUInteger)length];
-    bool result = ksfu_readBytesFromFD(fd, [actual mutableBytes], length);
+    bool result = fyfu_readBytesFromFD(fd, [actual mutableBytes], length);
     XCTAssertTrue(result, @"");
     XCTAssertEqualObjects(actual, expected, @"");
 }
@@ -459,7 +459,7 @@
     XCTAssertTrue(fd >= 0, @"");
     char* bytes;
     int readLength;
-    bool result = ksfu_readEntireFile([path UTF8String], &bytes, &readLength, 0);
+    bool result = fyfu_readEntireFile([path UTF8String], &bytes, &readLength, 0);
     XCTAssertTrue(result, @"");
     NSMutableData* data = [NSMutableData dataWithBytesNoCopy:bytes length:(unsigned)readLength freeWhenDone:YES];
     NSString* actual = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -485,7 +485,7 @@
     XCTAssertTrue(fd >= 0, @"");
     char* bytes;
     int readLength;
-    bool result = ksfu_readEntireFile([path UTF8String], &bytes, &readLength, 0);
+    bool result = fyfu_readEntireFile([path UTF8String], &bytes, &readLength, 0);
     XCTAssertTrue(result, @"");
     NSMutableData* actual = [NSMutableData dataWithBytesNoCopy:bytes length:(unsigned)readLength freeWhenDone:YES];
     XCTAssertEqualObjects(actual, expected, @"");
@@ -499,7 +499,7 @@
 
     int fd = open([path UTF8String], O_RDWR | O_CREAT | O_EXCL, 0644);
     XCTAssertTrue(fd >= 0, @"");
-    bool result = ksfu_writeStringToFD(fd, [expected cStringUsingEncoding:NSUTF8StringEncoding]);
+    bool result = fyfu_writeStringToFD(fd, [expected cStringUsingEncoding:NSUTF8StringEncoding]);
     XCTAssertTrue(result, @"");
     NSString* actual = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     XCTAssertNil(error, @"");
@@ -514,7 +514,7 @@
 
     int fd = open([path UTF8String], O_RDWR | O_CREAT | O_EXCL, 0644);
     XCTAssertTrue(fd >= 0, @"");
-    bool result = ksfu_writeFmtToFD(fd, "test test testing %d %.1f %s", 1, 2.0f, "3");
+    bool result = fyfu_writeFmtToFD(fd, "test test testing %d %.1f %s", 1, 2.0f, "3");
     XCTAssertTrue(result, @"");
     NSString* actual = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     XCTAssertNil(error, @"");
@@ -525,7 +525,7 @@
 {
     va_list args;
     va_start(args, fmt);
-    bool result = ksfu_writeFmtArgsToFD(fd, fmt, args);
+    bool result = fyfu_writeFmtArgsToFD(fd, fmt, args);
     va_end(args);
     return result;
 }
@@ -562,28 +562,28 @@
     int bytesRead;
     NSString* actual;
 
-    bytesRead = ksfu_readLineFromFD(fd, [data mutableBytes], 100);
+    bytesRead = fyfu_readLineFromFD(fd, [data mutableBytes], 100);
     XCTAssertTrue(bytesRead > 0, @"");
     actual = [[NSString alloc] initWithBytes:[data bytes]
                                       length:(NSUInteger)bytesRead
                                     encoding:NSUTF8StringEncoding];
     XCTAssertEqualObjects(actual, expected1, @"");
 
-    bytesRead = ksfu_readLineFromFD(fd, [data mutableBytes], 100);
+    bytesRead = fyfu_readLineFromFD(fd, [data mutableBytes], 100);
     XCTAssertTrue(bytesRead > 0, @"");
     actual = [[NSString alloc] initWithBytes:[data bytes]
                                       length:(NSUInteger)bytesRead
                                     encoding:NSUTF8StringEncoding];
     XCTAssertEqualObjects(actual, expected2, @"");
 
-    bytesRead = ksfu_readLineFromFD(fd, [data mutableBytes], 100);
+    bytesRead = fyfu_readLineFromFD(fd, [data mutableBytes], 100);
     XCTAssertTrue(bytesRead > 0, @"");
     actual = [[NSString alloc] initWithBytes:[data bytes]
                                       length:(NSUInteger)bytesRead
                                     encoding:NSUTF8StringEncoding];
     XCTAssertEqualObjects(actual, expected3, @"");
 
-    bytesRead = ksfu_readLineFromFD(fd, [data mutableBytes], 100);
+    bytesRead = fyfu_readLineFromFD(fd, [data mutableBytes], 100);
     XCTAssertTrue(bytesRead == 0, @"");
 }
 

@@ -2434,7 +2434,7 @@
                         {
                             "object_name": "Crash-Tester",
                             "object_addr": 929792,
-                            "symbol_name": "ksmachexc_i_handleExceptions",
+                            "symbol_name": "fymachexc_i_handleExceptions",
                             "symbol_addr": 1104848,
                             "instruction_addr": 1105081
                         },
@@ -2483,7 +2483,7 @@
                     }
                 },
                 "index": 4,
-                "name": "KSCrash Exception Handler (Secondary)",
+                "name": "FYCrash Exception Handler (Secondary)",
                 "crashed": false,
                 "current_thread": false
             },
@@ -2500,7 +2500,7 @@
                         {
                             "object_name": "Crash-Tester",
                             "object_addr": 929792,
-                            "symbol_name": "ksmachexc_i_handleExceptions",
+                            "symbol_name": "fymachexc_i_handleExceptions",
                             "symbol_addr": 1104848,
                             "instruction_addr": 1105192
                         },
@@ -2549,7 +2549,7 @@
                     }
                 },
                 "index": 5,
-                "name": "KSCrash Exception Handler (Primary)",
+                "name": "FYCrash Exception Handler (Primary)",
                 "crashed": false,
                 "current_thread": false
             }

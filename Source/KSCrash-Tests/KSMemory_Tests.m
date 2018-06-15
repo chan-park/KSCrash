@@ -1,5 +1,5 @@
 //
-//  ksmemory_Tests.m
+//  fymemory_Tests.m
 //
 //  Created by Karl Stenerud on 2012-03-03.
 //
@@ -27,20 +27,20 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSMemory.h"
+#import "FYMemory.h"
 #import "TestThread.h"
 
 
-@interface KSMemory_Tests : XCTestCase @end
+@interface FYMemory_Tests : XCTestCase @end
 
-@implementation KSMemory_Tests
+@implementation FYMemory_Tests
 
 - (void) testCopyMem
 {
     char buff[100];
     char buff2[100] = {1,2,3,4,5};
     
-    bool result = ksmem_copySafely(buff2, buff, sizeof(buff));
+    bool result = fymem_copySafely(buff2, buff, sizeof(buff));
     XCTAssertTrue(result, @"");
     int memCmpResult = memcmp(buff, buff2, sizeof(buff));
     XCTAssertEqual(memCmpResult, 0, @"");
@@ -51,7 +51,7 @@
     char buff[100];
     char* buff2 = NULL;
     
-    bool result = ksmem_copySafely(buff2, buff, sizeof(buff));
+    bool result = fymem_copySafely(buff2, buff, sizeof(buff));
     XCTAssertFalse(result, @"");
 }
 
@@ -60,7 +60,7 @@
     char buff[100];
     char* buff2 = (char*)-1;
     
-    bool result = ksmem_copySafely(buff2, buff, sizeof(buff));
+    bool result = fymem_copySafely(buff2, buff, sizeof(buff));
     XCTAssertFalse(result, @"");
 }
 
@@ -69,7 +69,7 @@
     char buff[1000];
     char buff2[5] = {1,2,3,4,5};
     
-    int copied = ksmem_copyMaxPossible(buff2, buff, sizeof(buff));
+    int copied = fymem_copyMaxPossible(buff2, buff, sizeof(buff));
     XCTAssertTrue(copied >= 5, @"");
     int memCmpResult = memcmp(buff, buff2, sizeof(buff2));
     XCTAssertEqual(memCmpResult, 0, @"");
@@ -80,7 +80,7 @@
     char buff[1000];
     char* buff2 = NULL;
     
-    int copied = ksmem_copyMaxPossible(buff2, buff, sizeof(buff));
+    int copied = fymem_copyMaxPossible(buff2, buff, sizeof(buff));
     XCTAssertTrue(copied == 0, @"");
 }
 
@@ -89,7 +89,7 @@
     char buff[1000];
     char* buff2 = (char*)-1;
     
-    int copied = ksmem_copyMaxPossible(buff2, buff, sizeof(buff));
+    int copied = fymem_copyMaxPossible(buff2, buff, sizeof(buff));
     XCTAssertTrue(copied == 0, @"");
 }
 

@@ -1,5 +1,5 @@
 //
-//  KSCrashInstallationStandard_Tests.m
+//  FYCrashInstallationStandard_Tests.m
 //
 //  Created by Kelp on 2013-03-14.
 //
@@ -27,17 +27,17 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCrashInstallationVictory.h"
+#import "FYCrashInstallationVictory.h"
 
 
-@interface KSCrashInstallationVictory_Tests : XCTestCase @end
+@interface FYCrashInstallationVictory_Tests : XCTestCase @end
 
 
-@implementation KSCrashInstallationVictory_Tests
+@implementation FYCrashInstallationVictory_Tests
 
 - (void) testInstall
 {
-    KSCrashInstallationVictory* installation = [KSCrashInstallationVictory sharedInstance];
+    FYCrashInstallationVictory* installation = [FYCrashInstallationVictory sharedInstance];
     installation.url = [NSURL URLWithString:@"https://victory-demo.appspot.com/api/v1/crash/0571f5f6-652d-413f-8043-0e9531e1b689"];
     installation.userName = nil;
     installation.userEmail = nil;

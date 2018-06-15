@@ -1,5 +1,5 @@
 //
-//  KSCrashReportConverter_Tests.m
+//  FYCrashReportConverter_Tests.m
 //
 //  Created by Karl Stenerud on 2012-02-24.
 //
@@ -26,24 +26,24 @@
 
 
 #import "FileBasedTestCase.h"
-#import "XCTestCase+KSCrash.h"
+#import "XCTestCase+FYCrash.h"
 
 
-//#import "KSCrashReportConverter.h"
-#import "KSCrashReportStore.h"
+//#import "FYCrashReportConverter.h"
+#import "FYCrashReportStore.h"
 
-#define REPORT_PREFIX @"CrashReport-KSCrashTest"
+#define REPORT_PREFIX @"CrashReport-FYCrashTest"
 
-#define REPORT_BADPOINTER @"CrashReport-KSCrashTest-BadPointer.json"
-#define REPORT_NSEXCEPTION @"CrashReport-KSCrashTest-NSException.json"
+#define REPORT_BADPOINTER @"CrashReport-FYCrashTest-BadPointer.json"
+#define REPORT_NSEXCEPTION @"CrashReport-FYCrashTest-NSException.json"
 
-#define APPLE_BADPOINTER_UNSYMBOLICATED @"AppleReport-KSCrashTest-BadPointer-Unsymbolicated.txt"
-#define APPLE_NSEXCEPTION_UNSYMBOLICATED @"AppleReport-KSCrashTest-NSException-Unsymbolicated.txt"
+#define APPLE_BADPOINTER_UNSYMBOLICATED @"AppleReport-FYCrashTest-BadPointer-Unsymbolicated.txt"
+#define APPLE_NSEXCEPTION_UNSYMBOLICATED @"AppleReport-FYCrashTest-NSException-Unsymbolicated.txt"
 
 
-@interface KSCrashReportConverter_Tests : FileBasedTestCase @end
+@interface FYCrashReportConverter_Tests : FileBasedTestCase @end
 
-@implementation KSCrashReportConverter_Tests
+@implementation FYCrashReportConverter_Tests
 #if 0
 - (void) setUp
 {
@@ -51,9 +51,9 @@
     [self createTempReportsAtPath:self.tempPath prefix:REPORT_PREFIX];
 }
 
-- (KSCrashReportStore*) store
+- (FYCrashReportStore*) store
 {
-//    return [KSCrashReportStore storeWithPath:self.tempPath filenamePrefix:REPORT_PREFIX];
+//    return [FYCrashReportStore storeWithPath:self.tempPath filenamePrefix:REPORT_PREFIX];
     return nil;
 }
 
@@ -76,10 +76,10 @@
     // TODO
     return;
     
-//    KSCrashReportStore* store = [self store];
+//    FYCrashReportStore* store = [self store];
 //    NSDictionary* report = [store reportNamed:REPORT_BADPOINTER];
-//    NSString* converted = [KSCrashReportConverter toAppleFormat:report
-//                                                    reportStyle:KSAppleReportStyleUnsymbolicated];
+//    NSString* converted = [FYCrashReportConverter toAppleFormat:report
+//                                                    reportStyle:FYAppleReportStyleUnsymbolicated];
 //    XCTAssertNotNil(converted, @"");
 //    
 //    NSString* expected = [self loadAppleReportNamed:APPLE_BADPOINTER_UNSYMBOLICATED];

@@ -1,5 +1,5 @@
 //
-//  KSCrashInstallationQuincyHockey_Tests.m
+//  FYCrashInstallationQuincyHockey_Tests.m
 //
 //  Created by Karl Stenerud on 2013-03-09.
 //
@@ -27,17 +27,17 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCrashInstallationQuincyHockey.h"
+#import "FYCrashInstallationQuincyHockey.h"
 
 
-@interface KSCrashInstallationQuincyHockey_Tests : XCTestCase @end
+@interface FYCrashInstallationQuincyHockey_Tests : XCTestCase @end
 
 
-@implementation KSCrashInstallationQuincyHockey_Tests
+@implementation FYCrashInstallationQuincyHockey_Tests
 
 - (void) testQuincyInstall
 {
-    KSCrashInstallationQuincy* installation = [KSCrashInstallationQuincy sharedInstance];
+    FYCrashInstallationQuincy* installation = [FYCrashInstallationQuincy sharedInstance];
     installation.userIDKey = @"user_id";
     installation.contactEmailKey = nil;
     installation.crashDescriptionKey = @"crash_description";
@@ -59,7 +59,7 @@
 
 - (void) testQuincyInstallMissingProperties
 {
-    KSCrashInstallationQuincy* installation = [KSCrashInstallationQuincy sharedInstance];
+    FYCrashInstallationQuincy* installation = [FYCrashInstallationQuincy sharedInstance];
     installation.url = nil;
     [installation install];
     [installation sendAllReportsWithCompletion:^(__unused NSArray *filteredReports, BOOL completed, NSError *error)
@@ -71,7 +71,7 @@
 
 - (void) testHockeyInstall
 {
-    KSCrashInstallationHockey* installation = [KSCrashInstallationHockey sharedInstance];
+    FYCrashInstallationHockey* installation = [FYCrashInstallationHockey sharedInstance];
     installation.appIdentifier = @"some_app_id";
     [installation install];
     [installation sendAllReportsWithCompletion:^(__unused NSArray *filteredReports, BOOL completed, NSError *error)

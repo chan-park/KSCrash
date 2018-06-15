@@ -1,5 +1,5 @@
 //
-//  KSCString_Tests.m
+//  FYCString_Tests.m
 //
 //  Created by Karl Stenerud on 2013-03-09.
 //
@@ -27,18 +27,18 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCString.h"
+#import "FYCString.h"
 
 
-@interface KSCString_Tests : XCTestCase @end
+@interface FYCString_Tests : XCTestCase @end
 
 
-@implementation KSCString_Tests
+@implementation FYCString_Tests
 
 - (void) testNSString
 {
     NSString* expected = @"Expected";
-    KSCString* actual = [KSCString stringWithString:expected];
+    FYCString* actual = [FYCString stringWithString:expected];
     BOOL matches = strcmp([expected cStringUsingEncoding:NSUTF8StringEncoding], actual.bytes) == 0;
     XCTAssertTrue(matches, @"");
     XCTAssertEqual(actual.length, expected.length, @"");
@@ -48,7 +48,7 @@
 {
     const char* expected = "Expected";
     NSUInteger expectedLength = strlen(expected);
-    KSCString* actual = [KSCString stringWithCString:expected];
+    FYCString* actual = [FYCString stringWithCString:expected];
     BOOL matches = strcmp(expected, actual.bytes) == 0;
     XCTAssertTrue(matches, @"");
     XCTAssertEqual(actual.length, expectedLength, @"");
@@ -59,7 +59,7 @@
     const char* expected = "Expected";
     NSUInteger expectedLength = strlen(expected);
     NSData* source = [NSData dataWithBytes:expected length:expectedLength];
-    KSCString* actual = [KSCString stringWithData:source];
+    FYCString* actual = [FYCString stringWithData:source];
     BOOL matches = strcmp(expected, actual.bytes) == 0;
     XCTAssertTrue(matches, @"");
     XCTAssertEqual(actual.length, expectedLength, @"");
@@ -69,7 +69,7 @@
 {
     const char* expected = "Expected";
     NSUInteger expectedLength = strlen(expected);
-    KSCString* actual = [KSCString stringWithData:expected length:expectedLength];
+    FYCString* actual = [FYCString stringWithData:expected length:expectedLength];
     BOOL matches = strcmp(expected, actual.bytes) == 0;
     XCTAssertTrue(matches, @"");
     XCTAssertEqual(actual.length, expectedLength, @"");

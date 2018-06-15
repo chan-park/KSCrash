@@ -1,5 +1,5 @@
 //
-//  KSCrashMonitor_AppState_Tests.m
+//  FYCrashMonitor_AppState_Tests.m
 //
 //  Created by Karl Stenerud on 2012-02-05.
 //
@@ -26,28 +26,28 @@
 
 
 #import "FileBasedTestCase.h"
-#import "XCTestCase+KSCrash.h"
+#import "XCTestCase+FYCrash.h"
 
-#import "KSCrashMonitor_AppState.h"
-
-
-@interface KSCrashMonitor_AppState_Tests : FileBasedTestCase @end
+#import "FYCrashMonitor_AppState.h"
 
 
-@implementation KSCrashMonitor_AppState_Tests
+@interface FYCrashMonitor_AppState_Tests : FileBasedTestCase @end
+
+
+@implementation FYCrashMonitor_AppState_Tests
 
 - (void) initializeCrashState
 {
     NSString* stateFile = [self.tempPath stringByAppendingPathComponent:@"state.json"];
-    kscrashstate_initialize([stateFile cStringUsingEncoding:NSUTF8StringEncoding]);
-    kscm_setActiveMonitors(KSCrashMonitorTypeNone);
-    kscm_setActiveMonitors(KSCrashMonitorTypeApplicationState);
+    fycrashstate_initialize([stateFile cStringUsingEncoding:NSUTF8StringEncoding]);
+    fycm_setActiveMonitors(FYCrashMonitorTypeNone);
+    fycm_setActiveMonitors(FYCrashMonitorTypeApplicationState);
 }
 
 - (void) testInitRelaunch
 {
     [self initializeCrashState];
-    KSCrash_AppState context = *kscrashstate_currentState();
+    FYCrash_AppState context = *fycrashstate_currentState();
 
     XCTAssertTrue(context.applicationIsInForeground, @"");
     XCTAssertFalse(context.applicationIsActive, @"");
@@ -65,7 +65,7 @@
     XCTAssertFalse(context.crashedLastLaunch, @"");
 
     [self initializeCrashState];
-    context = *kscrashstate_currentState();
+    context = *fycrashstate_currentState();
 
     XCTAssertTrue(context.applicationIsInForeground, @"");
     XCTAssertFalse(context.applicationIsActive, @"");
@@ -86,13 +86,13 @@
 - (void) testInitCrash
 {
     [self initializeCrashState];
-    KSCrash_AppState context = *kscrashstate_currentState();
+    FYCrash_AppState context = *fycrashstate_currentState();
 
-    KSCrash_AppState checkpoint0 = *kscrashstate_currentState();
+    FYCrash_AppState checkpoint0 = *fycrashstate_currentState();
 
     usleep(1);
-    kscrashstate_notifyAppCrash();
-    KSCrash_AppState checkpointC = *kscrashstate_currentState();
+    fycrashstate_notifyAppCrash();
+    FYCrash_AppState checkpointC = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpointC.applicationIsInForeground ==
                  checkpoint0.applicationIsInForeground, @"");
@@ -119,7 +119,7 @@
     XCTAssertFalse(checkpointC.crashedLastLaunch, @"");
 
     [self initializeCrashState];
-    context = *kscrashstate_currentState();
+    context = *fycrashstate_currentState();
 
     XCTAssertTrue(context.applicationIsInForeground, @"");
     XCTAssertFalse(context.applicationIsActive, @"");
@@ -140,14 +140,14 @@
 - (void) testActRelaunch
 {
     [self initializeCrashState];
-    KSCrash_AppState context = *kscrashstate_currentState();
+    FYCrash_AppState context = *fycrashstate_currentState();
     
-    KSCrash_AppState checkpoint0 = *kscrashstate_currentState();
+    FYCrash_AppState checkpoint0 = *fycrashstate_currentState();
 
     usleep(1);
-    kscrashstate_notifyAppActive(true);
+    fycrashstate_notifyAppActive(true);
 
-    KSCrash_AppState checkpoint1 = *kscrashstate_currentState();
+    FYCrash_AppState checkpoint1 = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpoint1.applicationIsInForeground ==
                  checkpoint0.applicationIsInForeground, @"");
@@ -176,7 +176,7 @@
 
     usleep(1);
     [self initializeCrashState];
-    context = *kscrashstate_currentState();
+    context = *fycrashstate_currentState();
     
     XCTAssertTrue(context.applicationIsInForeground, @"");
     XCTAssertFalse(context.applicationIsActive, @"");
@@ -198,12 +198,12 @@
 {
     [self initializeCrashState];
     usleep(1);
-    kscrashstate_notifyAppActive(true);
-    KSCrash_AppState checkpoint0 = *kscrashstate_currentState();
+    fycrashstate_notifyAppActive(true);
+    FYCrash_AppState checkpoint0 = *fycrashstate_currentState();
 
     usleep(1);
-    kscrashstate_notifyAppCrash();
-    KSCrash_AppState checkpointC = *kscrashstate_currentState();
+    fycrashstate_notifyAppCrash();
+    FYCrash_AppState checkpointC = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpointC.applicationIsInForeground ==
                  checkpoint0.applicationIsInForeground, @"");
@@ -230,7 +230,7 @@
     XCTAssertFalse(checkpointC.crashedLastLaunch, @"");
 
     [self initializeCrashState];
-    KSCrash_AppState context = *kscrashstate_currentState();
+    FYCrash_AppState context = *fycrashstate_currentState();
 
     XCTAssertTrue(context.applicationIsInForeground, @"");
     XCTAssertFalse(context.applicationIsActive, @"");
@@ -252,12 +252,12 @@
 {
     [self initializeCrashState];
     usleep(1);
-    kscrashstate_notifyAppActive(true);
-    KSCrash_AppState checkpoint0 = *kscrashstate_currentState();
+    fycrashstate_notifyAppActive(true);
+    FYCrash_AppState checkpoint0 = *fycrashstate_currentState();
 
     usleep(1);
-    kscrashstate_notifyAppActive(false);
-    KSCrash_AppState checkpoint1 = *kscrashstate_currentState();
+    fycrashstate_notifyAppActive(false);
+    FYCrash_AppState checkpoint1 = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpoint1.applicationIsInForeground ==
                  checkpoint0.applicationIsInForeground, @"");
@@ -286,7 +286,7 @@
 
     usleep(1);
     [self initializeCrashState];
-    KSCrash_AppState checkpointR = *kscrashstate_currentState();
+    FYCrash_AppState checkpointR = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpointR.applicationIsInForeground, @"");
     XCTAssertFalse(checkpointR.applicationIsActive, @"");
@@ -308,16 +308,16 @@
 - (void) testActDeactCrash
 {
     [self initializeCrashState];
-    KSCrash_AppState context = *kscrashstate_currentState();
+    FYCrash_AppState context = *fycrashstate_currentState();
     usleep(1);
-    kscrashstate_notifyAppActive(true);
+    fycrashstate_notifyAppActive(true);
     usleep(1);
-    kscrashstate_notifyAppActive(false);
-    KSCrash_AppState checkpoint0 = *kscrashstate_currentState();
+    fycrashstate_notifyAppActive(false);
+    FYCrash_AppState checkpoint0 = *fycrashstate_currentState();
 
     usleep(1);
-    kscrashstate_notifyAppCrash();
-    KSCrash_AppState checkpointC = *kscrashstate_currentState();
+    fycrashstate_notifyAppCrash();
+    FYCrash_AppState checkpointC = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpointC.applicationIsInForeground ==
                  checkpoint0.applicationIsInForeground, @"");
@@ -344,7 +344,7 @@
     XCTAssertFalse(checkpointC.crashedLastLaunch, @"");
 
     [self initializeCrashState];
-    context = *kscrashstate_currentState();
+    context = *fycrashstate_currentState();
 
     XCTAssertTrue(context.applicationIsInForeground, @"");
     XCTAssertFalse(context.applicationIsActive, @"");
@@ -366,14 +366,14 @@
 {
     [self initializeCrashState];
     usleep(1);
-    kscrashstate_notifyAppActive(true);
+    fycrashstate_notifyAppActive(true);
     usleep(1);
-    kscrashstate_notifyAppActive(false);
-    KSCrash_AppState checkpoint0 = *kscrashstate_currentState();
+    fycrashstate_notifyAppActive(false);
+    FYCrash_AppState checkpoint0 = *fycrashstate_currentState();
 
     usleep(1);
-    kscrashstate_notifyAppInForeground(false);
-    KSCrash_AppState checkpoint1 = *kscrashstate_currentState();
+    fycrashstate_notifyAppInForeground(false);
+    FYCrash_AppState checkpoint1 = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpoint1.applicationIsInForeground !=
                  checkpoint0.applicationIsInForeground, @"");
@@ -402,7 +402,7 @@
 
     usleep(1);
     [self initializeCrashState];
-    KSCrash_AppState checkpointR = *kscrashstate_currentState();
+    FYCrash_AppState checkpointR = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpointR.applicationIsInForeground, @"");
     XCTAssertFalse(checkpointR.applicationIsActive, @"");
@@ -424,18 +424,18 @@
 {
     [self initializeCrashState];
     usleep(1);
-    kscrashstate_notifyAppActive(true);
+    fycrashstate_notifyAppActive(true);
     usleep(1);
-    kscrashstate_notifyAppActive(false);
+    fycrashstate_notifyAppActive(false);
     usleep(1);
-    kscrashstate_notifyAppInForeground(false);
-    KSCrash_AppState checkpoint0 = *kscrashstate_currentState();
+    fycrashstate_notifyAppInForeground(false);
+    FYCrash_AppState checkpoint0 = *fycrashstate_currentState();
     usleep(1);
-    kscrashstate_notifyAppTerminate();
+    fycrashstate_notifyAppTerminate();
 
     usleep(1);
     [self initializeCrashState];
-    KSCrash_AppState checkpointR = *kscrashstate_currentState();
+    FYCrash_AppState checkpointR = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpointR.applicationIsInForeground, @"");
     XCTAssertFalse(checkpointR.applicationIsActive, @"");
@@ -456,18 +456,18 @@
 - (void) testActDeactBGCrash
 {
     [self initializeCrashState];
-    KSCrash_AppState context = *kscrashstate_currentState();
+    FYCrash_AppState context = *fycrashstate_currentState();
     usleep(1);
-    kscrashstate_notifyAppActive(true);
+    fycrashstate_notifyAppActive(true);
     usleep(1);
-    kscrashstate_notifyAppActive(false);
+    fycrashstate_notifyAppActive(false);
     usleep(1);
-    kscrashstate_notifyAppInForeground(false);
-    KSCrash_AppState checkpoint0 = *kscrashstate_currentState();
+    fycrashstate_notifyAppInForeground(false);
+    FYCrash_AppState checkpoint0 = *fycrashstate_currentState();
 
     usleep(1);
-    kscrashstate_notifyAppCrash();
-    KSCrash_AppState checkpointC = *kscrashstate_currentState();
+    fycrashstate_notifyAppCrash();
+    FYCrash_AppState checkpointC = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpointC.applicationIsInForeground ==
                  checkpoint0.applicationIsInForeground, @"");
@@ -494,7 +494,7 @@
     XCTAssertFalse(checkpointC.crashedLastLaunch, @"");
 
     [self initializeCrashState];
-    context = *kscrashstate_currentState();
+    context = *fycrashstate_currentState();
 
     XCTAssertTrue(context.applicationIsInForeground, @"");
     XCTAssertFalse(context.applicationIsActive, @"");
@@ -516,17 +516,17 @@
 {
     [self initializeCrashState];
     usleep(1);
-    kscrashstate_notifyAppActive(true);
+    fycrashstate_notifyAppActive(true);
     usleep(1);
-    kscrashstate_notifyAppActive(false);
+    fycrashstate_notifyAppActive(false);
     usleep(1);
-    kscrashstate_notifyAppInForeground(false);
+    fycrashstate_notifyAppInForeground(false);
     usleep(1);
-    KSCrash_AppState checkpoint0 = *kscrashstate_currentState();
+    FYCrash_AppState checkpoint0 = *fycrashstate_currentState();
 
     usleep(1);
-    kscrashstate_notifyAppInForeground(true);
-    KSCrash_AppState checkpoint1 = *kscrashstate_currentState();
+    fycrashstate_notifyAppInForeground(true);
+    FYCrash_AppState checkpoint1 = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpoint1.applicationIsInForeground !=
                  checkpoint0.applicationIsInForeground, @"");
@@ -555,7 +555,7 @@
 
     usleep(1);
     [self initializeCrashState];
-    KSCrash_AppState checkpointR = *kscrashstate_currentState();
+    FYCrash_AppState checkpointR = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpointR.applicationIsInForeground, @"");
     XCTAssertFalse(checkpointR.applicationIsActive, @"");
@@ -577,20 +577,20 @@
 - (void) testActDeactBGFGCrash
 {
     [self initializeCrashState];
-    KSCrash_AppState context = *kscrashstate_currentState();
+    FYCrash_AppState context = *fycrashstate_currentState();
     usleep(1);
-    kscrashstate_notifyAppActive(true);
+    fycrashstate_notifyAppActive(true);
     usleep(1);
-    kscrashstate_notifyAppActive(false);
+    fycrashstate_notifyAppActive(false);
     usleep(1);
-    kscrashstate_notifyAppInForeground(false);
+    fycrashstate_notifyAppInForeground(false);
     usleep(1);
-    kscrashstate_notifyAppInForeground(true);
-    KSCrash_AppState checkpoint0 = *kscrashstate_currentState();
+    fycrashstate_notifyAppInForeground(true);
+    FYCrash_AppState checkpoint0 = *fycrashstate_currentState();
 
     usleep(1);
-    kscrashstate_notifyAppCrash();
-    KSCrash_AppState checkpointC = *kscrashstate_currentState();
+    fycrashstate_notifyAppCrash();
+    FYCrash_AppState checkpointC = *fycrashstate_currentState();
 
     XCTAssertTrue(checkpointC.applicationIsInForeground ==
                  checkpoint0.applicationIsInForeground, @"");
@@ -617,7 +617,7 @@
     XCTAssertFalse(checkpointC.crashedLastLaunch, @"");
 
     [self initializeCrashState];
-    context = *kscrashstate_currentState();
+    context = *fycrashstate_currentState();
 
     XCTAssertTrue(context.applicationIsInForeground, @"");
     XCTAssertFalse(context.applicationIsActive, @"");

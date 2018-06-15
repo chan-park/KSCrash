@@ -26,7 +26,7 @@
 
 
 #import "TestThread.h"
-#import "KSThread.h"
+#import "FYThread.h"
 
 
 @implementation TestThread
@@ -35,7 +35,7 @@
 
 - (void) main
 {
-    self.thread = (thread_t)ksthread_self();
+    self.thread = (thread_t)fythread_self();
     while(!self.isCancelled)
     {
         [[self class] sleepForTimeInterval:0.1];

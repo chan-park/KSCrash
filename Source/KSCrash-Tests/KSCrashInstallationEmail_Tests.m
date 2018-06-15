@@ -1,5 +1,5 @@
 //
-//  KSCrashInstallationEmail_Tests.m
+//  FYCrashInstallationEmail_Tests.m
 //
 //  Created by Karl Stenerud on 2013-03-09.
 //
@@ -27,18 +27,18 @@
 
 #import <XCTest/XCTest.h>
 
-#import <KSCrash/KSCrashInstallation+Alert.h>
-#import "KSCrashInstallationEmail.h"
+#import <FYCrash/FYCrashInstallation+Alert.h>
+#import "FYCrashInstallationEmail.h"
 
 
-@interface KSCrashInstallationEmail_Tests : XCTestCase @end
+@interface FYCrashInstallationEmail_Tests : XCTestCase @end
 
 
-@implementation KSCrashInstallationEmail_Tests
+@implementation FYCrashInstallationEmail_Tests
 
 - (void) testInstall
 {
-    KSCrashInstallationEmail* installation = [KSCrashInstallationEmail sharedInstance];
+    FYCrashInstallationEmail* installation = [FYCrashInstallationEmail sharedInstance];
     installation.recipients = [NSArray arrayWithObjects:@"nobody", nil];
     installation.subject = @"subject";
     installation.message = @"message";
@@ -55,7 +55,7 @@
 
 - (void) testInstallInvalid
 {
-    KSCrashInstallationEmail* installation = [KSCrashInstallationEmail sharedInstance];
+    FYCrashInstallationEmail* installation = [FYCrashInstallationEmail sharedInstance];
     installation.recipients = nil;
     installation.subject = nil;
     installation.message = nil;

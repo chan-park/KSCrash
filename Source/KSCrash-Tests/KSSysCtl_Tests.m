@@ -1,5 +1,5 @@
 //
-//  KSSysCtl_Tests.m
+//  FYSysCtl_Tests.m
 //
 //  Created by Karl Stenerud on 2013-01-26.
 //
@@ -27,114 +27,114 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSSysCtl.h"
+#import "FYSysCtl.h"
 
 
-@interface KSSysCtl_Tests : XCTestCase @end
+@interface FYSysCtl_Tests : XCTestCase @end
 
 
-@implementation KSSysCtl_Tests
+@implementation FYSysCtl_Tests
 
 - (void) testSysCtlInt32
 {
-    int32_t result = kssysctl_int32(CTL_KERN, KERN_POSIX1);
+    int32_t result = fysysctl_int32(CTL_KERN, KERN_POSIX1);
     XCTAssertTrue(result > 0, @"");
 }
 
 - (void) testSysCtlInt32Invalid
 {
-    int32_t result = kssysctl_int32(CTL_KERN, 1000000);
+    int32_t result = fysysctl_int32(CTL_KERN, 1000000);
     XCTAssertTrue(result == 0, @"");
 }
 
 - (void) testSysCtlInt32ForName
 {
-    int32_t result = kssysctl_int32ForName("kern.posix1version");
+    int32_t result = fysysctl_int32ForName("kern.posix1version");
     XCTAssertTrue(result > 0, @"");
 }
 
 - (void) testSysCtlInt32ForNameInvalid
 {
-    int32_t result = kssysctl_int32ForName("kernblah.posix1version");
+    int32_t result = fysysctl_int32ForName("kernblah.posix1version");
     XCTAssertTrue(result == 0, @"");
 }
 
 - (void) testSysCtlInt64
 {
-    int64_t result = kssysctl_int64(CTL_KERN, KERN_USRSTACK64);
+    int64_t result = fysysctl_int64(CTL_KERN, KERN_USRSTACK64);
     XCTAssertTrue(result > 0, @"");
 }
 
 - (void) testSysCtlInt64Invalid
 {
-    int64_t result = kssysctl_int64(CTL_KERN, 1000000);
+    int64_t result = fysysctl_int64(CTL_KERN, 1000000);
     XCTAssertTrue(result == 0, @"");
 }
 
 - (void) testSysCtlInt64ForName
 {
-    int64_t result = kssysctl_int64ForName("kern.usrstack64");
+    int64_t result = fysysctl_int64ForName("kern.usrstack64");
     XCTAssertTrue(result > 0, @"");
 }
 
 - (void) testSysCtlInt64ForNameInvalid
 {
-    int64_t result = kssysctl_int64ForName("kernblah.usrstack64");
+    int64_t result = fysysctl_int64ForName("kernblah.usrstack64");
     XCTAssertTrue(result == 0, @"");
 }
 
 - (void) testSysCtlUInt32
 {
-    uint32_t result = kssysctl_uint32(CTL_KERN, KERN_POSIX1);
+    uint32_t result = fysysctl_uint32(CTL_KERN, KERN_POSIX1);
     XCTAssertTrue(result > 0, @"");
 }
 
 - (void) testSysCtlUInt32Invalid
 {
-    uint32_t result = kssysctl_uint32(CTL_KERN, 1000000);
+    uint32_t result = fysysctl_uint32(CTL_KERN, 1000000);
     XCTAssertTrue(result == 0, @"");
 }
 
 - (void) testSysCtlUInt32ForName
 {
-    uint32_t result = kssysctl_uint32ForName("kern.posix1version");
+    uint32_t result = fysysctl_uint32ForName("kern.posix1version");
     XCTAssertTrue(result > 0, @"");
 }
 
 - (void) testSysCtlUInt32ForNameInvalid
 {
-    uint32_t result = kssysctl_uint32ForName("kernblah.posix1version");
+    uint32_t result = fysysctl_uint32ForName("kernblah.posix1version");
     XCTAssertTrue(result == 0, @"");
 }
 
 - (void) testSysCtlUInt64
 {
-    uint64_t result = kssysctl_uint64(CTL_KERN, KERN_USRSTACK64);
+    uint64_t result = fysysctl_uint64(CTL_KERN, KERN_USRSTACK64);
     XCTAssertTrue(result > 0, @"");
 }
 
 - (void) testSysCtlUInt64Invalid
 {
-    uint64_t result = kssysctl_uint64(CTL_KERN, 1000000);
+    uint64_t result = fysysctl_uint64(CTL_KERN, 1000000);
     XCTAssertTrue(result == 0, @"");
 }
 
 - (void) testSysCtlUInt64ForName
 {
-    uint64_t result = kssysctl_uint64ForName("kern.usrstack64");
+    uint64_t result = fysysctl_uint64ForName("kern.usrstack64");
     XCTAssertTrue(result > 0, @"");
 }
 
 - (void) testSysCtlUInt64ForNameInvalid
 {
-    uint64_t result = kssysctl_uint64ForName("kernblah.usrstack64");
+    uint64_t result = fysysctl_uint64ForName("kernblah.usrstack64");
     XCTAssertTrue(result == 0, @"");
 }
 
 - (void) testSysCtlString
 {
     char buff[100] = {0};
-    bool success = kssysctl_string(CTL_KERN, KERN_OSTYPE, buff, sizeof(buff));
+    bool success = fysysctl_string(CTL_KERN, KERN_OSTYPE, buff, sizeof(buff));
     XCTAssertTrue(success, @"");
     XCTAssertTrue(buff[0] != 0, @"");
 }
@@ -142,7 +142,7 @@
 - (void) testSysCtlStringInvalid
 {
     char buff[100] = {0};
-    bool success = kssysctl_string(CTL_KERN, 1000000, buff, sizeof(buff));
+    bool success = fysysctl_string(CTL_KERN, 1000000, buff, sizeof(buff));
     XCTAssertFalse(success, @"");
     XCTAssertTrue(buff[0] == 0, @"");
 }
@@ -150,7 +150,7 @@
 - (void) testSysCtlStringForName
 {
     char buff[100] = {0};
-    bool success = kssysctl_stringForName("kern.ostype", buff, sizeof(buff));
+    bool success = fysysctl_stringForName("kern.ostype", buff, sizeof(buff));
     XCTAssertTrue(success, @"");
     XCTAssertTrue(buff[0] != 0, @"");
 }
@@ -158,32 +158,32 @@
 - (void) testSysCtlStringForNameInvalid
 {
     char buff[100] = {0};
-    bool success = kssysctl_stringForName("kernblah.ostype", buff, sizeof(buff));
+    bool success = fysysctl_stringForName("kernblah.ostype", buff, sizeof(buff));
     XCTAssertFalse(success, @"");
     XCTAssertTrue(buff[0] == 0, @"");
 }
 
 - (void) testSysCtlDate
 {
-    struct timeval value = kssysctl_timeval(CTL_KERN, KERN_BOOTTIME);
+    struct timeval value = fysysctl_timeval(CTL_KERN, KERN_BOOTTIME);
     XCTAssertTrue(value.tv_sec > 0, @"");
 }
 
 - (void) testSysCtlDateInvalid
 {
-    struct timeval value = kssysctl_timeval(CTL_KERN, 1000000);
+    struct timeval value = fysysctl_timeval(CTL_KERN, 1000000);
     XCTAssertTrue(value.tv_sec == 0, @"");
 }
 
 - (void) testSysCtlDateForName
 {
-    struct timeval value = kssysctl_timevalForName("kern.boottime");
+    struct timeval value = fysysctl_timevalForName("kern.boottime");
     XCTAssertTrue(value.tv_sec > 0, @"");
 }
 
 - (void) testSysCtlDateForNameInvalid
 {
-    struct timeval value = kssysctl_timevalForName("kernblah.boottime");
+    struct timeval value = fysysctl_timevalForName("kernblah.boottime");
     XCTAssertTrue(value.tv_sec == 0, @"");
 }
 
@@ -191,7 +191,7 @@
 {
     int pid = getpid();
     struct kinfo_proc procInfo = {{{{0}}}};
-    bool success = kssysctl_getProcessInfo(pid, &procInfo);
+    bool success = fysysctl_getProcessInfo(pid, &procInfo);
     XCTAssertTrue(success, @"");
     NSString* processName = [NSString stringWithCString:procInfo.kp_proc.p_comm encoding:NSUTF8StringEncoding];
     NSString* expected = @"xctest";
@@ -203,14 +203,14 @@
 //{
 //    int pid = 1000000;
 //    struct kinfo_proc procInfo = {{{{0}}}};
-//    bool success = kssysctl_getProcessInfo(pid, &procInfo);
+//    bool success = fysysctl_getProcessInfo(pid, &procInfo);
 //    XCTAssertFalse(success, @"");
 //}
 
 - (void) testGetMacAddress
 {
     unsigned char macAddress[6] = {0};
-    bool success = kssysctl_getMacAddress("en0", (char*)macAddress);
+    bool success = fysysctl_getMacAddress("en0", (char*)macAddress);
     XCTAssertTrue(success, @"");
     unsigned int result = 0;
     for(unsigned i = 0; i < sizeof(macAddress); i++)
@@ -223,7 +223,7 @@
 - (void) testGetMacAddressInvalid
 {
     unsigned char macAddress[6] = {0};
-    bool success = kssysctl_getMacAddress("blah blah", (char*)macAddress);
+    bool success = fysysctl_getMacAddress("blah blah", (char*)macAddress);
     XCTAssertFalse(success, @"");
 }
 

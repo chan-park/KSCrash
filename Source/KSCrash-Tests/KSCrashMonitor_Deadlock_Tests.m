@@ -1,5 +1,5 @@
 //
-//  KSCrashMonitor_Deadlock_Tests.m
+//  FYCrashMonitor_Deadlock_Tests.m
 //
 //  Created by Karl Stenerud on 2013-01-26.
 //
@@ -27,19 +27,19 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCrashMonitorContext.h"
-#import "KSCrashMonitor_Deadlock.h"
+#import "FYCrashMonitorContext.h"
+#import "FYCrashMonitor_Deadlock.h"
 
 
-@interface KSCrashMonitor_Deadlock_Tests : XCTestCase @end
+@interface FYCrashMonitor_Deadlock_Tests : XCTestCase @end
 
 
-@implementation KSCrashMonitor_Deadlock_Tests
+@implementation FYCrashMonitor_Deadlock_Tests
 
 - (void) testInstallAndRemove
 {
-    KSCrashMonitorAPI* api = kscm_deadlock_getAPI();
-    kscm_setDeadlockHandlerWatchdogInterval(10);
+    FYCrashMonitorAPI* api = fycm_deadlock_getAPI();
+    fycm_setDeadlockHandlerWatchdogInterval(10);
     api->setEnabled(true);
     XCTAssertTrue(api->isEnabled());
     [NSThread sleepForTimeInterval:0.1];
@@ -49,7 +49,7 @@
 
 - (void) testDoubleInstallAndRemove
 {
-    KSCrashMonitorAPI* api = kscm_deadlock_getAPI();
+    FYCrashMonitorAPI* api = fycm_deadlock_getAPI();
     
     api->setEnabled(true);
     XCTAssertTrue(api->isEnabled());

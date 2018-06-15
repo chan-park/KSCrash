@@ -1,5 +1,5 @@
 //
-//  KSLogger_Tests.m
+//  FYLogger_Tests.m
 //
 //  Created by Karl Stenerud on 2013-01-26.
 //
@@ -26,19 +26,19 @@
 
 
 #import <XCTest/XCTest.h>
-#import "XCTestCase+KSCrash.h"
+#import "XCTestCase+FYCrash.h"
 
-#import "KSLogger.h"
+#import "FYLogger.h"
 
 
-@interface KSLogger_Tests : XCTestCase
+@interface FYLogger_Tests : XCTestCase
 
 @property(nonatomic, readwrite, retain) NSString* tempDir;
 
 @end
 
 
-@implementation KSLogger_Tests
+@implementation FYLogger_Tests
 
 @synthesize tempDir = _tempDir;
 
@@ -55,55 +55,55 @@
 
 - (void) testLogError
 {
-    KSLOG_ERROR(@"TEST");
+    FYLOG_ERROR(@"TEST");
 }
 
 - (void) testLogErrorNull
 {
     NSString* str = nil;
-    KSLOG_ERROR(str);
+    FYLOG_ERROR(str);
 }
 
 - (void) testLogAlways
 {
-    KSLOG_ALWAYS(@"TEST");
+    FYLOG_ALWAYS(@"TEST");
 }
 
 - (void) testLogAlwaysNull
 {
     NSString* str = nil;
-    KSLOG_ALWAYS(str);
+    FYLOG_ALWAYS(str);
 }
 
 - (void) testLogBasicError
 {
-    KSLOGBASIC_ERROR(@"TEST");
+    FYLOGBASIC_ERROR(@"TEST");
 }
 
 - (void) testLogBasicErrorNull
 {
     NSString* str = nil;
-    KSLOGBASIC_ERROR(str);
+    FYLOGBASIC_ERROR(str);
 }
 
 - (void) testLogBasicAlways
 {
-    KSLOGBASIC_ALWAYS(@"TEST");
+    FYLOGBASIC_ALWAYS(@"TEST");
 }
 
 - (void) testLogBasicAlwaysNull
 {
     NSString* str = nil;
-    KSLOGBASIC_ALWAYS(str);
+    FYLOGBASIC_ALWAYS(str);
 }
 
 - (void) testSetLogFilename
 {
     NSString* expected = @"TEST";
     NSString* logFileName = [self.tempDir stringByAppendingPathComponent:@"log.txt"];
-    kslog_setLogFilename([logFileName UTF8String], true);
-    KSLOGBASIC_ALWAYS(expected);
-    kslog_setLogFilename(nil, true);
+    fylog_setLogFilename([logFileName UTF8String], true);
+    FYLOGBASIC_ALWAYS(expected);
+    fylog_setLogFilename(nil, true);
 
     NSError* error = nil;
     NSString* result = [NSString stringWithContentsOfFile:logFileName encoding:NSUTF8StringEncoding error:&error];
@@ -111,7 +111,7 @@
     result = [[result componentsSeparatedByString:@"\x0a"] objectAtIndex:0];
     XCTAssertEqualObjects(result, expected, @"");
 
-    KSLOGBASIC_ALWAYS(@"blah blah");
+    FYLOGBASIC_ALWAYS(@"blah blah");
     result = [NSString stringWithContentsOfFile:logFileName encoding:NSUTF8StringEncoding error:&error];
     result = [[result componentsSeparatedByString:@"\x0a"] objectAtIndex:0];
     XCTAssertNil(error, @"");

@@ -1,5 +1,5 @@
 //
-//  KSCrashInstallationStandard_Tests.m
+//  FYCrashInstallationStandard_Tests.m
 //
 //  Created by Karl Stenerud on 2013-03-09.
 //
@@ -27,17 +27,17 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCrashInstallationStandard.h"
+#import "FYCrashInstallationStandard.h"
 
 
-@interface KSCrashInstallationStandard_Tests : XCTestCase @end
+@interface FYCrashInstallationStandard_Tests : XCTestCase @end
 
 
-@implementation KSCrashInstallationStandard_Tests
+@implementation FYCrashInstallationStandard_Tests
 
 - (void) testInstall
 {
-    KSCrashInstallationStandard* installation = [KSCrashInstallationStandard sharedInstance];
+    FYCrashInstallationStandard* installation = [FYCrashInstallationStandard sharedInstance];
     installation.url = [NSURL URLWithString:@"www.google.com"];
     [installation install];
     [installation sendAllReportsWithCompletion:^(__unused NSArray *filteredReports, BOOL completed, NSError *error)

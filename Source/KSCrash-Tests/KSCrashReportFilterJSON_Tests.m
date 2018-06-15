@@ -1,5 +1,5 @@
 //
-//  KSCrashReportFilterJSON_Tests.m
+//  FYCrashReportFilterJSON_Tests.m
 //
 //  Created by Karl Stenerud on 2013-03-09.
 //
@@ -27,13 +27,13 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCrashReportFilterJSON.h"
+#import "FYCrashReportFilterJSON.h"
 
 
-@interface KSCrashReportFilterJSON_Tests : XCTestCase @end
+@interface FYCrashReportFilterJSON_Tests : XCTestCase @end
 
 
-@implementation KSCrashReportFilterJSON_Tests
+@implementation FYCrashReportFilterJSON_Tests
 
 - (void) testFilterJSONEncode
 {
@@ -48,7 +48,7 @@
                         (id _Nonnull)[@"[\"7\",\"8\",\"9\"]" dataUsingEncoding:NSUTF8StringEncoding],
                         nil];
     
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterJSONEncode filterWithOptions:0];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterJSONEncode filterWithOptions:0];
     [filter filterReports:decoded onCompletion:^(NSArray* filteredReports,
                                                  BOOL completed,
                                                  NSError* error2)
@@ -65,7 +65,7 @@
                         [NSException exceptionWithName:@"" reason:@"" userInfo:nil],
                         nil];
     
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterJSONEncode filterWithOptions:0];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterJSONEncode filterWithOptions:0];
     [filter filterReports:decoded onCompletion:^(__unused NSArray* filteredReports,
                                                  BOOL completed,
                                                  NSError* error2)
@@ -88,7 +88,7 @@
                         (id _Nonnull)[@"[\"7\",\"8\",\"9\"]" dataUsingEncoding:NSUTF8StringEncoding],
                         nil];
     
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterJSONDecode filterWithOptions:0];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterJSONDecode filterWithOptions:0];
     [filter filterReports:encoded onCompletion:^(NSArray* filteredReports,
                                                  BOOL completed,
                                                  NSError* error2)
@@ -105,7 +105,7 @@
                         (id _Nonnull)[@"[\"1\"\",\"2\",\"3\"]" dataUsingEncoding:NSUTF8StringEncoding],
                         nil];
     
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterJSONDecode filterWithOptions:0];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterJSONDecode filterWithOptions:0];
     [filter filterReports:encoded onCompletion:^(__unused NSArray* filteredReports,
                                                  BOOL completed,
                                                  NSError* error2)

@@ -1,5 +1,5 @@
 //
-//  KSDynamicLinker_Tests.m
+//  FYDynamicLinker_Tests.m
 //
 //  Created by Karl Stenerud on 2013-10-02.
 //
@@ -28,41 +28,41 @@
 #import <XCTest/XCTest.h>
 #include <mach-o/dyld.h>
 
-#import "KSDynamicLinker.h"
+#import "FYDynamicLinker.h"
 
-@interface KSDynamicLinker_Tests : XCTestCase @end
+@interface FYDynamicLinker_Tests : XCTestCase @end
 
-@implementation KSDynamicLinker_Tests
+@implementation FYDynamicLinker_Tests
 
 - (void) testImageUUID
 {
     // Just abritrarily grab the name of the 4th image...
     const char* name = _dyld_get_image_name(4);
-    const uint8_t* uuidBytes = ksdl_imageUUID(name, true);
+    const uint8_t* uuidBytes = fydl_imageUUID(name, true);
     XCTAssertTrue(uuidBytes != NULL, @"");
 }
 
 - (void) testImageUUIDInvalidName
 {
-    const uint8_t* uuidBytes = ksdl_imageUUID("sdfgserghwerghwrh", true);
+    const uint8_t* uuidBytes = fydl_imageUUID("sdfgserghwerghwrh", true);
     XCTAssertTrue(uuidBytes == NULL, @"");
 }
 
 - (void) testImageUUIDNULLName
 {
-    const uint8_t* uuidBytes = ksdl_imageUUID(NULL, true);
+    const uint8_t* uuidBytes = fydl_imageUUID(NULL, true);
     XCTAssertTrue(uuidBytes == NULL, @"");
 }
 
 - (void) testImageUUIDPartialMatch
 {
-    const uint8_t* uuidBytes = ksdl_imageUUID("libSystem", false);
+    const uint8_t* uuidBytes = fydl_imageUUID("libSystem", false);
     XCTAssertTrue(uuidBytes != NULL, @"");
 }
 
 - (void) testGetImageNameNULL
 {
-    uint32_t imageIdx = ksdl_imageNamed(NULL, false);
+    uint32_t imageIdx = fydl_imageNamed(NULL, false);
     XCTAssertEqual(imageIdx, UINT32_MAX, @"");
 }
 

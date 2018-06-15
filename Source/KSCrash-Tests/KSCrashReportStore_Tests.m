@@ -1,5 +1,5 @@
 //
-//  KSCrashReportStore_Tests.m
+//  FYCrashReportStore_Tests.m
 //
 //  Created by Karl Stenerud on 2012-02-05.
 //
@@ -26,17 +26,17 @@
 
 
 #import "FileBasedTestCase.h"
-#import "XCTestCase+KSCrash.h"
+#import "XCTestCase+FYCrash.h"
 
-#import "KSCrashReportStore.h"
+#import "FYCrashReportStore.h"
 
 #include <inttypes.h>
 
 
-#define REPORT_PREFIX @"CrashReport-KSCrashTest"
+#define REPORT_PREFIX @"CrashReport-FYCrashTest"
 
 
-@interface KSCrashReportStore_Tests : FileBasedTestCase
+@interface FYCrashReportStore_Tests : FileBasedTestCase
 
 @property(nonatomic,readwrite,retain) NSString* appName;
 @property(nonatomic,readwrite,retain) NSString* reportStorePath;
@@ -44,7 +44,7 @@
 
 @end
 
-@implementation KSCrashReportStore_Tests
+@implementation FYCrashReportStore_Tests
 
 @synthesize appName = _appName;
 @synthesize reportStorePath = _reportStorePath;
@@ -70,14 +70,14 @@
 - (void) prepareReportStoreWithPathEnd:(NSString*) pathEnd
 {
     self.reportStorePath = [self.tempPath stringByAppendingPathComponent:pathEnd];
-    kscrs_initialize(self.appName.UTF8String, self.reportStorePath.UTF8String);
+    fycrs_initialize(self.appName.UTF8String, self.reportStorePath.UTF8String);
 }
 
 - (NSArray*) getReportIDs
 {
-    int reportCount = kscrs_getReportCount();
+    int reportCount = fycrs_getReportCount();
     int64_t rawReportIDs[reportCount];
-    reportCount = kscrs_getReportIDs(rawReportIDs, reportCount);
+    reportCount = fycrs_getReportIDs(rawReportIDs, reportCount);
     NSMutableArray* reportIDs = [NSMutableArray new];
     for(int i = 0; i < reportCount; i++)
     {
@@ -89,8 +89,8 @@
 - (int64_t) writeCrashReportWithStringContents:(NSString*) contents
 {
     NSData* crashData = [contents dataUsingEncoding:NSUTF8StringEncoding];
-    char crashReportPath[KSCRS_MAX_PATH_LENGTH];
-    kscrs_getNextCrashReportPath(crashReportPath);
+    char crashReportPath[FYCRS_MAX_PATH_LENGTH];
+    fycrs_getNextCrashReportPath(crashReportPath);
     [crashData writeToFile:[NSString stringWithUTF8String:crashReportPath] atomically:YES];
     return [self getReportIDFromPath:[NSString stringWithUTF8String:crashReportPath]];
 }
@@ -98,13 +98,13 @@
 - (int64_t) writeUserReportWithStringContents:(NSString*) contents
 {
     NSData* data = [contents dataUsingEncoding:NSUTF8StringEncoding];
-    return kscrs_addUserReport(data.bytes, (int)data.length);
+    return fycrs_addUserReport(data.bytes, (int)data.length);
 }
 
 - (void) loadReportID:(int64_t) reportID
          reportString:(NSString* __autoreleasing *) reportString
 {
-    char* reportBytes = kscrs_readReport(reportID);
+    char* reportBytes = fycrs_readReport(reportID);
     
     if(reportBytes == NULL)
     {
@@ -118,7 +118,7 @@
 
 - (void) expectHasReportCount:(int) reportCount
 {
-    XCTAssertEqual(kscrs_getReportCount(), reportCount);
+    XCTAssertEqual(fycrs_getReportCount(), reportCount);
 }
 
 - (void) expectReports:(NSArray*) reportIDs
@@ -186,14 +186,14 @@
     [self writeUserReportWithStringContents:@"3"];
     [self writeCrashReportWithStringContents:@"4"];
     [self expectHasReportCount:4];
-    kscrs_deleteAllReports();
+    fycrs_deleteAllReports();
     [self expectHasReportCount:0];
 }
 
 - (void) testPruneReports
 {
     int reportStorePrunesTo = 7;
-    kscrs_setMaxReportCount(reportStorePrunesTo);
+    fycrs_setMaxReportCount(reportStorePrunesTo);
     [self prepareReportStoreWithPathEnd:@"testDeleteAllReports"];
     int64_t prunedReportID = [self writeUserReportWithStringContents:@"u1"];
     [self writeCrashReportWithStringContents:@"c1"];
@@ -204,7 +204,7 @@
     [self writeCrashReportWithStringContents:@"c4"];
     [self writeCrashReportWithStringContents:@"c5"];
     [self expectHasReportCount:8];
-    // Calls kscrs_initialize() again, which prunes the reports.
+    // Calls fycrs_initialize() again, which prunes the reports.
     [self prepareReportStoreWithPathEnd:@"testDeleteAllReports"];
     [self expectHasReportCount:reportStorePrunesTo];
     NSArray* reportIDs = [self getReportIDs];

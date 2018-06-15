@@ -1,5 +1,5 @@
 //
-//  KSCrashReportFilterGZip_Tests.m
+//  FYCrashReportFilterGZip_Tests.m
 //
 //  Created by Karl Stenerud on 2013-03-09.
 //
@@ -27,14 +27,14 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCrashReportFilterGZip.h"
+#import "FYCrashReportFilterGZip.h"
 #import "NSData+GZip.h"
 
 
-@interface KSCrashReportFilterGZip_Tests : XCTestCase @end
+@interface FYCrashReportFilterGZip_Tests : XCTestCase @end
 
 
-@implementation KSCrashReportFilterGZip_Tests
+@implementation FYCrashReportFilterGZip_Tests
 
 - (void) testFilterGZipCompress
 {
@@ -54,7 +54,7 @@
         [compressed addObject:newData];
     }
     
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterGZipCompress filterWithCompressionLevel:-1];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterGZipCompress filterWithCompressionLevel:-1];
     [filter filterReports:decompressed onCompletion:^(NSArray* filteredReports,
                                                       BOOL completed,
                                                       NSError* error2)
@@ -83,7 +83,7 @@
         [compressed addObject:newData];
     }
     
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterGZipDecompress filter];
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterGZipDecompress filter];
     [filter filterReports:compressed onCompletion:^(NSArray* filteredReports,
                                                     BOOL completed,
                                                     NSError* error2)

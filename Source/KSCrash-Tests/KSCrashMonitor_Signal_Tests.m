@@ -1,5 +1,5 @@
 //
-//  KSCrashMonitor_Signal_Tests.m
+//  FYCrashMonitor_Signal_Tests.m
 //
 //  Created by Karl Stenerud on 2013-01-26.
 //
@@ -27,18 +27,18 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCrashMonitorContext.h"
-#import "KSCrashMonitor_Signal.h"
+#import "FYCrashMonitorContext.h"
+#import "FYCrashMonitor_Signal.h"
 
 
-@interface KSCrashMonitor_Signal_Tests : XCTestCase @end
+@interface FYCrashMonitor_Signal_Tests : XCTestCase @end
 
 
-@implementation KSCrashMonitor_Signal_Tests
+@implementation FYCrashMonitor_Signal_Tests
 
 - (void) testInstallAndRemove
 {
-    KSCrashMonitorAPI* api = kscm_signal_getAPI();
+    FYCrashMonitorAPI* api = fycm_signal_getAPI();
     api->setEnabled(true);
     XCTAssertTrue(api->isEnabled());
     [NSThread sleepForTimeInterval:0.1];
@@ -48,7 +48,7 @@
 
 - (void) testDoubleInstallAndRemove
 {
-    KSCrashMonitorAPI* api = kscm_signal_getAPI();
+    FYCrashMonitorAPI* api = fycm_signal_getAPI();
     
     api->setEnabled(true);
     XCTAssertTrue(api->isEnabled());

@@ -1,5 +1,5 @@
 //
-//  KSCrashMonitor_Zombie_Tests.m
+//  FYCrashMonitor_Zombie_Tests.m
 //
 //  Created by Karl Stenerud on 2013-01-26.
 //
@@ -27,18 +27,18 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCrashMonitor_Zombie.h"
+#import "FYCrashMonitor_Zombie.h"
 
 
-@interface KSCrashMonitor_Zombie_Tests : XCTestCase @end
+@interface FYCrashMonitor_Zombie_Tests : XCTestCase @end
 
 
-@implementation KSCrashMonitor_Zombie_Tests
+@implementation FYCrashMonitor_Zombie_Tests
 
 - (void) setUp
 {
     [super setUp];
-    kszombie_install();
+    fyzombie_install();
 }
 
 - (void) tearDown
@@ -48,14 +48,14 @@
 
 - (void) testDoubleInstall
 {
-    kszombie_install();
+    fyzombie_install();
 }
 
 - (void) testNoLastDeallocedException
 {
-    const void* address = kszombie_lastDeallocedNSExceptionAddress();
-    const char* name = kszombie_lastDeallocedNSExceptionName();
-    const char* reason = kszombie_lastDeallocedNSExceptionReason();
+    const void* address = fyzombie_lastDeallocedNSExceptionAddress();
+    const char* name = fyzombie_lastDeallocedNSExceptionName();
+    const char* reason = fyzombie_lastDeallocedNSExceptionReason();
     
     XCTAssertTrue(address == NULL, @"");
     XCTAssertTrue(name[0] == 0, @"");
@@ -64,14 +64,14 @@
 
 - (void) testZombieClassNameNull
 {
-    const char* className = kszombie_className(NULL);
+    const char* className = fyzombie_className(NULL);
     XCTAssertTrue(className == NULL, @"");
 }
 
 - (void) testZombieClassNameNotFound
 {
     // TODO: Figure out why this causes an endless call loop.
-//    const char* className = kszombie_className((void*)1);
+//    const char* className = fyzombie_className((void*)1);
 //    XCTAssertTrue(className == NULL, @"");
 }
 
@@ -83,7 +83,7 @@
         object = anObject;
     }
     
-    const char* className = kszombie_className((__bridge void*)object);
+    const char* className = fyzombie_className((__bridge void*)object);
     XCTAssertTrue(strcmp(className, "NSObject") == 0, @"");
 }
 
@@ -95,7 +95,7 @@
         object = anObject;
     }
     
-    const char* className = kszombie_className((__bridge void*)object);
+    const char* className = fyzombie_className((__bridge void*)object);
     XCTAssertTrue(strcmp(className, "NSProxy") == 0, @"");
 }
 
@@ -111,12 +111,12 @@
         }
     }
     
-    const char* className = kszombie_className((__bridge void*)object);
+    const char* className = fyzombie_className((__bridge void*)object);
     XCTAssertTrue(strcmp(className, "NSException") == 0, @"");
 
-    const void* address = kszombie_lastDeallocedNSExceptionAddress();
-    const char* name = kszombie_lastDeallocedNSExceptionName();
-    const char* reason = kszombie_lastDeallocedNSExceptionReason();
+    const void* address = fyzombie_lastDeallocedNSExceptionAddress();
+    const char* name = fyzombie_lastDeallocedNSExceptionName();
+    const char* reason = fyzombie_lastDeallocedNSExceptionReason();
     
     XCTAssertTrue(address == (__bridge void*)object, @"");
     XCTAssertTrue(strcmp(name, "name") == 0, @"");

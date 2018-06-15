@@ -1,5 +1,5 @@
 //
-//  KSCrashReportFilterAlert_Tests.m
+//  FYCrashReportFilterAlert_Tests.m
 //
 //  Created by Karl Stenerud on 2013-03-09.
 //
@@ -27,17 +27,17 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCrashReportFilterAlert.h"
+#import "FYCrashReportFilterAlert.h"
 
 
-@interface KSCrashReportFilterAlert_Tests : XCTestCase @end
+@interface FYCrashReportFilterAlert_Tests : XCTestCase @end
 
 
-@implementation KSCrashReportFilterAlert_Tests
+@implementation FYCrashReportFilterAlert_Tests
 
 - (void) testAlert
 {
-    id<KSCrashReportFilter> filter = [KSCrashReportFilterAlert filterWithTitle:@"title"
+    id<FYCrashReportFilter> filter = [FYCrashReportFilterAlert filterWithTitle:@"title"
                                                                        message:@"message"
                                                                      yesAnswer:@"YES"
                                                                       noAnswer:@"NO"];

@@ -1,5 +1,5 @@
 //
-//  ksmemory_Tests.m
+//  fymemory_Tests.m
 //
 //  Created by Karl Stenerud on 2012-03-03.
 //
@@ -27,16 +27,16 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSDebug.h"
+#import "FYDebug.h"
 
 
-@interface KSDebug_Tests : XCTestCase @end
+@interface FYDebug_Tests : XCTestCase @end
 
-@implementation KSDebug_Tests
+@implementation FYDebug_Tests
 
 - (void) testIsBeingTraced
 {
-    bool traced = ksdebug_isBeingTraced();
+    bool traced = fydebug_isBeingTraced();
     XCTAssertTrue(traced, @"");
 }
 

@@ -1,5 +1,5 @@
 //
-//  KSCrashCachedData_Tests.m
+//  FYCrashCachedData_Tests.m
 //
 //  Copyright (c) 2012 Karl Stenerud. All rights reserved.
 //
@@ -25,14 +25,14 @@
 
 #import <XCTest/XCTest.h>
 
-#import "KSCrashCachedData.h"
+#import "FYCrashCachedData.h"
 #import "TestThread.h"
 
 
-@interface KSCrashCachedData_Tests : XCTestCase @end
+@interface FYCrashCachedData_Tests : XCTestCase @end
 
 
-@implementation KSCrashCachedData_Tests
+@implementation FYCrashCachedData_Tests
 
 - (void) testGetThreadName
 {
@@ -41,15 +41,15 @@
     thread.name = expectedName;
     [thread start];
     [NSThread sleepForTimeInterval:0.1];
-    ksccd_init(10);
+    fyccd_init(10);
     [NSThread sleepForTimeInterval:0.1];
     [thread cancel];
-    ksccd_freeze();
-    const char* cName = ksccd_getThreadName(thread.thread);
+    fyccd_freeze();
+    const char* cName = fyccd_getThreadName(thread.thread);
     XCTAssertTrue(cName != NULL);
     NSString* name = [NSString stringWithUTF8String:cName];
     XCTAssertEqualObjects(name, expectedName);
-    ksccd_unfreeze();
+    fyccd_unfreeze();
 }
 
 @end
