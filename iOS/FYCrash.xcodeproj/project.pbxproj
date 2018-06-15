@@ -30,7 +30,7 @@
 		03DE7C9B1C84DFAB00F789BA /* NSError+SimpleConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D8E17EB765C0056DA83 /* NSError+SimpleConstructor.m */; };
 		03DE7CB81C84DFBC00F789BA /* Container+DeepSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D1317EB765C0056DA83 /* Container+DeepSearch.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		03DE7CB91C84DFBC00F789BA /* Container+DeepSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D1417EB765C0056DA83 /* Container+DeepSearch.m */; };
-		03DE7CBA1C84DFBC00F789BA /* KSVarArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8617EB765C0056DA83 /* KSVarArgs.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		03DE7CBA1C84DFBC00F789BA /* FYVarArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8617EB765C0056DA83 /* FYVarArgs.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		03DE7CBB1C84DFBC00F789BA /* NSData+GZip.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8917EB765C0056DA83 /* NSData+GZip.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03DE7CBC1C84DFBC00F789BA /* NSData+GZip.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D8A17EB765C0056DA83 /* NSData+GZip.m */; };
 		03DE7CC51C84DFC100F789BA /* NSMutableData+AppendUTF8.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8F17EB765C0056DA83 /* NSMutableData+AppendUTF8.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -58,7 +58,7 @@
 		632D8DD21EDFFA6700A9A62E /* FYCPU_Apple.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = CB25A6051DF23D7300EC2B02 /* FYCPU_Apple.h */; };
 		632D8DED1EDFFA6700A9A62E /* NSError+SimpleConstructor.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8D17EB765C0056DA83 /* NSError+SimpleConstructor.h */; };
 		632D8DF61EDFFA6700A9A62E /* Container+DeepSearch.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = CBF53D1317EB765C0056DA83 /* Container+DeepSearch.h */; };
-		632D8DF71EDFFA6700A9A62E /* KSVarArgs.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8617EB765C0056DA83 /* KSVarArgs.h */; };
+		632D8DF71EDFFA6700A9A62E /* FYVarArgs.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8617EB765C0056DA83 /* FYVarArgs.h */; };
 		632D8DF81EDFFA6700A9A62E /* NSData+GZip.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8917EB765C0056DA83 /* NSData+GZip.h */; };
 		632D8E021EDFFA6700A9A62E /* NSMutableData+AppendUTF8.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8F17EB765C0056DA83 /* NSMutableData+AppendUTF8.h */; };
 		632D8E031EDFFA6700A9A62E /* NSString+URLEncode.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = CBEE5DC01CBC197D005EAF61 /* NSString+URLEncode.h */; };
@@ -178,14 +178,14 @@
 		6F32062E20D47C6100603EBA /* FYCrashReportSinkQuincyHockey.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32062420D47C6100603EBA /* FYCrashReportSinkQuincyHockey.h */; };
 		6F32062F20D47C6100603EBA /* FYCrashReportSinkQuincyHockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32062520D47C6100603EBA /* FYCrashReportSinkQuincyHockey.m */; };
 		6F32063020D47C6100603EBA /* FYCrashReportSinkStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32062620D47C6100603EBA /* FYCrashReportSinkStandard.m */; };
-		6F32063920D47D0500603EBA /* FYReachabilityKSCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063120D47D0400603EBA /* FYReachabilityKSCrash.m */; };
+		6F32063920D47D0500603EBA /* FYReachabilityFYCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063120D47D0400603EBA /* FYReachabilityFYCrash.m */; };
 		6F32063A20D47D0500603EBA /* FYCString.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063220D47D0400603EBA /* FYCString.h */; };
 		6F32063B20D47D0500603EBA /* FYHTTPRequestSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063320D47D0500603EBA /* FYHTTPRequestSender.m */; };
 		6F32063C20D47D0500603EBA /* FYCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063420D47D0500603EBA /* FYCString.m */; };
 		6F32063D20D47D0500603EBA /* FYHTTPMultipartPostBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063520D47D0500603EBA /* FYHTTPMultipartPostBody.m */; };
 		6F32063E20D47D0500603EBA /* FYHTTPMultipartPostBody.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063620D47D0500603EBA /* FYHTTPMultipartPostBody.h */; };
 		6F32063F20D47D0500603EBA /* FYHTTPRequestSender.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063720D47D0500603EBA /* FYHTTPRequestSender.h */; };
-		6F32064020D47D0500603EBA /* FYReachabilityKSCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063820D47D0500603EBA /* FYReachabilityKSCrash.h */; };
+		6F32064020D47D0500603EBA /* FYReachabilityFYCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063820D47D0500603EBA /* FYReachabilityFYCrash.h */; };
 		6F32065020D47F0900603EBA /* FYCrashInstallationVictory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064120D47F0800603EBA /* FYCrashInstallationVictory.h */; };
 		6F32065120D47F0900603EBA /* FYCrashInstallationStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064220D47F0800603EBA /* FYCrashInstallationStandard.m */; };
 		6F32065220D47F0900603EBA /* FYCrashInstallation+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064320D47F0800603EBA /* FYCrashInstallation+Private.h */; };
@@ -288,7 +288,7 @@
 		CBF53E4717EB765C0056DA83 /* NSError+SimpleConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D8E17EB765C0056DA83 /* NSError+SimpleConstructor.m */; };
 		CBF53E4A17EB765C0056DA83 /* NSMutableData+AppendUTF8.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D9017EB765C0056DA83 /* NSMutableData+AppendUTF8.m */; };
 		CBF53E8717EB7EA80056DA83 /* Container+DeepSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D1317EB765C0056DA83 /* Container+DeepSearch.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		CBF53E8E17EB7EA80056DA83 /* KSVarArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8617EB765C0056DA83 /* KSVarArgs.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CBF53E8E17EB7EA80056DA83 /* FYVarArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8617EB765C0056DA83 /* FYVarArgs.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CBF53E8F17EB7EA80056DA83 /* NSData+GZip.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8917EB765C0056DA83 /* NSData+GZip.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CBF53E9117EB7EA80056DA83 /* NSError+SimpleConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8D17EB765C0056DA83 /* NSError+SimpleConstructor.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CBF53E9217EB7EA80056DA83 /* NSMutableData+AppendUTF8.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8F17EB765C0056DA83 /* NSMutableData+AppendUTF8.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -307,7 +307,7 @@
 		EDF2BEC21CCF15AD004BADF4 /* FYCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D1B17EB765C0056DA83 /* FYCrash.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDF2BED51CCF15AD004BADF4 /* NSString+URLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = CBEE5DC01CBC197D005EAF61 /* NSString+URLEncode.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EDF2BEE31CCF15AD004BADF4 /* llvm-config.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC43F0D1C5AF2B10083A11B /* llvm-config.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		EDF2BEE51CCF15AD004BADF4 /* KSVarArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8617EB765C0056DA83 /* KSVarArgs.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		EDF2BEE51CCF15AD004BADF4 /* FYVarArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8617EB765C0056DA83 /* FYVarArgs.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EDF2BEEB1CCF15AD004BADF4 /* AlignOf.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC43F0F1C5AF2B10083A11B /* AlignOf.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EDF2BEEC1CCF15AD004BADF4 /* NSData+GZip.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8917EB765C0056DA83 /* NSData+GZip.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDF2BEEE1CCF15AD004BADF4 /* StringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC43F0B1C5AF2B10083A11B /* StringRef.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -363,7 +363,7 @@
 				632D8DD21EDFFA6700A9A62E /* FYCPU_Apple.h in Copy Headers */,
 				632D8DED1EDFFA6700A9A62E /* NSError+SimpleConstructor.h in Copy Headers */,
 				632D8DF61EDFFA6700A9A62E /* Container+DeepSearch.h in Copy Headers */,
-				632D8DF71EDFFA6700A9A62E /* KSVarArgs.h in Copy Headers */,
+				632D8DF71EDFFA6700A9A62E /* FYVarArgs.h in Copy Headers */,
 				632D8DF81EDFFA6700A9A62E /* NSData+GZip.h in Copy Headers */,
 				632D8E021EDFFA6700A9A62E /* NSMutableData+AppendUTF8.h in Copy Headers */,
 				632D8E031EDFFA6700A9A62E /* NSString+URLEncode.h in Copy Headers */,
@@ -494,14 +494,14 @@
 		6F32062420D47C6100603EBA /* FYCrashReportSinkQuincyHockey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYCrashReportSinkQuincyHockey.h; path = ../../Source/KSCrash/Reporting/Sinks/FYCrashReportSinkQuincyHockey.h; sourceTree = "<group>"; };
 		6F32062520D47C6100603EBA /* FYCrashReportSinkQuincyHockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYCrashReportSinkQuincyHockey.m; path = ../../Source/KSCrash/Reporting/Sinks/FYCrashReportSinkQuincyHockey.m; sourceTree = "<group>"; };
 		6F32062620D47C6100603EBA /* FYCrashReportSinkStandard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYCrashReportSinkStandard.m; path = ../../Source/KSCrash/Reporting/Sinks/FYCrashReportSinkStandard.m; sourceTree = "<group>"; };
-		6F32063120D47D0400603EBA /* FYReachabilityKSCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYReachabilityKSCrash.m; path = ../../Source/KSCrash/Reporting/Tools/FYReachabilityKSCrash.m; sourceTree = "<group>"; };
+		6F32063120D47D0400603EBA /* FYReachabilityFYCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYReachabilityFYCrash.m; path = ../../Source/KSCrash/Reporting/Tools/FYReachabilityFYCrash.m; sourceTree = "<group>"; };
 		6F32063220D47D0400603EBA /* FYCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYCString.h; path = ../../Source/KSCrash/Reporting/Tools/FYCString.h; sourceTree = "<group>"; };
 		6F32063320D47D0500603EBA /* FYHTTPRequestSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYHTTPRequestSender.m; path = ../../Source/KSCrash/Reporting/Tools/FYHTTPRequestSender.m; sourceTree = "<group>"; };
 		6F32063420D47D0500603EBA /* FYCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYCString.m; path = ../../Source/KSCrash/Reporting/Tools/FYCString.m; sourceTree = "<group>"; };
 		6F32063520D47D0500603EBA /* FYHTTPMultipartPostBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYHTTPMultipartPostBody.m; path = ../../Source/KSCrash/Reporting/Tools/FYHTTPMultipartPostBody.m; sourceTree = "<group>"; };
 		6F32063620D47D0500603EBA /* FYHTTPMultipartPostBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYHTTPMultipartPostBody.h; path = ../../Source/KSCrash/Reporting/Tools/FYHTTPMultipartPostBody.h; sourceTree = "<group>"; };
 		6F32063720D47D0500603EBA /* FYHTTPRequestSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYHTTPRequestSender.h; path = ../../Source/KSCrash/Reporting/Tools/FYHTTPRequestSender.h; sourceTree = "<group>"; };
-		6F32063820D47D0500603EBA /* FYReachabilityKSCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYReachabilityKSCrash.h; path = ../../Source/KSCrash/Reporting/Tools/FYReachabilityKSCrash.h; sourceTree = "<group>"; };
+		6F32063820D47D0500603EBA /* FYReachabilityFYCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYReachabilityFYCrash.h; path = ../../Source/KSCrash/Reporting/Tools/FYReachabilityFYCrash.h; sourceTree = "<group>"; };
 		6F32064120D47F0800603EBA /* FYCrashInstallationVictory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYCrashInstallationVictory.h; path = ../../Source/KSCrash/Installations/FYCrashInstallationVictory.h; sourceTree = "<group>"; };
 		6F32064220D47F0800603EBA /* FYCrashInstallationStandard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYCrashInstallationStandard.m; path = ../../Source/KSCrash/Installations/FYCrashInstallationStandard.m; sourceTree = "<group>"; };
 		6F32064320D47F0800603EBA /* FYCrashInstallation+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FYCrashInstallation+Private.h"; path = "../../Source/KSCrash/Installations/FYCrashInstallation+Private.h"; sourceTree = "<group>"; };
@@ -605,7 +605,7 @@
 		CBF53D1B17EB765C0056DA83 /* FYCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYCrash.h; path = ../../Source/KSCrash/Recording/FYCrash.h; sourceTree = "<group>"; };
 		CBF53D1C17EB765C0056DA83 /* FYCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYCrash.m; path = ../../Source/KSCrash/Recording/FYCrash.m; sourceTree = "<group>"; };
 		CBF53D6F17EB765C0056DA83 /* FYCPU_arm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = FYCPU_arm.c; path = ../../Source/KSCrash/Recording/Tools/FYCPU_arm.c; sourceTree = "<group>"; };
-		CBF53D8617EB765C0056DA83 /* KSVarArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSVarArgs.h; path = ../../Source/KSCrash/Reporting/Filters/Tools/KSVarArgs.h; sourceTree = "<group>"; };
+		CBF53D8617EB765C0056DA83 /* FYVarArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYVarArgs.h; path = ../../Source/KSCrash/Reporting/Filters/Tools/FYVarArgs.h; sourceTree = "<group>"; };
 		CBF53D8917EB765C0056DA83 /* NSData+GZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+GZip.h"; path = "../../Source/KSCrash/Reporting/Filters/Tools/NSData+GZip.h"; sourceTree = "<group>"; };
 		CBF53D8A17EB765C0056DA83 /* NSData+GZip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+GZip.m"; path = "../../Source/KSCrash/Reporting/Filters/Tools/NSData+GZip.m"; sourceTree = "<group>"; };
 		CBF53D8D17EB765C0056DA83 /* NSError+SimpleConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+SimpleConstructor.h"; path = "../../Source/KSCrash/Recording/Tools/NSError+SimpleConstructor.h"; sourceTree = "<group>"; };
@@ -1021,8 +1021,8 @@
 				6F32063520D47D0500603EBA /* FYHTTPMultipartPostBody.m */,
 				6F32063720D47D0500603EBA /* FYHTTPRequestSender.h */,
 				6F32063320D47D0500603EBA /* FYHTTPRequestSender.m */,
-				6F32063820D47D0500603EBA /* FYReachabilityKSCrash.h */,
-				6F32063120D47D0400603EBA /* FYReachabilityKSCrash.m */,
+				6F32063820D47D0500603EBA /* FYReachabilityFYCrash.h */,
+				6F32063120D47D0400603EBA /* FYReachabilityFYCrash.m */,
 				CBF53D8F17EB765C0056DA83 /* NSMutableData+AppendUTF8.h */,
 				CBF53D9017EB765C0056DA83 /* NSMutableData+AppendUTF8.m */,
 				CBEE5DC01CBC197D005EAF61 /* NSString+URLEncode.h */,
@@ -1059,7 +1059,7 @@
 			children = (
 				CBF53D1317EB765C0056DA83 /* Container+DeepSearch.h */,
 				CBF53D1417EB765C0056DA83 /* Container+DeepSearch.m */,
-				CBF53D8617EB765C0056DA83 /* KSVarArgs.h */,
+				CBF53D8617EB765C0056DA83 /* FYVarArgs.h */,
 				CBF53D8917EB765C0056DA83 /* NSData+GZip.h */,
 				CBF53D8A17EB765C0056DA83 /* NSData+GZip.m */,
 			);
@@ -1096,7 +1096,7 @@
 				6F32062820D47C6100603EBA /* FYCrashReportSinkStandard.h in Headers */,
 				6F32058220D45E7400603EBA /* FYStackCursor.h in Headers */,
 				6F3205DB20D4667800603EBA /* FYCrashMonitorType.h in Headers */,
-				6F32064020D47D0500603EBA /* FYReachabilityKSCrash.h in Headers */,
+				6F32064020D47D0500603EBA /* FYReachabilityFYCrash.h in Headers */,
 				6F3205F920D46C1E00603EBA /* FYCrashReportFields.h in Headers */,
 				6F3205DA20D4667800603EBA /* FYCrashMonitor_System.h in Headers */,
 				6F3205F720D46C1E00603EBA /* FYCrashReportStore.h in Headers */,
@@ -1134,7 +1134,7 @@
 				6F3205F620D46C1E00603EBA /* FYCrashReportFixer.h in Headers */,
 				6F32059A20D45E7400603EBA /* FYDynamicLinker.h in Headers */,
 				03DE7C651C84DF9C00F789BA /* llvm-config.h in Headers */,
-				03DE7CBA1C84DFBC00F789BA /* KSVarArgs.h in Headers */,
+				03DE7CBA1C84DFBC00F789BA /* FYVarArgs.h in Headers */,
 				03DE7C661C84DF9F00F789BA /* AlignOf.h in Headers */,
 				6F32059E20D45E7400603EBA /* FYSysCtl.h in Headers */,
 				03DE7C641C84DF9200F789BA /* StringRef.h in Headers */,
@@ -1211,7 +1211,7 @@
 				CBC43F211C5AF2B10083A11B /* Optional.h in Headers */,
 				CBF53E8F17EB7EA80056DA83 /* NSData+GZip.h in Headers */,
 				CBC43F2D1C5AF2B10083A11B /* type_traits.h in Headers */,
-				CBF53E8E17EB7EA80056DA83 /* KSVarArgs.h in Headers */,
+				CBF53E8E17EB7EA80056DA83 /* FYVarArgs.h in Headers */,
 				CBC43F3C1C5AF2B10083A11B /* Punycode.h in Headers */,
 				CBC43F271C5AF2B10083A11B /* AlignOf.h in Headers */,
 				CBF53E8717EB7EA80056DA83 /* Container+DeepSearch.h in Headers */,
@@ -1228,7 +1228,7 @@
 				EDF2BEC21CCF15AD004BADF4 /* FYCrash.h in Headers */,
 				EDF2BED51CCF15AD004BADF4 /* NSString+URLEncode.h in Headers */,
 				EDF2BEE31CCF15AD004BADF4 /* llvm-config.h in Headers */,
-				EDF2BEE51CCF15AD004BADF4 /* KSVarArgs.h in Headers */,
+				EDF2BEE51CCF15AD004BADF4 /* FYVarArgs.h in Headers */,
 				EDF2BEEB1CCF15AD004BADF4 /* AlignOf.h in Headers */,
 				EDF2BEEC1CCF15AD004BADF4 /* NSData+GZip.h in Headers */,
 				EDF2BEEE1CCF15AD004BADF4 /* StringRef.h in Headers */,
@@ -1411,7 +1411,7 @@
 				6F32061620D47B9100603EBA /* FYCrashReportFilterJSON.m in Sources */,
 				6F32061220D47B9100603EBA /* FYCrashReportFilterSets.m in Sources */,
 				6F32065120D47F0900603EBA /* FYCrashInstallationStandard.m in Sources */,
-				6F32063920D47D0500603EBA /* FYReachabilityKSCrash.m in Sources */,
+				6F32063920D47D0500603EBA /* FYReachabilityFYCrash.m in Sources */,
 				6F32065B20D47F0900603EBA /* FYCrashInstallation+Alert.m in Sources */,
 				03DE7C851C84DFAB00F789BA /* FYCPU_arm.c in Sources */,
 				6F32062F20D47C6100603EBA /* FYCrashReportSinkQuincyHockey.m in Sources */,
