@@ -1911,7 +1911,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CB52178717EB735D007CB3C1 /* Build configuration list for PBXProject "KSCrash-iOS" */;
+			buildConfigurationList = CB52178717EB735D007CB3C1 /* Build configuration list for PBXProject "FYCrash" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -2639,7 +2639,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB52178717EB735D007CB3C1 /* Build configuration list for PBXProject "KSCrash-iOS" */ = {
+		CB52178717EB735D007CB3C1 /* Build configuration list for PBXProject "FYCrash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB5217BC17EB735D007CB3C1 /* Debug */,
