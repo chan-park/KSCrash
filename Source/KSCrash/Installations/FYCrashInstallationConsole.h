@@ -1,7 +1,6 @@
 //
-//  KSCrashInstallationStandard.h
-//
-//  Created by Karl Stenerud on 2013-03-02.
+//  FYCrashInstallationConsole.h
+//  FYCrash-iOS
 //
 //  Copyright (c) 2012 Karl Stenerud. All rights reserved.
 //
@@ -24,14 +23,14 @@
 // THE SOFTWARE.
 //
 
+#import "FYCrashInstallation.h"
 
-#import "KSCrashInstallation.h"
+/** Prints all reports to the console.
+ * This class is intended for testing purposes.
+ */
+@interface FYCrashInstallationConsole : FYCrashInstallation
 
-
-@interface KSCrashInstallationStandard : KSCrashInstallation
-
-/** The URL to connect to. */
-@property(nonatomic,readwrite,retain) NSURL* url;
+@property(nonatomic,readwrite) BOOL printAppleFormat;
 
 + (instancetype) sharedInstance;
 

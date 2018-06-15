@@ -1,5 +1,5 @@
 //
-//  KSCrashInstallation+Alert.h
+//  FYCrashInstallation+Alert.h
 //
 //  Copyright (c) 2012 Karl Stenerud. All rights reserved.
 //
@@ -22,9 +22,9 @@
 // THE SOFTWARE.
 //
 
-#import "KSCrashInstallation.h"
+#import "FYCrashInstallation.h"
 
-@interface KSCrashInstallation (Alert)
+@interface FYCrashInstallation (Alert)
 
 /** Show an alert before sending any reports. Reports will only be sent if the user
  * presses the "yes" button.

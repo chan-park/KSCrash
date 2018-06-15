@@ -1,9 +1,9 @@
 //
-//  KSCrashInstallationVictory.h
+//  FYCrashInstallationVictory.m
 //
-//  Created by Kelp on 2013-03-14.
+//  Created by Kelp on 2013-03-13.
 //
-//  Copyright (c) 2013 Karl Stenerud. All rights reserved.
+//  Copyright (c) 2012 Karl Stenerud. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -25,26 +25,38 @@
 //
 
 
-#import "KSCrashInstallation.h"
+#import "FYCrashInstallationVictory.h"
+#import "FYCrashInstallation+Private.h"
+#import "FYCrashReportFilterBasic.h"
+#import "FYCrashReportSinkVictory.h"
 
 
-/**
- Victory is an error reporting server in Python. It runs on Google App Engine.
- https://github.com/kelp404/Victory
- 
- You could download this project and then deploy to GAE with free plan.
- Your app could send error information to Victory with RESTful API.
- This is a demo site: https://victory-demo.appspot.com/
- */
-@interface KSCrashInstallationVictory : KSCrashInstallation
+@implementation FYCrashInstallationVictory
 
-/** The URL to connect to. */
-@property(nonatomic,readwrite,retain) NSURL* url;
-/** The user name of crash information *required. If value is nil it will be replaced with UIDevice.currentDevice.name */
-@property(nonatomic,readwrite,retain) NSString* userName;
-/** The user email of crash information *optional */
-@property(nonatomic,readwrite,retain) NSString* userEmail;
+@synthesize url = _url;
+@synthesize userName = _userName;
+@synthesize userEmail = _userEmail;
 
-+ (instancetype) sharedInstance;
++ (instancetype) sharedInstance
+{
+    static FYCrashInstallationVictory *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[FYCrashInstallationVictory alloc] init];
+    });
+    return sharedInstance;
+}
+
+- (id) init
+{
+    return [super initWithRequiredProperties:[NSArray arrayWithObjects: @"url", nil]];
+}
+
+- (id<FYCrashReportFilter>) sink
+{
+    FYCrashReportSinkVictory* sink = [FYCrashReportSinkVictory sinkWithURL:self.url userName:self.userName userEmail:self.userEmail];
+    return [FYCrashReportFilterPipeline filterWithFilters:[sink defaultCrashReportFilterSet], nil];
+}
 
 @end

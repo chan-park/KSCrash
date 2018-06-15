@@ -1,5 +1,5 @@
 //
-//  KSCrashInstallation+Alert.m
+//  FYCrashInstallation+Alert.m
 //
 //  Copyright (c) 2012 Karl Stenerud. All rights reserved.
 //
@@ -22,27 +22,27 @@
 // THE SOFTWARE.
 //
 
-#import "KSCrashInstallation+Alert.h"
-#import "KSCrash.h"
-#import "KSCrashReportFilterAlert.h"
+#import "FYCrashInstallation+Alert.h"
+#import "FYCrash.h"
+#import "FYCrashReportFilterAlert.h"
 
-@implementation KSCrashInstallation (Alert)
+@implementation FYCrashInstallation (Alert)
 
 - (void) addConditionalAlertWithTitle:(NSString*) title
                               message:(NSString*) message
                             yesAnswer:(NSString*) yesAnswer
                              noAnswer:(NSString*) noAnswer
 {
-    [self addPreFilter:[KSCrashReportFilterAlert filterWithTitle:title
+    [self addPreFilter:[FYCrashReportFilterAlert filterWithTitle:title
                                                          message:message
                                                        yesAnswer:yesAnswer
                                                         noAnswer:noAnswer]];
-    KSCrash* handler = [KSCrash sharedInstance];
-    if(handler.deleteBehaviorAfterSendAll == KSCDeleteOnSucess)
+    FYCrash* handler = [FYCrash sharedInstance];
+    if(handler.deleteBehaviorAfterSendAll == FYCDeleteOnSucess)
     {
         // Better to delete always, or else the user will keep getting nagged
         // until he presses "yes"!
-        handler.deleteBehaviorAfterSendAll = KSCDeleteAlways;
+        handler.deleteBehaviorAfterSendAll = FYCDeleteAlways;
     }
 }
 
@@ -50,7 +50,7 @@
                                 message:(NSString*) message
                       dismissButtonText:(NSString*) dismissButtonText
 {
-    [self addPreFilter:[KSCrashReportFilterAlert filterWithTitle:title
+    [self addPreFilter:[FYCrashReportFilterAlert filterWithTitle:title
                                                          message:message
                                                        yesAnswer:dismissButtonText
                                                         noAnswer:nil]];

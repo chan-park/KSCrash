@@ -1,5 +1,5 @@
 //
-//  KSCrashInstallationEmail.m
+//  FYCrashInstallationEmail.m
 //
 //  Created by Karl Stenerud on 2013-03-02.
 //
@@ -25,20 +25,20 @@
 //
 
 
-#import "KSCrashInstallationEmail.h"
-#import "KSCrashInstallation+Private.h"
-#import "KSCrashReportSinkEMail.h"
-#import "KSCrashReportFilterAlert.h"
+#import "FYCrashInstallationEmail.h"
+#import "FYCrashInstallation+Private.h"
+#import "FYCrashReportSinkEMail.h"
+#import "FYCrashReportFilterAlert.h"
 
 
-@interface KSCrashInstallationEmail ()
+@interface FYCrashInstallationEmail ()
 
 @property(nonatomic,readwrite,retain) NSDictionary* defaultFilenameFormats;
 
 @end
 
 
-@implementation KSCrashInstallationEmail
+@implementation FYCrashInstallationEmail
 
 @synthesize recipients = _recipients;
 @synthesize subject = _subject;
@@ -49,11 +49,11 @@
 
 + (instancetype) sharedInstance
 {
-    static KSCrashInstallationEmail *sharedInstance = nil;
+    static FYCrashInstallationEmail *sharedInstance = nil;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[KSCrashInstallationEmail alloc] init];
+        sharedInstance = [[FYCrashInstallationEmail alloc] init];
     });
     return sharedInstance;
 }
@@ -70,16 +70,16 @@
         self.subject = [NSString stringWithFormat:@"Crash Report (%@)", bundleName];
         self.defaultFilenameFormats = [NSDictionary dictionaryWithObjectsAndKeys:
                                        [NSString stringWithFormat:@"crash-report-%@-%%d.txt.gz", bundleName],
-                                       [NSNumber numberWithInt:KSCrashEmailReportStyleApple],
+                                       [NSNumber numberWithInt:FYCrashEmailReportStyleApple],
                                        [NSString stringWithFormat:@"crash-report-%@-%%d.json.gz", bundleName],
-                                       [NSNumber numberWithInt:KSCrashEmailReportStyleJSON],
+                                       [NSNumber numberWithInt:FYCrashEmailReportStyleJSON],
                                        nil];
-        [self setReportStyle:KSCrashEmailReportStyleJSON useDefaultFilenameFormat:YES];
+        [self setReportStyle:FYCrashEmailReportStyleJSON useDefaultFilenameFormat:YES];
     }
     return self;
 }
 
-- (void) setReportStyle:(KSCrashEmailReportStyle)reportStyle
+- (void) setReportStyle:(FYCrashEmailReportStyle)reportStyle
 useDefaultFilenameFormat:(BOOL) useDefaultFilenameFormat
 {
     self.reportStyle = reportStyle;
@@ -90,18 +90,18 @@ useDefaultFilenameFormat:(BOOL) useDefaultFilenameFormat
     }
 }
 
-- (id<KSCrashReportFilter>) sink
+- (id<FYCrashReportFilter>) sink
 {
-    KSCrashReportSinkEMail* sink = [KSCrashReportSinkEMail sinkWithRecipients:self.recipients
+    FYCrashReportSinkEMail* sink = [FYCrashReportSinkEMail sinkWithRecipients:self.recipients
                                                                       subject:self.subject
                                                                       message:self.message
                                                                   filenameFmt:self.filenameFmt];
     
     switch(self.reportStyle)
     {
-        case KSCrashEmailReportStyleApple:
+        case FYCrashEmailReportStyleApple:
             return [sink defaultCrashReportFilterSetAppleFmt];
-        case KSCrashEmailReportStyleJSON:
+        case FYCrashEmailReportStyleJSON:
             return [sink defaultCrashReportFilterSet];
     }
 }

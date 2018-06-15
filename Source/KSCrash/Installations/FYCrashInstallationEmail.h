@@ -1,5 +1,5 @@
 //
-//  KSCrashInstallationEmail.h
+//  FYCrashInstallationEmail.h
 //
 //  Created by Karl Stenerud on 2013-03-02.
 //
@@ -25,19 +25,19 @@
 //
 
 
-#import "KSCrashInstallation.h"
+#import "FYCrashInstallation.h"
 
 typedef enum
 {
-    KSCrashEmailReportStyleJSON,
-    KSCrashEmailReportStyleApple,
-} KSCrashEmailReportStyle;
+    FYCrashEmailReportStyleJSON,
+    FYCrashEmailReportStyleApple,
+} FYCrashEmailReportStyle;
 
 /**
  * Email installation.
  * Sends reports via email.
  */
-@interface KSCrashInstallationEmail : KSCrashInstallation
+@interface FYCrashInstallationEmail : FYCrashInstallation
 
 /** List of email addresses to send to (mandatory) */
 @property(nonatomic,readwrite,retain) NSArray* recipients;
@@ -66,14 +66,14 @@ typedef enum
 
 /** Which report style to use.
  */
-@property(nonatomic,readwrite,assign) KSCrashEmailReportStyle reportStyle;
+@property(nonatomic,readwrite,assign) FYCrashEmailReportStyle reportStyle;
 
 /** Use the specified report format.
  *
  * useDefaultFilenameFormat If true, also change the filename format to the default
  *                          suitable for the report format.
  */
-- (void) setReportStyle:(KSCrashEmailReportStyle)reportStyle
+- (void) setReportStyle:(FYCrashEmailReportStyle)reportStyle
 useDefaultFilenameFormat:(BOOL) useDefaultFilenameFormat;
 
 + (instancetype) sharedInstance;

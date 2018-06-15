@@ -1,8 +1,9 @@
 //
-//  KSCrashInstallationConsole.h
-//  KSCrash-iOS
+//  FYCrashInstallationVictory.h
 //
-//  Copyright (c) 2012 Karl Stenerud. All rights reserved.
+//  Created by Kelp on 2013-03-14.
+//
+//  Copyright (c) 2013 Karl Stenerud. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +24,26 @@
 // THE SOFTWARE.
 //
 
-#import "KSCrashInstallation.h"
 
-/** Prints all reports to the console.
- * This class is intended for testing purposes.
+#import "FYCrashInstallation.h"
+
+
+/**
+ Victory is an error reporting server in Python. It runs on Google App Engine.
+ https://github.com/kelp404/Victory
+ 
+ You could download this project and then deploy to GAE with free plan.
+ Your app could send error information to Victory with RESTful API.
+ This is a demo site: https://victory-demo.appspot.com/
  */
-@interface KSCrashInstallationConsole : KSCrashInstallation
+@interface FYCrashInstallationVictory : FYCrashInstallation
 
-@property(nonatomic,readwrite) BOOL printAppleFormat;
+/** The URL to connect to. */
+@property(nonatomic,readwrite,retain) NSURL* url;
+/** The user name of crash information *required. If value is nil it will be replaced with UIDevice.currentDevice.name */
+@property(nonatomic,readwrite,retain) NSString* userName;
+/** The user email of crash information *optional */
+@property(nonatomic,readwrite,retain) NSString* userEmail;
 
 + (instancetype) sharedInstance;
 

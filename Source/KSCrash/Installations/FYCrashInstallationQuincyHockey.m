@@ -1,5 +1,5 @@
 //
-//  KSCrashInstallationQuincyHockey.m
+//  FYCrashInstallationQuincyHockey.m
 //
 //  Created by Karl Stenerud on 2013-02-10.
 //
@@ -25,11 +25,11 @@
 //
 
 
-#import "KSCrashInstallationQuincyHockey.h"
+#import "FYCrashInstallationQuincyHockey.h"
 
-#import "KSCrashInstallation+Private.h"
-#import "KSCrashReportFields.h"
-#import "KSCrashReportSinkQuincyHockey.h"
+#import "FYCrashInstallation+Private.h"
+#import "FYCrashReportFields.h"
+#import "FYCrashReportSinkQuincyHockey.h"
 #import "NSError+SimpleConstructor.h"
 
 
@@ -37,10 +37,10 @@
 #define kQuincyDefaultKeyUserName @"user_name"
 #define kQuincyDefaultKeyContactEmail @"contact_email"
 #define kQuincyDefaultKeyDescription @"crash_description"
-#define kQuincyDefaultKeysExtraDescription [NSArray arrayWithObjects:@"/" @KSCrashField_System, @"/" @KSCrashField_User, nil]
+#define kQuincyDefaultKeysExtraDescription [NSArray arrayWithObjects:@"/" @FYCrashField_System, @"/" @FYCrashField_User, nil]
 
 
-@implementation KSCrashInstallationBaseQuincyHockey
+@implementation FYCrashInstallationBaseQuincyHockey
 
 IMPLEMENT_REPORT_PROPERTY(userID, UserID, NSString*);
 IMPLEMENT_REPORT_PROPERTY(userName, UserName, NSString*);
@@ -81,17 +81,17 @@ IMPLEMENT_REPORT_PROPERTY(crashDescription, CrashDescription, NSString*);
 @end
 
 
-@implementation KSCrashInstallationQuincy
+@implementation FYCrashInstallationQuincy
 
 @synthesize url = _url;
 
 + (instancetype) sharedInstance
 {
-    static KSCrashInstallationQuincy *sharedInstance = nil;
+    static FYCrashInstallationQuincy *sharedInstance = nil;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[KSCrashInstallationQuincy alloc] init];
+        sharedInstance = [[FYCrashInstallationQuincy alloc] init];
     });
     return sharedInstance;
 }
@@ -101,9 +101,9 @@ IMPLEMENT_REPORT_PROPERTY(crashDescription, CrashDescription, NSString*);
     return [super initWithRequiredProperties:[NSArray arrayWithObjects: @"url", nil]];
 }
 
-- (id<KSCrashReportFilter>) sink
+- (id<FYCrashReportFilter>) sink
 {
-    KSCrashReportSinkQuincy* sink = [KSCrashReportSinkQuincy sinkWithURL:self.url
+    FYCrashReportSinkQuincy* sink = [FYCrashReportSinkQuincy sinkWithURL:self.url
                                                                userIDKey:[self makeKeyPath:self.userIDKey]
                                                              userNameKey:[self makeKeyPath:self.userNameKey]
                                                          contactEmailKey:[self makeKeyPath:self.contactEmailKey]
@@ -115,17 +115,17 @@ IMPLEMENT_REPORT_PROPERTY(crashDescription, CrashDescription, NSString*);
 @end
 
 
-@implementation KSCrashInstallationHockey
+@implementation FYCrashInstallationHockey
 
 @synthesize appIdentifier = _appIdentifier;
 
 + (instancetype) sharedInstance
 {
-    static KSCrashInstallationHockey *sharedInstance = nil;
+    static FYCrashInstallationHockey *sharedInstance = nil;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[KSCrashInstallationHockey alloc] init];
+        sharedInstance = [[FYCrashInstallationHockey alloc] init];
     });
     return sharedInstance;
 }
@@ -140,9 +140,9 @@ IMPLEMENT_REPORT_PROPERTY(crashDescription, CrashDescription, NSString*);
     return self;
 }
 
-- (id<KSCrashReportFilter>) sink
+- (id<FYCrashReportFilter>) sink
 {
-    KSCrashReportSinkHockey* sink = [KSCrashReportSinkHockey sinkWithAppIdentifier:self.appIdentifier
+    FYCrashReportSinkHockey* sink = [FYCrashReportSinkHockey sinkWithAppIdentifier:self.appIdentifier
                                                                          userIDKey:[self makeKeyPath:self.userIDKey]
                                                                        userNameKey:[self makeKeyPath:self.userNameKey]
                                                                    contactEmailKey:[self makeKeyPath:self.contactEmailKey]

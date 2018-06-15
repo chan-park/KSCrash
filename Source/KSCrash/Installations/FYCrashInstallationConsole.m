@@ -1,6 +1,6 @@
 //
-//  KSCrashInstallationConsole.m
-//  KSCrash-iOS
+//  FYCrashInstallationConsole.m
+//  FYCrash-iOS
 //
 //  Copyright (c) 2012 Karl Stenerud. All rights reserved.
 //
@@ -23,25 +23,25 @@
 // THE SOFTWARE.
 //
 
-#import "KSCrashInstallationConsole.h"
-#import "KSCrashInstallation+Private.h"
-#import "KSCrashReportSinkConsole.h"
-#import "KSCrashReportFilterAppleFmt.h"
-#import "KSCrashReportFilterBasic.h"
-#import "KSCrashReportFilterJSON.h"
-#import "KSCrashReportFilterStringify.h"
+#import "FYCrashInstallationConsole.h"
+#import "FYCrashInstallation+Private.h"
+#import "FYCrashReportSinkConsole.h"
+#import "FYCrashReportFilterAppleFmt.h"
+#import "FYCrashReportFilterBasic.h"
+#import "FYCrashReportFilterJSON.h"
+#import "FYCrashReportFilterStringify.h"
 
-@implementation KSCrashInstallationConsole
+@implementation FYCrashInstallationConsole
 
 @synthesize printAppleFormat = _printAppleFormat;
 
 + (instancetype) sharedInstance
 {
-    static KSCrashInstallationConsole *sharedInstance = nil;
+    static FYCrashInstallationConsole *sharedInstance = nil;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[KSCrashInstallationConsole alloc] init];
+        sharedInstance = [[FYCrashInstallationConsole alloc] init];
     });
     return sharedInstance;
 }
@@ -55,24 +55,24 @@
     return self;
 }
 
-- (id<KSCrashReportFilter>) sink
+- (id<FYCrashReportFilter>) sink
 {
-    id<KSCrashReportFilter> formatFilter;
+    id<FYCrashReportFilter> formatFilter;
     if(self.printAppleFormat)
     {
-        formatFilter = [KSCrashReportFilterAppleFmt filterWithReportStyle:KSAppleReportStyleSymbolicated];
+        formatFilter = [FYCrashReportFilterAppleFmt filterWithReportStyle:FYAppleReportStyleSymbolicated];
     }
     else
     {
-        formatFilter = [KSCrashReportFilterPipeline filterWithFilters:
-                        [KSCrashReportFilterJSONEncode filterWithOptions:KSJSONEncodeOptionPretty | KSJSONEncodeOptionSorted],
-                        [KSCrashReportFilterStringify new],
+        formatFilter = [FYCrashReportFilterPipeline filterWithFilters:
+                        [FYCrashReportFilterJSONEncode filterWithOptions:FYJSONEncodeOptionPretty | FYJSONEncodeOptionSorted],
+                        [FYCrashReportFilterStringify new],
                         nil];
     }
 
-    return [KSCrashReportFilterPipeline filterWithFilters:
+    return [FYCrashReportFilterPipeline filterWithFilters:
             formatFilter,
-            [KSCrashReportSinkConsole new],
+            [FYCrashReportSinkConsole new],
             nil];
 }
 

@@ -1,5 +1,5 @@
 //
-//  KSCrashInstallationQuincyHockey.h
+//  FYCrashInstallationQuincyHockey.h
 //
 //  Created by Karl Stenerud on 2013-02-10.
 //
@@ -26,8 +26,8 @@
 
 
 #import <Foundation/Foundation.h>
-#import "KSCrashInstallation.h"
-#import "KSCrashReportWriter.h"
+#import "FYCrashInstallation.h"
+#import "FYCrashReportWriter.h"
 
 
 /**
@@ -62,7 +62,7 @@
  *
  * This is an abstract class.
  */
-@interface KSCrashInstallationBaseQuincyHockey : KSCrashInstallation
+@interface FYCrashInstallationBaseQuincyHockey : FYCrashInstallation
 
 // ======================================================================
 #pragma mark - Basic properties (nil by default) -
@@ -106,12 +106,12 @@
 /**
  * Quincy installation.
  */
-@interface KSCrashInstallationQuincy : KSCrashInstallationBaseQuincyHockey
+@interface FYCrashInstallationQuincy : FYCrashInstallationBaseQuincyHockey
 
 /** URL to send reports to (mandatory) */
 @property(nonatomic, readwrite, retain) NSURL* url;
 
-+ (KSCrashInstallationQuincy*) sharedInstance;
++ (FYCrashInstallationQuincy*) sharedInstance;
 
 @end
 
@@ -119,7 +119,7 @@
 /**
  * Hockey installation.
  */
-@interface KSCrashInstallationHockey: KSCrashInstallationBaseQuincyHockey
+@interface FYCrashInstallationHockey: FYCrashInstallationBaseQuincyHockey
 
 /** App identifier you received from Hockey (mandatory) */
 @property(nonatomic, readwrite, retain) NSString* appIdentifier;

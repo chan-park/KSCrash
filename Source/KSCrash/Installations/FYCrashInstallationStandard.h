@@ -1,7 +1,7 @@
 //
-//  KSCrashInstallationVictory.m
+//  FYCrashInstallationStandard.h
 //
-//  Created by Kelp on 2013-03-13.
+//  Created by Karl Stenerud on 2013-03-02.
 //
 //  Copyright (c) 2012 Karl Stenerud. All rights reserved.
 //
@@ -25,38 +25,14 @@
 //
 
 
-#import "KSCrashInstallationVictory.h"
-#import "KSCrashInstallation+Private.h"
-#import "KSCrashReportFilterBasic.h"
-#import "KSCrashReportSinkVictory.h"
+#import "FYCrashInstallation.h"
 
 
-@implementation KSCrashInstallationVictory
+@interface FYCrashInstallationStandard : FYCrashInstallation
 
-@synthesize url = _url;
-@synthesize userName = _userName;
-@synthesize userEmail = _userEmail;
+/** The URL to connect to. */
+@property(nonatomic,readwrite,retain) NSURL* url;
 
-+ (instancetype) sharedInstance
-{
-    static KSCrashInstallationVictory *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[KSCrashInstallationVictory alloc] init];
-    });
-    return sharedInstance;
-}
-
-- (id) init
-{
-    return [super initWithRequiredProperties:[NSArray arrayWithObjects: @"url", nil]];
-}
-
-- (id<KSCrashReportFilter>) sink
-{
-    KSCrashReportSinkVictory* sink = [KSCrashReportSinkVictory sinkWithURL:self.url userName:self.userName userEmail:self.userEmail];
-    return [KSCrashReportFilterPipeline filterWithFilters:[sink defaultCrashReportFilterSet], nil];
-}
++ (instancetype) sharedInstance;
 
 @end

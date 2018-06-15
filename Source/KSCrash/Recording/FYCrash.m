@@ -182,31 +182,31 @@ static NSString* getBasePath()
         }
         
         _userInfo = userInfo;
-        kscrash_setUserInfoJSON([userInfoJSON bytes]);
+        fycrash_setUserInfoJSON([userInfoJSON bytes]);
     }
 }
 
 - (void) setMonitoring:(FYCrashMonitorType)monitoring
 {
-    _monitoring = kscrash_setMonitoring(monitoring);
+    _monitoring = fycrash_setMonitoring(monitoring);
 }
 
 - (void) setDeadlockWatchdogInterval:(double) deadlockWatchdogInterval
 {
     _deadlockWatchdogInterval = deadlockWatchdogInterval;
-    kscrash_setDeadlockWatchdogInterval(deadlockWatchdogInterval);
+    fycrash_setDeadlockWatchdogInterval(deadlockWatchdogInterval);
 }
 
 - (void) setOnCrash:(FYReportWriteCallback) onCrash
 {
     _onCrash = onCrash;
-    kscrash_setCrashNotifyCallback(onCrash);
+    fycrash_setCrashNotifyCallback(onCrash);
 }
 
 - (void) setIntrospectMemory:(BOOL) introspectMemory
 {
     _introspectMemory = introspectMemory;
-    kscrash_setIntrospectMemory(introspectMemory);
+    fycrash_setIntrospectMemory(introspectMemory);
 }
 
 - (void) setCatchZombies:(BOOL)catchZombies
@@ -221,7 +221,7 @@ static NSString* getBasePath()
     NSUInteger count = [doNotIntrospectClasses count];
     if(count == 0)
     {
-        kscrash_setDoNotIntrospectClasses(nil, 0);
+        fycrash_setDoNotIntrospectClasses(nil, 0);
     }
     else
     {
@@ -231,20 +231,20 @@ static NSString* getBasePath()
         {
             classes[i] = [[doNotIntrospectClasses objectAtIndex:i] cStringUsingEncoding:NSUTF8StringEncoding];
         }
-        kscrash_setDoNotIntrospectClasses(classes, (int)count);
+        fycrash_setDoNotIntrospectClasses(classes, (int)count);
     }
 }
 
 - (void) setMaxReportCount:(int)maxReportCount
 {
     _maxReportCount = maxReportCount;
-    kscrash_setMaxReportCount(maxReportCount);
+    fycrash_setMaxReportCount(maxReportCount);
 }
 
 - (NSDictionary*) systemInfo
 {
     FYCrash_MonitorContext fakeEvent = {0};
-    kscm_system_getAPI()->addContextualInfoToEvent(&fakeEvent);
+    fycm_system_getAPI()->addContextualInfoToEvent(&fakeEvent);
     NSMutableDictionary* dict = [NSMutableDictionary new];
 
 #define COPY_STRING(A) if (fakeEvent.System.A) dict[@#A] = [NSString stringWithUTF8String:fakeEvent.System.A]
@@ -286,7 +286,7 @@ static NSString* getBasePath()
 
 - (BOOL) install
 {
-    _monitoring = kscrash_install(self.bundleName.UTF8String,
+    _monitoring = fycrash_install(self.bundleName.UTF8String,
                                           self.basePath.UTF8String);
     if(self.monitoring == 0)
     {
@@ -356,20 +356,20 @@ static NSString* getBasePath()
          if((self.deleteBehaviorAfterSendAll == FYCDeleteOnSucess && completed) ||
             self.deleteBehaviorAfterSendAll == FYCDeleteAlways)
          {
-             kscrash_deleteAllReports();
+             fycrash_deleteAllReports();
          }
-         kscrash_callCompletion(onCompletion, filteredReports, completed, error);
+         fycrash_callCompletion(onCompletion, filteredReports, completed, error);
      }];
 }
 
 - (void) deleteAllReports
 {
-    kscrash_deleteAllReports();
+    fycrash_deleteAllReports();
 }
 
 - (void) deleteReportWithID:(NSNumber*) reportID
 {
-    kscrash_deleteReportWithID([reportID longValue]);
+    fycrash_deleteReportWithID([reportID longValue]);
 }
 
 - (void) reportUserException:(NSString*) name
@@ -394,7 +394,7 @@ static NSString* getBasePath()
     NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     const char* cStackTrace = [jsonString cStringUsingEncoding:NSUTF8StringEncoding];
 
-    kscrash_reportUserException(cName,
+    fycrash_reportUserException(cName,
                                 cReason,
                                 cLanguage,
                                 cLineOfCode,
@@ -410,7 +410,7 @@ static NSString* getBasePath()
 #define SYNTHESIZE_CRASH_STATE_PROPERTY(TYPE, NAME) \
 - (TYPE) NAME \
 { \
-    return kscrashstate_currentState()->NAME; \
+    return fycrashstate_currentState()->NAME; \
 }
 
 SYNTHESIZE_CRASH_STATE_PROPERTY(NSTimeInterval, activeDurationSinceLastCrash)
@@ -424,20 +424,20 @@ SYNTHESIZE_CRASH_STATE_PROPERTY(BOOL, crashedLastLaunch)
 
 - (int) reportCount
 {
-    return kscrash_getReportCount();
+    return fycrash_getReportCount();
 }
 
 - (void) sendReports:(NSArray*) reports onCompletion:(FYCrashReportFilterCompletion) onCompletion
 {
     if([reports count] == 0)
     {
-        kscrash_callCompletion(onCompletion, reports, YES, nil);
+        fycrash_callCompletion(onCompletion, reports, YES, nil);
         return;
     }
     
     if(self.sink == nil)
     {
-        kscrash_callCompletion(onCompletion, reports, NO,
+        fycrash_callCompletion(onCompletion, reports, NO,
                                  [NSError errorWithDomain:[[self class] description]
                                                      code:0
                                               description:@"No sink set. Crash reports not sent."]);
@@ -447,13 +447,13 @@ SYNTHESIZE_CRASH_STATE_PROPERTY(BOOL, crashedLastLaunch)
     [self.sink filterReports:reports
                 onCompletion:^(NSArray* filteredReports, BOOL completed, NSError* error)
      {
-         kscrash_callCompletion(onCompletion, filteredReports, completed, error);
+         fycrash_callCompletion(onCompletion, filteredReports, completed, error);
      }];
 }
 
 - (NSData*) loadCrashReportJSONWithID:(int64_t) reportID
 {
-    char* report = kscrash_readReport(reportID);
+    char* report = fycrash_readReport(reportID);
     if(report != NULL)
     {
         return [NSData dataWithBytesNoCopy:report length:strlen(report) freeWhenDone:YES];
@@ -477,9 +477,9 @@ SYNTHESIZE_CRASH_STATE_PROPERTY(BOOL, crashedLastLaunch)
 
 - (NSArray*)reportIDs
 {
-    int reportCount = kscrash_getReportCount();
+    int reportCount = fycrash_getReportCount();
     int64_t reportIDsC[reportCount];
-    reportCount = kscrash_getReportIDs(reportIDsC, reportCount);
+    reportCount = fycrash_getReportIDs(reportIDsC, reportCount);
     NSMutableArray* reportIDs = [NSMutableArray arrayWithCapacity:(NSUInteger)reportCount];
     for(int i = 0; i < reportCount; i++)
     {
@@ -523,9 +523,9 @@ SYNTHESIZE_CRASH_STATE_PROPERTY(BOOL, crashedLastLaunch)
 
 - (NSArray*) allReports
 {
-    int reportCount = kscrash_getReportCount();
+    int reportCount = fycrash_getReportCount();
     int64_t reportIDs[reportCount];
-    reportCount = kscrash_getReportIDs(reportIDs, reportCount);
+    reportCount = fycrash_getReportIDs(reportIDs, reportCount);
     NSMutableArray* reports = [NSMutableArray arrayWithCapacity:(NSUInteger)reportCount];
     for(int i = 0; i < reportCount; i++)
     {
@@ -542,13 +542,13 @@ SYNTHESIZE_CRASH_STATE_PROPERTY(BOOL, crashedLastLaunch)
 - (void) setAddConsoleLogToReport:(BOOL) shouldAddConsoleLogToReport
 {
     _addConsoleLogToReport = shouldAddConsoleLogToReport;
-    kscrash_setAddConsoleLogToReport(shouldAddConsoleLogToReport);
+    fycrash_setAddConsoleLogToReport(shouldAddConsoleLogToReport);
 }
 
 - (void) setPrintPreviousLog:(BOOL) shouldPrintPreviousLog
 {
     _printPreviousLog = shouldPrintPreviousLog;
-    kscrash_setPrintPreviousLog(shouldPrintPreviousLog);
+    fycrash_setPrintPreviousLog(shouldPrintPreviousLog);
 }
 
 
@@ -574,27 +574,27 @@ SYNTHESIZE_CRASH_STATE_PROPERTY(BOOL, crashedLastLaunch)
 
 - (void) applicationDidBecomeActive
 {
-    kscrash_notifyAppActive(true);
+    fycrash_notifyAppActive(true);
 }
 
 - (void) applicationWillResignActive
 {
-    kscrash_notifyAppActive(false);
+    fycrash_notifyAppActive(false);
 }
 
 - (void) applicationDidEnterBackground
 {
-    kscrash_notifyAppInForeground(false);
+    fycrash_notifyAppInForeground(false);
 }
 
 - (void) applicationWillEnterForeground
 {
-    kscrash_notifyAppInForeground(true);
+    fycrash_notifyAppInForeground(true);
 }
 
 - (void) applicationWillTerminate
 {
-    kscrash_notifyAppTerminate();
+    fycrash_notifyAppTerminate();
 }
 
 @end

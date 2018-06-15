@@ -1,5 +1,5 @@
 //
-//  KSCrashInstallationStandard.m
+//  FYCrashInstallationStandard.m
 //
 //  Created by Karl Stenerud on 2013-03-02.
 //
@@ -25,23 +25,23 @@
 //
 
 
-#import "KSCrashInstallationStandard.h"
-#import "KSCrashInstallation+Private.h"
-#import "KSCrashReportSinkStandard.h"
-#import "KSCrashReportFilterBasic.h"
+#import "FYCrashInstallationStandard.h"
+#import "FYCrashInstallation+Private.h"
+#import "FYCrashReportSinkStandard.h"
+#import "FYCrashReportFilterBasic.h"
 
 
-@implementation KSCrashInstallationStandard
+@implementation FYCrashInstallationStandard
 
 @synthesize url = _url;
 
 + (instancetype) sharedInstance
 {
-    static KSCrashInstallationStandard *sharedInstance = nil;
+    static FYCrashInstallationStandard *sharedInstance = nil;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[KSCrashInstallationStandard alloc] init];
+        sharedInstance = [[FYCrashInstallationStandard alloc] init];
     });
     return sharedInstance;
 }
@@ -51,10 +51,10 @@
     return [super initWithRequiredProperties:[NSArray arrayWithObjects: @"url", nil]];
 }
 
-- (id<KSCrashReportFilter>) sink
+- (id<FYCrashReportFilter>) sink
 {
-    KSCrashReportSinkStandard* sink = [KSCrashReportSinkStandard sinkWithURL:self.url];
-    return [KSCrashReportFilterPipeline filterWithFilters:[sink defaultCrashReportFilterSet], nil];
+    FYCrashReportSinkStandard* sink = [FYCrashReportSinkStandard sinkWithURL:self.url];
+    return [FYCrashReportFilterPipeline filterWithFilters:[sink defaultCrashReportFilterSet], nil];
 }
 
 @end
