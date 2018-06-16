@@ -33,13 +33,11 @@
 		03DE7CBA1C84DFBC00F789BA /* FYVarArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8617EB765C0056DA83 /* FYVarArgs.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		03DE7CBB1C84DFBC00F789BA /* NSData+GZip.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8917EB765C0056DA83 /* NSData+GZip.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03DE7CBC1C84DFBC00F789BA /* NSData+GZip.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D8A17EB765C0056DA83 /* NSData+GZip.m */; };
-		03DE7CC51C84DFC100F789BA /* NSMutableData+AppendUTF8.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8F17EB765C0056DA83 /* NSMutableData+AppendUTF8.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		03DE7CC61C84DFC100F789BA /* NSMutableData+AppendUTF8.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D9017EB765C0056DA83 /* NSMutableData+AppendUTF8.m */; };
 		03DE7CD21C84DFD000F789BA /* FYCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D1B17EB765C0056DA83 /* FYCrash.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03DE7CD31C84DFD000F789BA /* FYCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D1C17EB765C0056DA83 /* FYCrash.m */; };
 		03DE7CD51C84E02A00F789BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB52178F17EB735D007CB3C1 /* Foundation.framework */; };
 		03DE7CD71C84E1F400F789BA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DE7CD61C84E1F400F789BA /* libz.tbd */; };
-		03DE7DAA1C879A0200F789BA /* KSCrashFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 03DE7DA91C879A0200F789BA /* KSCrashFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03DE7DAA1C879A0200F789BA /* FYCrashFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 03DE7DA91C879A0200F789BA /* FYCrashFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		632D8DC31EDFFA6700A9A62E /* None.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = CBC43F091C5AF2B10083A11B /* None.h */; };
 		632D8DC41EDFFA6700A9A62E /* Optional.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = CBC43F0A1C5AF2B10083A11B /* Optional.h */; };
 		632D8DC51EDFFA6700A9A62E /* StringRef.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = CBC43F0B1C5AF2B10083A11B /* StringRef.h */; };
@@ -114,29 +112,6 @@
 		6F3205AE20D45E7400603EBA /* FYDemangle_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057B20D45E7300603EBA /* FYDemangle_Swift.h */; };
 		6F3205AF20D45E7400603EBA /* FYID.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057C20D45E7300603EBA /* FYID.h */; };
 		6F3205B020D45E7400603EBA /* FYCPU.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057D20D45E7400603EBA /* FYCPU.h */; };
-		6F3205C820D4667800603EBA /* FYCrashMonitor_AppState.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B120D4667500603EBA /* FYCrashMonitor_AppState.c */; };
-		6F3205C920D4667800603EBA /* FYCrashMonitor_MachException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B220D4667500603EBA /* FYCrashMonitor_MachException.h */; };
-		6F3205CA20D4667800603EBA /* FYCrashMonitor_NSException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B320D4667500603EBA /* FYCrashMonitor_NSException.h */; };
-		6F3205CB20D4667800603EBA /* FYCrashMonitor_AppState.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B420D4667500603EBA /* FYCrashMonitor_AppState.h */; };
-		6F3205CC20D4667800603EBA /* FYCrashMonitor_NSException.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B520D4667500603EBA /* FYCrashMonitor_NSException.m */; };
-		6F3205CD20D4667800603EBA /* FYCrashMonitor_CPPException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B620D4667500603EBA /* FYCrashMonitor_CPPException.cpp */; };
-		6F3205CE20D4667800603EBA /* FYCrashMonitor_System.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B720D4667500603EBA /* FYCrashMonitor_System.m */; };
-		6F3205CF20D4667800603EBA /* FYCrashMonitor_Deadlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B820D4667500603EBA /* FYCrashMonitor_Deadlock.m */; };
-		6F3205D020D4667800603EBA /* FYCrashMonitor_Deadlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B920D4667600603EBA /* FYCrashMonitor_Deadlock.h */; };
-		6F3205D120D4667800603EBA /* FYCrashMonitor_User.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205BA20D4667600603EBA /* FYCrashMonitor_User.c */; };
-		6F3205D220D4667800603EBA /* FYCrashMonitor_Zombie.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205BB20D4667600603EBA /* FYCrashMonitor_Zombie.c */; };
-		6F3205D320D4667800603EBA /* FYCrashMonitor_Signal.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BC20D4667600603EBA /* FYCrashMonitor_Signal.h */; };
-		6F3205D420D4667800603EBA /* FYCrashMonitor_CPPException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BD20D4667600603EBA /* FYCrashMonitor_CPPException.h */; };
-		6F3205D520D4667800603EBA /* FYCrashMonitor_Zombie.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BE20D4667600603EBA /* FYCrashMonitor_Zombie.h */; };
-		6F3205D620D4667800603EBA /* FYCrashMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BF20D4667600603EBA /* FYCrashMonitor.h */; };
-		6F3205D720D4667800603EBA /* FYCrashMonitorType.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C020D4667600603EBA /* FYCrashMonitorType.c */; };
-		6F3205D820D4667800603EBA /* FYCrashMonitorContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C120D4667600603EBA /* FYCrashMonitorContext.h */; };
-		6F3205D920D4667800603EBA /* FYCrashMonitor_Signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C220D4667700603EBA /* FYCrashMonitor_Signal.c */; };
-		6F3205DA20D4667800603EBA /* FYCrashMonitor_System.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C320D4667700603EBA /* FYCrashMonitor_System.h */; };
-		6F3205DB20D4667800603EBA /* FYCrashMonitorType.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C420D4667700603EBA /* FYCrashMonitorType.h */; };
-		6F3205DC20D4667800603EBA /* FYCrashMonitor_User.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C520D4667700603EBA /* FYCrashMonitor_User.h */; };
-		6F3205DD20D4667800603EBA /* FYCrashMonitor_MachException.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C620D4667800603EBA /* FYCrashMonitor_MachException.c */; };
-		6F3205DE20D4667800603EBA /* FYCrashMonitor.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C720D4667800603EBA /* FYCrashMonitor.c */; };
 		6F3205E120D46C0900603EBA /* FYCrashC.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205DF20D46C0800603EBA /* FYCrashC.h */; };
 		6F3205E220D46C0900603EBA /* FYCrashC.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205E020D46C0900603EBA /* FYCrashC.c */; };
 		6F3205F120D46C1E00603EBA /* FYSystemCapabilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205E320D46C1C00603EBA /* FYSystemCapabilities.h */; };
@@ -178,14 +153,6 @@
 		6F32062E20D47C6100603EBA /* FYCrashReportSinkQuincyHockey.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32062420D47C6100603EBA /* FYCrashReportSinkQuincyHockey.h */; };
 		6F32062F20D47C6100603EBA /* FYCrashReportSinkQuincyHockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32062520D47C6100603EBA /* FYCrashReportSinkQuincyHockey.m */; };
 		6F32063020D47C6100603EBA /* FYCrashReportSinkStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32062620D47C6100603EBA /* FYCrashReportSinkStandard.m */; };
-		6F32063920D47D0500603EBA /* FYReachabilityFYCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063120D47D0400603EBA /* FYReachabilityFYCrash.m */; };
-		6F32063A20D47D0500603EBA /* FYCString.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063220D47D0400603EBA /* FYCString.h */; };
-		6F32063B20D47D0500603EBA /* FYHTTPRequestSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063320D47D0500603EBA /* FYHTTPRequestSender.m */; };
-		6F32063C20D47D0500603EBA /* FYCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063420D47D0500603EBA /* FYCString.m */; };
-		6F32063D20D47D0500603EBA /* FYHTTPMultipartPostBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063520D47D0500603EBA /* FYHTTPMultipartPostBody.m */; };
-		6F32063E20D47D0500603EBA /* FYHTTPMultipartPostBody.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063620D47D0500603EBA /* FYHTTPMultipartPostBody.h */; };
-		6F32063F20D47D0500603EBA /* FYHTTPRequestSender.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063720D47D0500603EBA /* FYHTTPRequestSender.h */; };
-		6F32064020D47D0500603EBA /* FYReachabilityFYCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063820D47D0500603EBA /* FYReachabilityFYCrash.h */; };
 		6F32065020D47F0900603EBA /* FYCrashInstallationVictory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064120D47F0800603EBA /* FYCrashInstallationVictory.h */; };
 		6F32065120D47F0900603EBA /* FYCrashInstallationStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064220D47F0800603EBA /* FYCrashInstallationStandard.m */; };
 		6F32065220D47F0900603EBA /* FYCrashInstallation+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064320D47F0800603EBA /* FYCrashInstallation+Private.h */; };
@@ -234,6 +201,320 @@
 		6F32069E20D4840300603EBA /* FYCrashMonitor_AppState_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32067D20D4840200603EBA /* FYCrashMonitor_AppState_Tests.m */; };
 		6F32069F20D4840300603EBA /* FYCrashMonitor_Signal_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32067E20D4840200603EBA /* FYCrashMonitor_Signal_Tests.m */; };
 		6F3206A020D4840300603EBA /* FYObjC_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32067F20D4840200603EBA /* FYObjC_Tests.m */; };
+		6F3206A220D4886500603EBA /* FYCrashCachedData.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205ED20D46C1E00603EBA /* FYCrashCachedData.c */; };
+		6F3206A320D4886500603EBA /* FYCrashCachedData.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205EC20D46C1D00603EBA /* FYCrashCachedData.h */; };
+		6F3206A420D4886500603EBA /* FYCrashDoctor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205F020D46C1E00603EBA /* FYCrashDoctor.h */; };
+		6F3206A520D4886500603EBA /* FYCrashDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205E620D46C1C00603EBA /* FYCrashDoctor.m */; };
+		6F3206A620D4886500603EBA /* FYCrashReport.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205E520D46C1C00603EBA /* FYCrashReport.c */; };
+		6F3206A720D4886500603EBA /* FYCrashReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205EA20D46C1D00603EBA /* FYCrashReport.h */; };
+		6F3206A820D4886500603EBA /* FYCrashReportFields.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205EB20D46C1D00603EBA /* FYCrashReportFields.h */; };
+		6F3206A920D4886500603EBA /* FYCrashReportFixer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205E720D46C1D00603EBA /* FYCrashReportFixer.c */; };
+		6F3206AA20D4886500603EBA /* FYCrashReportFixer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205E820D46C1D00603EBA /* FYCrashReportFixer.h */; };
+		6F3206AB20D4886500603EBA /* FYCrashReportStore.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205EE20D46C1E00603EBA /* FYCrashReportStore.c */; };
+		6F3206AC20D4886500603EBA /* FYCrashReportStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205E920D46C1D00603EBA /* FYCrashReportStore.h */; };
+		6F3206AD20D4886500603EBA /* FYCrashReportVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205EF20D46C1E00603EBA /* FYCrashReportVersion.h */; };
+		6F3206AE20D4886500603EBA /* FYCrashReportWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205E420D46C1C00603EBA /* FYCrashReportWriter.h */; };
+		6F3206AF20D4886500603EBA /* FYSystemCapabilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205E320D46C1C00603EBA /* FYSystemCapabilities.h */; };
+		6F3206B020D4886500603EBA /* FYCrashC.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205E020D46C0900603EBA /* FYCrashC.c */; };
+		6F3206B120D4886500603EBA /* FYCrashC.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205DF20D46C0800603EBA /* FYCrashC.h */; };
+		6F3206B220D4886600603EBA /* FYCrashCachedData.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205ED20D46C1E00603EBA /* FYCrashCachedData.c */; };
+		6F3206B320D4886600603EBA /* FYCrashCachedData.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205EC20D46C1D00603EBA /* FYCrashCachedData.h */; };
+		6F3206B420D4886600603EBA /* FYCrashDoctor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205F020D46C1E00603EBA /* FYCrashDoctor.h */; };
+		6F3206B520D4886600603EBA /* FYCrashDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205E620D46C1C00603EBA /* FYCrashDoctor.m */; };
+		6F3206B620D4886600603EBA /* FYCrashReport.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205E520D46C1C00603EBA /* FYCrashReport.c */; };
+		6F3206B720D4886600603EBA /* FYCrashReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205EA20D46C1D00603EBA /* FYCrashReport.h */; };
+		6F3206B820D4886600603EBA /* FYCrashReportFields.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205EB20D46C1D00603EBA /* FYCrashReportFields.h */; };
+		6F3206B920D4886600603EBA /* FYCrashReportFixer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205E720D46C1D00603EBA /* FYCrashReportFixer.c */; };
+		6F3206BA20D4886600603EBA /* FYCrashReportFixer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205E820D46C1D00603EBA /* FYCrashReportFixer.h */; };
+		6F3206BB20D4886600603EBA /* FYCrashReportStore.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205EE20D46C1E00603EBA /* FYCrashReportStore.c */; };
+		6F3206BC20D4886600603EBA /* FYCrashReportStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205E920D46C1D00603EBA /* FYCrashReportStore.h */; };
+		6F3206BD20D4886600603EBA /* FYCrashReportVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205EF20D46C1E00603EBA /* FYCrashReportVersion.h */; };
+		6F3206BE20D4886600603EBA /* FYCrashReportWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205E420D46C1C00603EBA /* FYCrashReportWriter.h */; };
+		6F3206BF20D4886600603EBA /* FYSystemCapabilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205E320D46C1C00603EBA /* FYSystemCapabilities.h */; };
+		6F3206C020D4886600603EBA /* FYCrashC.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205E020D46C0900603EBA /* FYCrashC.c */; };
+		6F3206C120D4886600603EBA /* FYCrashC.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205DF20D46C0800603EBA /* FYCrashC.h */; };
+		6F3206C220D4886C00603EBA /* FYCrashMonitor_AppState.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B120D4667500603EBA /* FYCrashMonitor_AppState.c */; };
+		6F3206C320D4886C00603EBA /* FYCrashMonitor_AppState.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B420D4667500603EBA /* FYCrashMonitor_AppState.h */; };
+		6F3206C420D4886C00603EBA /* FYCrashMonitor_CPPException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B620D4667500603EBA /* FYCrashMonitor_CPPException.cpp */; };
+		6F3206C520D4886C00603EBA /* FYCrashMonitor_CPPException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BD20D4667600603EBA /* FYCrashMonitor_CPPException.h */; };
+		6F3206C620D4886C00603EBA /* FYCrashMonitor_Deadlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B920D4667600603EBA /* FYCrashMonitor_Deadlock.h */; };
+		6F3206C720D4886C00603EBA /* FYCrashMonitor_Deadlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B820D4667500603EBA /* FYCrashMonitor_Deadlock.m */; };
+		6F3206C820D4886C00603EBA /* FYCrashMonitor_MachException.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C620D4667800603EBA /* FYCrashMonitor_MachException.c */; };
+		6F3206C920D4886C00603EBA /* FYCrashMonitor_MachException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B220D4667500603EBA /* FYCrashMonitor_MachException.h */; };
+		6F3206CA20D4886C00603EBA /* FYCrashMonitor_NSException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B320D4667500603EBA /* FYCrashMonitor_NSException.h */; };
+		6F3206CB20D4886C00603EBA /* FYCrashMonitor_NSException.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B520D4667500603EBA /* FYCrashMonitor_NSException.m */; };
+		6F3206CC20D4886C00603EBA /* FYCrashMonitor_Signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C220D4667700603EBA /* FYCrashMonitor_Signal.c */; };
+		6F3206CD20D4886C00603EBA /* FYCrashMonitor_Signal.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BC20D4667600603EBA /* FYCrashMonitor_Signal.h */; };
+		6F3206CE20D4886C00603EBA /* FYCrashMonitor_System.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C320D4667700603EBA /* FYCrashMonitor_System.h */; };
+		6F3206CF20D4886C00603EBA /* FYCrashMonitor_System.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B720D4667500603EBA /* FYCrashMonitor_System.m */; };
+		6F3206D020D4886C00603EBA /* FYCrashMonitor_User.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205BA20D4667600603EBA /* FYCrashMonitor_User.c */; };
+		6F3206D120D4886C00603EBA /* FYCrashMonitor_User.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C520D4667700603EBA /* FYCrashMonitor_User.h */; };
+		6F3206D220D4886C00603EBA /* FYCrashMonitor_Zombie.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205BB20D4667600603EBA /* FYCrashMonitor_Zombie.c */; };
+		6F3206D320D4886C00603EBA /* FYCrashMonitor_Zombie.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BE20D4667600603EBA /* FYCrashMonitor_Zombie.h */; };
+		6F3206D420D4886C00603EBA /* FYCrashMonitor.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C720D4667800603EBA /* FYCrashMonitor.c */; };
+		6F3206D520D4886C00603EBA /* FYCrashMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BF20D4667600603EBA /* FYCrashMonitor.h */; };
+		6F3206D620D4886C00603EBA /* FYCrashMonitorContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C120D4667600603EBA /* FYCrashMonitorContext.h */; };
+		6F3206D720D4886C00603EBA /* FYCrashMonitorType.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C020D4667600603EBA /* FYCrashMonitorType.c */; };
+		6F3206D820D4886C00603EBA /* FYCrashMonitorType.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C420D4667700603EBA /* FYCrashMonitorType.h */; };
+		6F3206D920D4886D00603EBA /* FYCrashMonitor_AppState.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B120D4667500603EBA /* FYCrashMonitor_AppState.c */; };
+		6F3206DA20D4886D00603EBA /* FYCrashMonitor_AppState.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B420D4667500603EBA /* FYCrashMonitor_AppState.h */; };
+		6F3206DB20D4886D00603EBA /* FYCrashMonitor_CPPException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B620D4667500603EBA /* FYCrashMonitor_CPPException.cpp */; };
+		6F3206DC20D4886D00603EBA /* FYCrashMonitor_CPPException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BD20D4667600603EBA /* FYCrashMonitor_CPPException.h */; };
+		6F3206DD20D4886D00603EBA /* FYCrashMonitor_Deadlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B920D4667600603EBA /* FYCrashMonitor_Deadlock.h */; };
+		6F3206DE20D4886D00603EBA /* FYCrashMonitor_Deadlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B820D4667500603EBA /* FYCrashMonitor_Deadlock.m */; };
+		6F3206DF20D4886D00603EBA /* FYCrashMonitor_MachException.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C620D4667800603EBA /* FYCrashMonitor_MachException.c */; };
+		6F3206E020D4886D00603EBA /* FYCrashMonitor_MachException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B220D4667500603EBA /* FYCrashMonitor_MachException.h */; };
+		6F3206E120D4886D00603EBA /* FYCrashMonitor_NSException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B320D4667500603EBA /* FYCrashMonitor_NSException.h */; };
+		6F3206E220D4886D00603EBA /* FYCrashMonitor_NSException.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B520D4667500603EBA /* FYCrashMonitor_NSException.m */; };
+		6F3206E320D4886D00603EBA /* FYCrashMonitor_Signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C220D4667700603EBA /* FYCrashMonitor_Signal.c */; };
+		6F3206E420D4886D00603EBA /* FYCrashMonitor_Signal.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BC20D4667600603EBA /* FYCrashMonitor_Signal.h */; };
+		6F3206E520D4886D00603EBA /* FYCrashMonitor_System.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C320D4667700603EBA /* FYCrashMonitor_System.h */; };
+		6F3206E620D4886D00603EBA /* FYCrashMonitor_System.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B720D4667500603EBA /* FYCrashMonitor_System.m */; };
+		6F3206E720D4886D00603EBA /* FYCrashMonitor_User.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205BA20D4667600603EBA /* FYCrashMonitor_User.c */; };
+		6F3206E820D4886D00603EBA /* FYCrashMonitor_User.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C520D4667700603EBA /* FYCrashMonitor_User.h */; };
+		6F3206E920D4886D00603EBA /* FYCrashMonitor_Zombie.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205BB20D4667600603EBA /* FYCrashMonitor_Zombie.c */; };
+		6F3206EA20D4886D00603EBA /* FYCrashMonitor_Zombie.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BE20D4667600603EBA /* FYCrashMonitor_Zombie.h */; };
+		6F3206EB20D4886D00603EBA /* FYCrashMonitor.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C720D4667800603EBA /* FYCrashMonitor.c */; };
+		6F3206EC20D4886D00603EBA /* FYCrashMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BF20D4667600603EBA /* FYCrashMonitor.h */; };
+		6F3206ED20D4886D00603EBA /* FYCrashMonitorContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C120D4667600603EBA /* FYCrashMonitorContext.h */; };
+		6F3206EE20D4886D00603EBA /* FYCrashMonitorType.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C020D4667600603EBA /* FYCrashMonitorType.c */; };
+		6F3206EF20D4886D00603EBA /* FYCrashMonitorType.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C420D4667700603EBA /* FYCrashMonitorType.h */; };
+		6F3206F020D4886D00603EBA /* FYCrashMonitor_AppState.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B120D4667500603EBA /* FYCrashMonitor_AppState.c */; };
+		6F3206F120D4886D00603EBA /* FYCrashMonitor_AppState.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B420D4667500603EBA /* FYCrashMonitor_AppState.h */; };
+		6F3206F220D4886D00603EBA /* FYCrashMonitor_CPPException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B620D4667500603EBA /* FYCrashMonitor_CPPException.cpp */; };
+		6F3206F320D4886D00603EBA /* FYCrashMonitor_CPPException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BD20D4667600603EBA /* FYCrashMonitor_CPPException.h */; };
+		6F3206F420D4886D00603EBA /* FYCrashMonitor_Deadlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B920D4667600603EBA /* FYCrashMonitor_Deadlock.h */; };
+		6F3206F520D4886D00603EBA /* FYCrashMonitor_Deadlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B820D4667500603EBA /* FYCrashMonitor_Deadlock.m */; };
+		6F3206F620D4886D00603EBA /* FYCrashMonitor_MachException.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C620D4667800603EBA /* FYCrashMonitor_MachException.c */; };
+		6F3206F720D4886D00603EBA /* FYCrashMonitor_MachException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B220D4667500603EBA /* FYCrashMonitor_MachException.h */; };
+		6F3206F820D4886D00603EBA /* FYCrashMonitor_NSException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205B320D4667500603EBA /* FYCrashMonitor_NSException.h */; };
+		6F3206F920D4886D00603EBA /* FYCrashMonitor_NSException.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B520D4667500603EBA /* FYCrashMonitor_NSException.m */; };
+		6F3206FA20D4886D00603EBA /* FYCrashMonitor_Signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C220D4667700603EBA /* FYCrashMonitor_Signal.c */; };
+		6F3206FB20D4886D00603EBA /* FYCrashMonitor_Signal.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BC20D4667600603EBA /* FYCrashMonitor_Signal.h */; };
+		6F3206FC20D4886D00603EBA /* FYCrashMonitor_System.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C320D4667700603EBA /* FYCrashMonitor_System.h */; };
+		6F3206FD20D4886D00603EBA /* FYCrashMonitor_System.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205B720D4667500603EBA /* FYCrashMonitor_System.m */; };
+		6F3206FE20D4886D00603EBA /* FYCrashMonitor_User.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205BA20D4667600603EBA /* FYCrashMonitor_User.c */; };
+		6F3206FF20D4886D00603EBA /* FYCrashMonitor_User.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C520D4667700603EBA /* FYCrashMonitor_User.h */; };
+		6F32070020D4886D00603EBA /* FYCrashMonitor_Zombie.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205BB20D4667600603EBA /* FYCrashMonitor_Zombie.c */; };
+		6F32070120D4886D00603EBA /* FYCrashMonitor_Zombie.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BE20D4667600603EBA /* FYCrashMonitor_Zombie.h */; };
+		6F32070220D4886D00603EBA /* FYCrashMonitor.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C720D4667800603EBA /* FYCrashMonitor.c */; };
+		6F32070320D4886D00603EBA /* FYCrashMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205BF20D4667600603EBA /* FYCrashMonitor.h */; };
+		6F32070420D4886D00603EBA /* FYCrashMonitorContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C120D4667600603EBA /* FYCrashMonitorContext.h */; };
+		6F32070520D4886D00603EBA /* FYCrashMonitorType.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F3205C020D4667600603EBA /* FYCrashMonitorType.c */; };
+		6F32070620D4886D00603EBA /* FYCrashMonitorType.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205C420D4667700603EBA /* FYCrashMonitorType.h */; };
+		6F32070720D4889400603EBA /* FYCPU_x86_32.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055320D45E6600603EBA /* FYCPU_x86_32.c */; };
+		6F32070820D4889400603EBA /* FYCPU_x86_64.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055820D45E6700603EBA /* FYCPU_x86_64.c */; };
+		6F32070920D4889400603EBA /* FYCPU.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057D20D45E7400603EBA /* FYCPU.h */; };
+		6F32070A20D4889400603EBA /* FYDate.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055420D45E6600603EBA /* FYDate.c */; };
+		6F32070B20D4889400603EBA /* FYDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057220D45E6F00603EBA /* FYDate.h */; };
+		6F32070C20D4889400603EBA /* FYDebug.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32057820D45E7100603EBA /* FYDebug.c */; };
+		6F32070D20D4889400603EBA /* FYDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056D20D45E6D00603EBA /* FYDebug.h */; };
+		6F32070E20D4889400603EBA /* FYDemangle_CPP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F32057A20D45E7200603EBA /* FYDemangle_CPP.cpp */; };
+		6F32070F20D4889400603EBA /* FYDemangle_CPP.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32055D20D45E6900603EBA /* FYDemangle_CPP.h */; };
+		6F32071020D4889400603EBA /* FYDemangle_Swift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055E20D45E6900603EBA /* FYDemangle_Swift.cpp */; };
+		6F32071120D4889400603EBA /* FYDemangle_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057B20D45E7300603EBA /* FYDemangle_Swift.h */; };
+		6F32071220D4889400603EBA /* FYDynamicLinker.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32056A20D45E6C00603EBA /* FYDynamicLinker.c */; };
+		6F32071320D4889400603EBA /* FYDynamicLinker.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056720D45E6B00603EBA /* FYDynamicLinker.h */; };
+		6F32071420D4889400603EBA /* FYFileUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32057320D45E7000603EBA /* FYFileUtils.c */; };
+		6F32071520D4889400603EBA /* FYFileUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32055020D45E6500603EBA /* FYFileUtils.h */; };
+		6F32071620D4889400603EBA /* FYID.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32054E20D45E6500603EBA /* FYID.c */; };
+		6F32071720D4889400603EBA /* FYID.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057C20D45E7300603EBA /* FYID.h */; };
+		6F32071820D4889400603EBA /* FYJSONCodec.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32056220D45E6A00603EBA /* FYJSONCodec.c */; };
+		6F32071920D4889400603EBA /* FYJSONCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056620D45E6B00603EBA /* FYJSONCodec.h */; };
+		6F32071A20D4889400603EBA /* FYJSONCodecObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056F20D45E6E00603EBA /* FYJSONCodecObjC.h */; };
+		6F32071B20D4889400603EBA /* FYJSONCodecObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055120D45E6600603EBA /* FYJSONCodecObjC.m */; };
+		6F32071C20D4889400603EBA /* FYLogger.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32056120D45E6A00603EBA /* FYLogger.c */; };
+		6F32071D20D4889400603EBA /* FYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32055920D45E6800603EBA /* FYLogger.h */; };
+		6F32071E20D4889400603EBA /* FYMach.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32057920D45E7200603EBA /* FYMach.c */; };
+		6F32071F20D4889400603EBA /* FYMach.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32055720D45E6700603EBA /* FYMach.h */; };
+		6F32072020D4889400603EBA /* FYMachineContext_Apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057020D45E6E00603EBA /* FYMachineContext_Apple.h */; };
+		6F32072120D4889400603EBA /* FYMachineContext.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32054C20D45E6400603EBA /* FYMachineContext.c */; };
+		6F32072220D4889400603EBA /* FYMachineContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056420D45E6B00603EBA /* FYMachineContext.h */; };
+		6F32072320D4889400603EBA /* FYMemory.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32057120D45E6F00603EBA /* FYMemory.c */; };
+		6F32072420D4889400603EBA /* FYMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057420D45E7000603EBA /* FYMemory.h */; };
+		6F32072520D4889400603EBA /* FYObjC.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055A20D45E6800603EBA /* FYObjC.c */; };
+		6F32072620D4889400603EBA /* FYObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32054B20D45E6400603EBA /* FYObjC.h */; };
+		6F32072720D4889400603EBA /* FYObjCApple.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056020D45E6900603EBA /* FYObjCApple.h */; };
+		6F32072820D4889400603EBA /* FYSignalInfo.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32057720D45E7100603EBA /* FYSignalInfo.c */; };
+		6F32072920D4889400603EBA /* FYSignalInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056920D45E6C00603EBA /* FYSignalInfo.h */; };
+		6F32072A20D4889400603EBA /* FYStackCursor_Backtrace.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055620D45E6700603EBA /* FYStackCursor_Backtrace.c */; };
+		6F32072B20D4889400603EBA /* FYStackCursor_Backtrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056C20D45E6D00603EBA /* FYStackCursor_Backtrace.h */; };
+		6F32072C20D4889400603EBA /* FYStackCursor_MachineContext.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055220D45E6600603EBA /* FYStackCursor_MachineContext.c */; };
+		6F32072D20D4889400603EBA /* FYStackCursor_MachineContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32054D20D45E6500603EBA /* FYStackCursor_MachineContext.h */; };
+		6F32072E20D4889400603EBA /* FYStackCursor_SelfThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32056320D45E6A00603EBA /* FYStackCursor_SelfThread.c */; };
+		6F32072F20D4889400603EBA /* FYStackCursor_SelfThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32055520D45E6700603EBA /* FYStackCursor_SelfThread.h */; };
+		6F32073020D4889400603EBA /* FYStackCursor.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055B20D45E6800603EBA /* FYStackCursor.c */; };
+		6F32073120D4889400603EBA /* FYStackCursor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32054F20D45E6500603EBA /* FYStackCursor.h */; };
+		6F32073220D4889400603EBA /* FYString.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32056520D45E6B00603EBA /* FYString.c */; };
+		6F32073320D4889400603EBA /* FYString.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057520D45E7000603EBA /* FYString.h */; };
+		6F32073420D4889400603EBA /* FYSymbolicator.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32056820D45E6C00603EBA /* FYSymbolicator.c */; };
+		6F32073520D4889400603EBA /* FYSymbolicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057620D45E7100603EBA /* FYSymbolicator.h */; };
+		6F32073620D4889400603EBA /* FYSysCtl.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055C20D45E6800603EBA /* FYSysCtl.c */; };
+		6F32073720D4889400603EBA /* FYSysCtl.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056B20D45E6D00603EBA /* FYSysCtl.h */; };
+		6F32073820D4889400603EBA /* FYThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055F20D45E6900603EBA /* FYThread.c */; };
+		6F32073920D4889400603EBA /* FYThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056E20D45E6E00603EBA /* FYThread.h */; };
+		6F32073A20D4889500603EBA /* FYCPU_x86_32.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055320D45E6600603EBA /* FYCPU_x86_32.c */; };
+		6F32073B20D4889500603EBA /* FYCPU_x86_64.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055820D45E6700603EBA /* FYCPU_x86_64.c */; };
+		6F32073C20D4889500603EBA /* FYCPU.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057D20D45E7400603EBA /* FYCPU.h */; };
+		6F32073D20D4889500603EBA /* FYDate.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055420D45E6600603EBA /* FYDate.c */; };
+		6F32073E20D4889500603EBA /* FYDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057220D45E6F00603EBA /* FYDate.h */; };
+		6F32073F20D4889500603EBA /* FYDebug.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32057820D45E7100603EBA /* FYDebug.c */; };
+		6F32074020D4889500603EBA /* FYDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056D20D45E6D00603EBA /* FYDebug.h */; };
+		6F32074120D4889500603EBA /* FYDemangle_CPP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F32057A20D45E7200603EBA /* FYDemangle_CPP.cpp */; };
+		6F32074220D4889500603EBA /* FYDemangle_CPP.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32055D20D45E6900603EBA /* FYDemangle_CPP.h */; };
+		6F32074320D4889500603EBA /* FYDemangle_Swift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055E20D45E6900603EBA /* FYDemangle_Swift.cpp */; };
+		6F32074420D4889500603EBA /* FYDemangle_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057B20D45E7300603EBA /* FYDemangle_Swift.h */; };
+		6F32074520D4889500603EBA /* FYDynamicLinker.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32056A20D45E6C00603EBA /* FYDynamicLinker.c */; };
+		6F32074620D4889500603EBA /* FYDynamicLinker.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056720D45E6B00603EBA /* FYDynamicLinker.h */; };
+		6F32074720D4889500603EBA /* FYFileUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32057320D45E7000603EBA /* FYFileUtils.c */; };
+		6F32074820D4889500603EBA /* FYFileUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32055020D45E6500603EBA /* FYFileUtils.h */; };
+		6F32074920D4889500603EBA /* FYID.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32054E20D45E6500603EBA /* FYID.c */; };
+		6F32074A20D4889500603EBA /* FYID.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057C20D45E7300603EBA /* FYID.h */; };
+		6F32074B20D4889500603EBA /* FYJSONCodec.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32056220D45E6A00603EBA /* FYJSONCodec.c */; };
+		6F32074C20D4889500603EBA /* FYJSONCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056620D45E6B00603EBA /* FYJSONCodec.h */; };
+		6F32074D20D4889500603EBA /* FYJSONCodecObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056F20D45E6E00603EBA /* FYJSONCodecObjC.h */; };
+		6F32074E20D4889500603EBA /* FYJSONCodecObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055120D45E6600603EBA /* FYJSONCodecObjC.m */; };
+		6F32074F20D4889500603EBA /* FYLogger.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32056120D45E6A00603EBA /* FYLogger.c */; };
+		6F32075020D4889500603EBA /* FYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32055920D45E6800603EBA /* FYLogger.h */; };
+		6F32075120D4889500603EBA /* FYMach.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32057920D45E7200603EBA /* FYMach.c */; };
+		6F32075220D4889500603EBA /* FYMach.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32055720D45E6700603EBA /* FYMach.h */; };
+		6F32075320D4889500603EBA /* FYMachineContext_Apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057020D45E6E00603EBA /* FYMachineContext_Apple.h */; };
+		6F32075420D4889500603EBA /* FYMachineContext.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32054C20D45E6400603EBA /* FYMachineContext.c */; };
+		6F32075520D4889500603EBA /* FYMachineContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056420D45E6B00603EBA /* FYMachineContext.h */; };
+		6F32075620D4889500603EBA /* FYMemory.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32057120D45E6F00603EBA /* FYMemory.c */; };
+		6F32075720D4889500603EBA /* FYMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057420D45E7000603EBA /* FYMemory.h */; };
+		6F32075820D4889500603EBA /* FYObjC.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055A20D45E6800603EBA /* FYObjC.c */; };
+		6F32075920D4889500603EBA /* FYObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32054B20D45E6400603EBA /* FYObjC.h */; };
+		6F32075A20D4889500603EBA /* FYObjCApple.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056020D45E6900603EBA /* FYObjCApple.h */; };
+		6F32075B20D4889500603EBA /* FYSignalInfo.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32057720D45E7100603EBA /* FYSignalInfo.c */; };
+		6F32075C20D4889500603EBA /* FYSignalInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056920D45E6C00603EBA /* FYSignalInfo.h */; };
+		6F32075D20D4889600603EBA /* FYStackCursor_Backtrace.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055620D45E6700603EBA /* FYStackCursor_Backtrace.c */; };
+		6F32075E20D4889600603EBA /* FYStackCursor_Backtrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056C20D45E6D00603EBA /* FYStackCursor_Backtrace.h */; };
+		6F32075F20D4889600603EBA /* FYStackCursor_MachineContext.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055220D45E6600603EBA /* FYStackCursor_MachineContext.c */; };
+		6F32076020D4889600603EBA /* FYStackCursor_MachineContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32054D20D45E6500603EBA /* FYStackCursor_MachineContext.h */; };
+		6F32076120D4889600603EBA /* FYStackCursor_SelfThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32056320D45E6A00603EBA /* FYStackCursor_SelfThread.c */; };
+		6F32076220D4889600603EBA /* FYStackCursor_SelfThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32055520D45E6700603EBA /* FYStackCursor_SelfThread.h */; };
+		6F32076320D4889600603EBA /* FYStackCursor.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055B20D45E6800603EBA /* FYStackCursor.c */; };
+		6F32076420D4889600603EBA /* FYStackCursor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32054F20D45E6500603EBA /* FYStackCursor.h */; };
+		6F32076520D4889600603EBA /* FYString.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32056520D45E6B00603EBA /* FYString.c */; };
+		6F32076620D4889600603EBA /* FYString.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057520D45E7000603EBA /* FYString.h */; };
+		6F32076720D4889600603EBA /* FYSymbolicator.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32056820D45E6C00603EBA /* FYSymbolicator.c */; };
+		6F32076820D4889600603EBA /* FYSymbolicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32057620D45E7100603EBA /* FYSymbolicator.h */; };
+		6F32076920D4889600603EBA /* FYSysCtl.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055C20D45E6800603EBA /* FYSysCtl.c */; };
+		6F32076A20D4889600603EBA /* FYSysCtl.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056B20D45E6D00603EBA /* FYSysCtl.h */; };
+		6F32076B20D4889600603EBA /* FYThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F32055F20D45E6900603EBA /* FYThread.c */; };
+		6F32076C20D4889600603EBA /* FYThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32056E20D45E6E00603EBA /* FYThread.h */; };
+		6F32076D20D488C600603EBA /* FYCrashReportFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060820D47B9000603EBA /* FYCrashReportFilter.h */; };
+		6F32076E20D488C600603EBA /* FYCrashReportFilterAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060420D47B8F00603EBA /* FYCrashReportFilterAlert.h */; };
+		6F32076F20D488C600603EBA /* FYCrashReportFilterAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060D20D47B9100603EBA /* FYCrashReportFilterAlert.m */; };
+		6F32077020D488C600603EBA /* FYCrashReportFilterAppleFmt.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060020D47B8F00603EBA /* FYCrashReportFilterAppleFmt.h */; };
+		6F32077120D488C600603EBA /* FYCrashReportFilterAppleFmt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060A20D47B9000603EBA /* FYCrashReportFilterAppleFmt.m */; };
+		6F32077220D488C600603EBA /* FYCrashReportFilterBasic.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060520D47B9000603EBA /* FYCrashReportFilterBasic.h */; };
+		6F32077320D488C600603EBA /* FYCrashReportFilterBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060120D47B8F00603EBA /* FYCrashReportFilterBasic.m */; };
+		6F32077420D488C600603EBA /* FYCrashReportFilterGZip.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205FF20D47B8F00603EBA /* FYCrashReportFilterGZip.h */; };
+		6F32077520D488C600603EBA /* FYCrashReportFilterGZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060220D47B8F00603EBA /* FYCrashReportFilterGZip.m */; };
+		6F32077620D488C600603EBA /* FYCrashReportFilterJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060620D47B9000603EBA /* FYCrashReportFilterJSON.h */; };
+		6F32077720D488C600603EBA /* FYCrashReportFilterJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060720D47B9000603EBA /* FYCrashReportFilterJSON.m */; };
+		6F32077820D488C600603EBA /* FYCrashReportFilterSets.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060920D47B9000603EBA /* FYCrashReportFilterSets.h */; };
+		6F32077920D488C600603EBA /* FYCrashReportFilterSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060320D47B8F00603EBA /* FYCrashReportFilterSets.m */; };
+		6F32077A20D488C600603EBA /* FYCrashReportFilterStringify.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060B20D47B9000603EBA /* FYCrashReportFilterStringify.h */; };
+		6F32077B20D488C600603EBA /* FYCrashReportFilterStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060C20D47B9100603EBA /* FYCrashReportFilterStringify.m */; };
+		6F32077C20D488C700603EBA /* FYCrashReportFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060820D47B9000603EBA /* FYCrashReportFilter.h */; };
+		6F32077D20D488C700603EBA /* FYCrashReportFilterAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060420D47B8F00603EBA /* FYCrashReportFilterAlert.h */; };
+		6F32077E20D488C700603EBA /* FYCrashReportFilterAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060D20D47B9100603EBA /* FYCrashReportFilterAlert.m */; };
+		6F32077F20D488C700603EBA /* FYCrashReportFilterAppleFmt.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060020D47B8F00603EBA /* FYCrashReportFilterAppleFmt.h */; };
+		6F32078020D488C700603EBA /* FYCrashReportFilterAppleFmt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060A20D47B9000603EBA /* FYCrashReportFilterAppleFmt.m */; };
+		6F32078120D488C700603EBA /* FYCrashReportFilterBasic.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060520D47B9000603EBA /* FYCrashReportFilterBasic.h */; };
+		6F32078220D488C700603EBA /* FYCrashReportFilterBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060120D47B8F00603EBA /* FYCrashReportFilterBasic.m */; };
+		6F32078320D488C700603EBA /* FYCrashReportFilterGZip.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3205FF20D47B8F00603EBA /* FYCrashReportFilterGZip.h */; };
+		6F32078420D488C700603EBA /* FYCrashReportFilterGZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060220D47B8F00603EBA /* FYCrashReportFilterGZip.m */; };
+		6F32078520D488C700603EBA /* FYCrashReportFilterJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060620D47B9000603EBA /* FYCrashReportFilterJSON.h */; };
+		6F32078620D488C700603EBA /* FYCrashReportFilterJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060720D47B9000603EBA /* FYCrashReportFilterJSON.m */; };
+		6F32078720D488C700603EBA /* FYCrashReportFilterSets.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060920D47B9000603EBA /* FYCrashReportFilterSets.h */; };
+		6F32078820D488C700603EBA /* FYCrashReportFilterSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060320D47B8F00603EBA /* FYCrashReportFilterSets.m */; };
+		6F32078920D488C700603EBA /* FYCrashReportFilterStringify.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32060B20D47B9000603EBA /* FYCrashReportFilterStringify.h */; };
+		6F32078A20D488C700603EBA /* FYCrashReportFilterStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32060C20D47B9100603EBA /* FYCrashReportFilterStringify.m */; };
+		6F32078B20D488D500603EBA /* FYCrashReportSinkConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32062020D47C6100603EBA /* FYCrashReportSinkConsole.h */; };
+		6F32078C20D488D500603EBA /* FYCrashReportSinkConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32061D20D47C6100603EBA /* FYCrashReportSinkConsole.m */; };
+		6F32078D20D488D500603EBA /* FYCrashReportSinkEMail.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32062220D47C6100603EBA /* FYCrashReportSinkEMail.h */; };
+		6F32078E20D488D500603EBA /* FYCrashReportSinkEMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32062120D47C6100603EBA /* FYCrashReportSinkEMail.m */; };
+		6F32078F20D488D500603EBA /* FYCrashReportSinkQuincyHockey.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32062420D47C6100603EBA /* FYCrashReportSinkQuincyHockey.h */; };
+		6F32079020D488D500603EBA /* FYCrashReportSinkQuincyHockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32062520D47C6100603EBA /* FYCrashReportSinkQuincyHockey.m */; };
+		6F32079120D488D500603EBA /* FYCrashReportSinkStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32061E20D47C6100603EBA /* FYCrashReportSinkStandard.h */; };
+		6F32079220D488D500603EBA /* FYCrashReportSinkStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32062620D47C6100603EBA /* FYCrashReportSinkStandard.m */; };
+		6F32079320D488D500603EBA /* FYCrashReportSinkVictory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32061F20D47C6100603EBA /* FYCrashReportSinkVictory.h */; };
+		6F32079420D488D500603EBA /* FYCrashReportSinkVictory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32062320D47C6100603EBA /* FYCrashReportSinkVictory.m */; };
+		6F32079520D488D600603EBA /* FYCrashReportSinkConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32062020D47C6100603EBA /* FYCrashReportSinkConsole.h */; };
+		6F32079620D488D600603EBA /* FYCrashReportSinkConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32061D20D47C6100603EBA /* FYCrashReportSinkConsole.m */; };
+		6F32079720D488D600603EBA /* FYCrashReportSinkEMail.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32062220D47C6100603EBA /* FYCrashReportSinkEMail.h */; };
+		6F32079820D488D600603EBA /* FYCrashReportSinkEMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32062120D47C6100603EBA /* FYCrashReportSinkEMail.m */; };
+		6F32079920D488D600603EBA /* FYCrashReportSinkQuincyHockey.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32062420D47C6100603EBA /* FYCrashReportSinkQuincyHockey.h */; };
+		6F32079A20D488D600603EBA /* FYCrashReportSinkQuincyHockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32062520D47C6100603EBA /* FYCrashReportSinkQuincyHockey.m */; };
+		6F32079B20D488D600603EBA /* FYCrashReportSinkStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32061E20D47C6100603EBA /* FYCrashReportSinkStandard.h */; };
+		6F32079C20D488D600603EBA /* FYCrashReportSinkStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32062620D47C6100603EBA /* FYCrashReportSinkStandard.m */; };
+		6F32079D20D488D600603EBA /* FYCrashReportSinkVictory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32061F20D47C6100603EBA /* FYCrashReportSinkVictory.h */; };
+		6F32079E20D488D600603EBA /* FYCrashReportSinkVictory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32062320D47C6100603EBA /* FYCrashReportSinkVictory.m */; };
+		6F32079F20D488DE00603EBA /* FYCString.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063220D47D0400603EBA /* FYCString.h */; };
+		6F3207A020D488DE00603EBA /* FYCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063420D47D0500603EBA /* FYCString.m */; };
+		6F3207A120D488DE00603EBA /* FYHTTPMultipartPostBody.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063620D47D0500603EBA /* FYHTTPMultipartPostBody.h */; };
+		6F3207A220D488DE00603EBA /* FYHTTPMultipartPostBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063520D47D0500603EBA /* FYHTTPMultipartPostBody.m */; };
+		6F3207A320D488DE00603EBA /* FYHTTPRequestSender.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063720D47D0500603EBA /* FYHTTPRequestSender.h */; };
+		6F3207A420D488DE00603EBA /* FYHTTPRequestSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063320D47D0500603EBA /* FYHTTPRequestSender.m */; };
+		6F3207A520D488DE00603EBA /* FYReachabilityFYCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063820D47D0500603EBA /* FYReachabilityFYCrash.h */; };
+		6F3207A620D488DE00603EBA /* FYReachabilityFYCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063120D47D0400603EBA /* FYReachabilityFYCrash.m */; };
+		6F3207A720D488DF00603EBA /* FYCString.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063220D47D0400603EBA /* FYCString.h */; };
+		6F3207A820D488DF00603EBA /* FYCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063420D47D0500603EBA /* FYCString.m */; };
+		6F3207A920D488DF00603EBA /* FYHTTPMultipartPostBody.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063620D47D0500603EBA /* FYHTTPMultipartPostBody.h */; };
+		6F3207AA20D488DF00603EBA /* FYHTTPMultipartPostBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063520D47D0500603EBA /* FYHTTPMultipartPostBody.m */; };
+		6F3207AB20D488DF00603EBA /* FYHTTPRequestSender.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063720D47D0500603EBA /* FYHTTPRequestSender.h */; };
+		6F3207AC20D488DF00603EBA /* FYHTTPRequestSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063320D47D0500603EBA /* FYHTTPRequestSender.m */; };
+		6F3207AD20D488DF00603EBA /* FYReachabilityFYCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063820D47D0500603EBA /* FYReachabilityFYCrash.h */; };
+		6F3207AE20D488DF00603EBA /* FYReachabilityFYCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063120D47D0400603EBA /* FYReachabilityFYCrash.m */; };
+		6F3207AF20D488DF00603EBA /* FYCString.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063220D47D0400603EBA /* FYCString.h */; };
+		6F3207B020D488DF00603EBA /* FYCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063420D47D0500603EBA /* FYCString.m */; };
+		6F3207B120D488DF00603EBA /* FYHTTPMultipartPostBody.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063620D47D0500603EBA /* FYHTTPMultipartPostBody.h */; };
+		6F3207B220D488DF00603EBA /* FYHTTPMultipartPostBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063520D47D0500603EBA /* FYHTTPMultipartPostBody.m */; };
+		6F3207B320D488DF00603EBA /* FYHTTPRequestSender.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063720D47D0500603EBA /* FYHTTPRequestSender.h */; };
+		6F3207B420D488DF00603EBA /* FYHTTPRequestSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063320D47D0500603EBA /* FYHTTPRequestSender.m */; };
+		6F3207B520D488DF00603EBA /* FYReachabilityFYCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32063820D47D0500603EBA /* FYReachabilityFYCrash.h */; };
+		6F3207B620D488DF00603EBA /* FYReachabilityFYCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32063120D47D0400603EBA /* FYReachabilityFYCrash.m */; };
+		6F3207B720D488DF00603EBA /* NSMutableData+AppendUTF8.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D8F17EB765C0056DA83 /* NSMutableData+AppendUTF8.h */; };
+		6F3207B820D488DF00603EBA /* NSMutableData+AppendUTF8.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D9017EB765C0056DA83 /* NSMutableData+AppendUTF8.m */; };
+		6F3207B920D488DF00603EBA /* NSString+URLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = CBEE5DC01CBC197D005EAF61 /* NSString+URLEncode.h */; };
+		6F3207BA20D488DF00603EBA /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEE5DC11CBC197D005EAF61 /* NSString+URLEncode.m */; };
+		6F3207BB20D488E600603EBA /* FYCrashInstallation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064620D47F0800603EBA /* FYCrashInstallation.h */; };
+		6F3207BC20D488E600603EBA /* FYCrashInstallation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064520D47F0800603EBA /* FYCrashInstallation.m */; };
+		6F3207BD20D488E600603EBA /* FYCrashInstallation+Alert.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064F20D47F0900603EBA /* FYCrashInstallation+Alert.h */; };
+		6F3207BE20D488E600603EBA /* FYCrashInstallation+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064C20D47F0900603EBA /* FYCrashInstallation+Alert.m */; };
+		6F3207BF20D488E600603EBA /* FYCrashInstallation+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064320D47F0800603EBA /* FYCrashInstallation+Private.h */; };
+		6F3207C020D488E600603EBA /* FYCrashInstallationConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064720D47F0800603EBA /* FYCrashInstallationConsole.h */; };
+		6F3207C120D488E600603EBA /* FYCrashInstallationConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064920D47F0900603EBA /* FYCrashInstallationConsole.m */; };
+		6F3207C220D488E600603EBA /* FYCrashInstallationEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064E20D47F0900603EBA /* FYCrashInstallationEmail.h */; };
+		6F3207C320D488E600603EBA /* FYCrashInstallationEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064420D47F0800603EBA /* FYCrashInstallationEmail.m */; };
+		6F3207C420D488E600603EBA /* FYCrashInstallationQuincyHockey.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064A20D47F0900603EBA /* FYCrashInstallationQuincyHockey.h */; };
+		6F3207C520D488E600603EBA /* FYCrashInstallationQuincyHockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064B20D47F0900603EBA /* FYCrashInstallationQuincyHockey.m */; };
+		6F3207C620D488E600603EBA /* FYCrashInstallationStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064820D47F0900603EBA /* FYCrashInstallationStandard.h */; };
+		6F3207C720D488E600603EBA /* FYCrashInstallationStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064220D47F0800603EBA /* FYCrashInstallationStandard.m */; };
+		6F3207C820D488E600603EBA /* FYCrashInstallationVictory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064120D47F0800603EBA /* FYCrashInstallationVictory.h */; };
+		6F3207C920D488E600603EBA /* FYCrashInstallationVictory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064D20D47F0900603EBA /* FYCrashInstallationVictory.m */; };
+		6F3207CA20D488E700603EBA /* FYCrashInstallation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064620D47F0800603EBA /* FYCrashInstallation.h */; };
+		6F3207CB20D488E700603EBA /* FYCrashInstallation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064520D47F0800603EBA /* FYCrashInstallation.m */; };
+		6F3207CC20D488E700603EBA /* FYCrashInstallation+Alert.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064F20D47F0900603EBA /* FYCrashInstallation+Alert.h */; };
+		6F3207CD20D488E700603EBA /* FYCrashInstallation+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064C20D47F0900603EBA /* FYCrashInstallation+Alert.m */; };
+		6F3207CE20D488E700603EBA /* FYCrashInstallation+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064320D47F0800603EBA /* FYCrashInstallation+Private.h */; };
+		6F3207CF20D488E700603EBA /* FYCrashInstallationConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064720D47F0800603EBA /* FYCrashInstallationConsole.h */; };
+		6F3207D020D488E700603EBA /* FYCrashInstallationConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064920D47F0900603EBA /* FYCrashInstallationConsole.m */; };
+		6F3207D120D488E700603EBA /* FYCrashInstallationEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064E20D47F0900603EBA /* FYCrashInstallationEmail.h */; };
+		6F3207D220D488E700603EBA /* FYCrashInstallationEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064420D47F0800603EBA /* FYCrashInstallationEmail.m */; };
+		6F3207D320D488E700603EBA /* FYCrashInstallationQuincyHockey.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064A20D47F0900603EBA /* FYCrashInstallationQuincyHockey.h */; };
+		6F3207D420D488E700603EBA /* FYCrashInstallationQuincyHockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064B20D47F0900603EBA /* FYCrashInstallationQuincyHockey.m */; };
+		6F3207D520D488E700603EBA /* FYCrashInstallationStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064820D47F0900603EBA /* FYCrashInstallationStandard.h */; };
+		6F3207D620D488E700603EBA /* FYCrashInstallationStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064220D47F0800603EBA /* FYCrashInstallationStandard.m */; };
+		6F3207D720D488E700603EBA /* FYCrashInstallationVictory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F32064120D47F0800603EBA /* FYCrashInstallationVictory.h */; };
+		6F3207D820D488E700603EBA /* FYCrashInstallationVictory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F32064D20D47F0900603EBA /* FYCrashInstallationVictory.m */; };
+		6F3207DA20D48CC500603EBA /* FYCrash_static-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F3207D920D48CC500603EBA /* FYCrash_static-Info.plist */; };
+		6F3207DD20D48CD500603EBA /* FYCrash-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F3207DC20D48CD500603EBA /* FYCrash-Info.plist */; };
+		6F3207DF20D48D0000603EBA /* FYCrashTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F3207DE20D48D0000603EBA /* FYCrashTests-Info.plist */; };
 		CB02648017F7CEC5003E0AED /* FYCPU_arm64.c in Sources */ = {isa = PBXBuildFile; fileRef = CB02647E17F7CEC5003E0AED /* FYCPU_arm64.c */; };
 		CB0264A917FA5B13003E0AED /* Container+DeepSearch_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB02648317FA5B12003E0AED /* Container+DeepSearch_Tests.m */; };
 		CB0264AA17FA5B13003E0AED /* FileBasedTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CB02648517FA5B12003E0AED /* FileBasedTestCase.m */; };
@@ -261,7 +542,7 @@
 		CB6D133517EB749A00BC2C04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB52178F17EB735D007CB3C1 /* Foundation.framework */; };
 		CB6D133617EB749A00BC2C04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB52179317EB735D007CB3C1 /* UIKit.framework */; };
 		CB6D134917EB758A00BC2C04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB6D131717EB743A00BC2C04 /* InfoPlist.strings */; };
-		CB7A6CEE17FB9E2800997792 /* libKSCrashLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6D132617EB749A00BC2C04 /* libKSCrashLib.a */; };
+		CB7A6CEE17FB9E2800997792 /* libFYCrashLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6D132617EB749A00BC2C04 /* libFYCrashLib.a */; };
 		CBC43F1F1C5AF2B10083A11B /* None.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC43F091C5AF2B10083A11B /* None.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CBC43F211C5AF2B10083A11B /* Optional.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC43F0A1C5AF2B10083A11B /* Optional.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CBC43F231C5AF2B10083A11B /* StringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC43F0B1C5AF2B10083A11B /* StringRef.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -279,9 +560,7 @@
 		CBC43F3C1C5AF2B10083A11B /* Punycode.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC43F1C1C5AF2B10083A11B /* Punycode.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CBC43F3E1C5AF2B10083A11B /* SwiftStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC43F1D1C5AF2B10083A11B /* SwiftStrings.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CBEE5DC21CBC197D005EAF61 /* NSString+URLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = CBEE5DC01CBC197D005EAF61 /* NSString+URLEncode.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		CBEE5DC31CBC197D005EAF61 /* NSString+URLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = CBEE5DC01CBC197D005EAF61 /* NSString+URLEncode.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CBEE5DC41CBC197D005EAF61 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEE5DC11CBC197D005EAF61 /* NSString+URLEncode.m */; };
-		CBEE5DC51CBC197D005EAF61 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEE5DC11CBC197D005EAF61 /* NSString+URLEncode.m */; };
 		CBF53D9617EB765C0056DA83 /* Container+DeepSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D1417EB765C0056DA83 /* Container+DeepSearch.m */; };
 		CBF53DA017EB765C0056DA83 /* FYCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D1C17EB765C0056DA83 /* FYCrash.m */; };
 		CBF53E1A17EB765C0056DA83 /* FYCPU_arm.c in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D6F17EB765C0056DA83 /* FYCPU_arm.c */; };
@@ -304,7 +583,7 @@
 		EDF2BEAE1CCF15AD004BADF4 /* NSData+GZip.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D8A17EB765C0056DA83 /* NSData+GZip.m */; };
 		EDF2BEB51CCF15AD004BADF4 /* NSMutableData+AppendUTF8.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D9017EB765C0056DA83 /* NSMutableData+AppendUTF8.m */; };
 		EDF2BEB81CCF15AD004BADF4 /* Container+DeepSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF53D1417EB765C0056DA83 /* Container+DeepSearch.m */; };
-		EDF2BEC11CCF15AD004BADF4 /* KSCrashFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 03DE7DA91C879A0200F789BA /* KSCrashFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDF2BEC11CCF15AD004BADF4 /* FYCrashFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 03DE7DA91C879A0200F789BA /* FYCrashFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDF2BEC21CCF15AD004BADF4 /* FYCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF53D1B17EB765C0056DA83 /* FYCrash.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDF2BED51CCF15AD004BADF4 /* NSString+URLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = CBEE5DC01CBC197D005EAF61 /* NSString+URLEncode.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EDF2BEE31CCF15AD004BADF4 /* llvm-config.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC43F0D1C5AF2B10083A11B /* llvm-config.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -376,10 +655,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		03DE7B6A1C84DEF700F789BA /* KSCrash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KSCrash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		03DE7B6A1C84DEF700F789BA /* FYCrash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FYCrash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DE7CD61C84E1F400F789BA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		03DE7D0F1C84FB9E00F789BA /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = ../../Source/Framework/module.modulemap; sourceTree = "<group>"; };
-		03DE7DA91C879A0200F789BA /* KSCrashFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSCrashFramework.h; path = ../../Source/Framework/KSCrashFramework.h; sourceTree = "<group>"; };
+		03DE7DA91C879A0200F789BA /* FYCrashFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYCrashFramework.h; path = ../../Source/Framework/FYCrashFramework.h; sourceTree = "<group>"; };
 		6F32054B20D45E6400603EBA /* FYObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYObjC.h; path = ../../Source/KSCrash/Recording/Tools/FYObjC.h; sourceTree = "<group>"; };
 		6F32054C20D45E6400603EBA /* FYMachineContext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = FYMachineContext.c; path = ../../Source/KSCrash/Recording/Tools/FYMachineContext.c; sourceTree = "<group>"; };
 		6F32054D20D45E6500603EBA /* FYStackCursor_MachineContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYStackCursor_MachineContext.h; path = ../../Source/KSCrash/Recording/Tools/FYStackCursor_MachineContext.h; sourceTree = "<group>"; };
@@ -551,6 +830,10 @@
 		6F32067D20D4840200603EBA /* FYCrashMonitor_AppState_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYCrashMonitor_AppState_Tests.m; path = "../../Source/KSCrash-Tests/FYCrashMonitor_AppState_Tests.m"; sourceTree = "<group>"; };
 		6F32067E20D4840200603EBA /* FYCrashMonitor_Signal_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYCrashMonitor_Signal_Tests.m; path = "../../Source/KSCrash-Tests/FYCrashMonitor_Signal_Tests.m"; sourceTree = "<group>"; };
 		6F32067F20D4840200603EBA /* FYObjC_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYObjC_Tests.m; path = "../../Source/KSCrash-Tests/FYObjC_Tests.m"; sourceTree = "<group>"; };
+		6F3207D920D48CC500603EBA /* FYCrash_static-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "FYCrash_static-Info.plist"; path = "FYCrash/FYCrash_static-Info.plist"; sourceTree = SOURCE_ROOT; };
+		6F3207DB20D48CD500603EBA /* FYCrash-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FYCrash-Prefix.pch"; path = "FYCrash/FYCrash-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		6F3207DC20D48CD500603EBA /* FYCrash-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "FYCrash-Info.plist"; path = "FYCrash/FYCrash-Info.plist"; sourceTree = SOURCE_ROOT; };
+		6F3207DE20D48D0000603EBA /* FYCrashTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "FYCrashTests-Info.plist"; path = "FYCrashTests/FYCrashTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CB02647E17F7CEC5003E0AED /* FYCPU_arm64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = FYCPU_arm64.c; path = ../../Source/KSCrash/Recording/Tools/FYCPU_arm64.c; sourceTree = "<group>"; };
 		CB02648317FA5B12003E0AED /* Container+DeepSearch_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Container+DeepSearch_Tests.m"; path = "../../Source/KSCrash-Tests/Container+DeepSearch_Tests.m"; sourceTree = "<group>"; };
 		CB02648417FA5B12003E0AED /* FileBasedTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileBasedTestCase.h; path = "../../Source/KSCrash-Tests/FileBasedTestCase.h"; sourceTree = "<group>"; };
@@ -575,13 +858,10 @@
 		CB52179117EB735D007CB3C1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CB52179317EB735D007CB3C1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CB5217AE17EB735D007CB3C1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		CB6D130117EB743A00BC2C04 /* KSCrash-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KSCrash-Info.plist"; sourceTree = "<group>"; };
 		CB6D130317EB743A00BC2C04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CB6D130517EB743A00BC2C04 /* KSCrash-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KSCrash-Prefix.pch"; sourceTree = "<group>"; };
-		CB6D131617EB743A00BC2C04 /* FYCrashTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FYCrashTests-Info.plist"; sourceTree = "<group>"; };
 		CB6D131817EB743A00BC2C04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CB6D132617EB749A00BC2C04 /* libKSCrashLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKSCrashLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB6D133317EB749A00BC2C04 /* KSCrashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KSCrashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB6D132617EB749A00BC2C04 /* libFYCrashLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFYCrashLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB6D133317EB749A00BC2C04 /* FYCrashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FYCrashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC43F091C5AF2B10083A11B /* None.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = None.h; sourceTree = "<group>"; };
 		CBC43F0A1C5AF2B10083A11B /* Optional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Optional.h; sourceTree = "<group>"; };
 		CBC43F0B1C5AF2B10083A11B /* StringRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringRef.h; sourceTree = "<group>"; };
@@ -613,8 +893,7 @@
 		CBF53D8E17EB765C0056DA83 /* NSError+SimpleConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+SimpleConstructor.m"; path = "../../Source/KSCrash/Recording/Tools/NSError+SimpleConstructor.m"; sourceTree = "<group>"; };
 		CBF53D8F17EB765C0056DA83 /* NSMutableData+AppendUTF8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableData+AppendUTF8.h"; path = "../../Source/KSCrash/Reporting/Tools/NSMutableData+AppendUTF8.h"; sourceTree = "<group>"; };
 		CBF53D9017EB765C0056DA83 /* NSMutableData+AppendUTF8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableData+AppendUTF8.m"; path = "../../Source/KSCrash/Reporting/Tools/NSMutableData+AppendUTF8.m"; sourceTree = "<group>"; };
-		EDF2BF211CCF15AD004BADF4 /* KSCrash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KSCrash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDF2BF281CCF1A27004BADF4 /* KSCrash_static-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KSCrash_static-Info.plist"; sourceTree = "<group>"; };
+		EDF2BF211CCF15AD004BADF4 /* FYCrash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FYCrash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -639,7 +918,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB7A6CEE17FB9E2800997792 /* libKSCrashLib.a in Frameworks */,
+				CB7A6CEE17FB9E2800997792 /* libFYCrashLib.a in Frameworks */,
 				CB0264D417FA6101003E0AED /* libz.dylib in Frameworks */,
 				CB0264D217FA60D3003E0AED /* MessageUI.framework in Frameworks */,
 				CB0264D017FA60CD003E0AED /* libc++.dylib in Frameworks */,
@@ -674,10 +953,10 @@
 		CB52178D17EB735D007CB3C1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB6D132617EB749A00BC2C04 /* libKSCrashLib.a */,
-				CB6D133317EB749A00BC2C04 /* KSCrashTests.xctest */,
-				03DE7B6A1C84DEF700F789BA /* KSCrash.framework */,
-				EDF2BF211CCF15AD004BADF4 /* KSCrash.framework */,
+				CB6D132617EB749A00BC2C04 /* libFYCrashLib.a */,
+				CB6D133317EB749A00BC2C04 /* FYCrashTests.xctest */,
+				03DE7B6A1C84DEF700F789BA /* FYCrash.framework */,
+				EDF2BF211CCF15AD004BADF4 /* FYCrash.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -715,11 +994,11 @@
 		CB6D130017EB743A00BC2C04 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EDF2BF281CCF1A27004BADF4 /* KSCrash_static-Info.plist */,
+				6F3207DC20D48CD500603EBA /* FYCrash-Info.plist */,
+				6F3207DB20D48CD500603EBA /* FYCrash-Prefix.pch */,
+				6F3207D920D48CC500603EBA /* FYCrash_static-Info.plist */,
 				CB6D130217EB743A00BC2C04 /* InfoPlist.strings */,
-				CB6D130117EB743A00BC2C04 /* KSCrash-Info.plist */,
-				CB6D130517EB743A00BC2C04 /* KSCrash-Prefix.pch */,
-				03DE7DA91C879A0200F789BA /* KSCrashFramework.h */,
+				03DE7DA91C879A0200F789BA /* FYCrashFramework.h */,
 				03DE7D0F1C84FB9E00F789BA /* module.modulemap */,
 			);
 			name = "Supporting Files";
@@ -781,9 +1060,9 @@
 		CB6D131517EB743A00BC2C04 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6F3207DE20D48D0000603EBA /* FYCrashTests-Info.plist */,
 				CB0C19C71DD143A6005B2F80 /* processed.json */,
 				CB0C19C81DD143A6005B2F80 /* raw.json */,
-				CB6D131617EB743A00BC2C04 /* FYCrashTests-Info.plist */,
 				CB6D131717EB743A00BC2C04 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -1093,18 +1372,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F3207B520D488DF00603EBA /* FYReachabilityFYCrash.h in Headers */,
 				6F3205F220D46C1E00603EBA /* FYCrashReportWriter.h in Headers */,
 				6F3205A320D45E7400603EBA /* FYMachineContext_Apple.h in Headers */,
+				6F32070120D4886D00603EBA /* FYCrashMonitor_Zombie.h in Headers */,
 				6F32059720D45E7400603EBA /* FYMachineContext.h in Headers */,
 				6F32062820D47C6100603EBA /* FYCrashReportSinkStandard.h in Headers */,
 				6F32058220D45E7400603EBA /* FYStackCursor.h in Headers */,
-				6F3205DB20D4667800603EBA /* FYCrashMonitorType.h in Headers */,
-				6F32064020D47D0500603EBA /* FYReachabilityFYCrash.h in Headers */,
 				6F3205F920D46C1E00603EBA /* FYCrashReportFields.h in Headers */,
-				6F3205DA20D4667800603EBA /* FYCrashMonitor_System.h in Headers */,
 				6F3205F720D46C1E00603EBA /* FYCrashReportStore.h in Headers */,
 				6F32058020D45E7400603EBA /* FYStackCursor_MachineContext.h in Headers */,
-				03DE7DAA1C879A0200F789BA /* KSCrashFramework.h in Headers */,
+				6F32070420D4886D00603EBA /* FYCrashMonitorContext.h in Headers */,
+				03DE7DAA1C879A0200F789BA /* FYCrashFramework.h in Headers */,
 				6F3205A820D45E7400603EBA /* FYString.h in Headers */,
 				6F32062920D47C6100603EBA /* FYCrashReportSinkVictory.h in Headers */,
 				03DE7CBB1C84DFBC00F789BA /* NSData+GZip.h in Headers */,
@@ -1114,22 +1393,18 @@
 				6F3205FE20D46C1E00603EBA /* FYCrashDoctor.h in Headers */,
 				6F3205B020D45E7400603EBA /* FYCPU.h in Headers */,
 				6F32065720D47F0900603EBA /* FYCrashInstallationStandard.h in Headers */,
-				6F3205D820D4667800603EBA /* FYCrashMonitorContext.h in Headers */,
-				6F3205D420D4667800603EBA /* FYCrashMonitor_CPPException.h in Headers */,
 				6F3205A120D45E7400603EBA /* FYThread.h in Headers */,
-				6F3205D520D4667800603EBA /* FYCrashMonitor_Zombie.h in Headers */,
+				6F3207B920D488DF00603EBA /* NSString+URLEncode.h in Headers */,
 				6F32059320D45E7400603EBA /* FYObjCApple.h in Headers */,
-				6F3205C920D4667800603EBA /* FYCrashMonitor_MachException.h in Headers */,
 				6F32061420D47B9100603EBA /* FYCrashReportFilterBasic.h in Headers */,
 				6F3205FD20D46C1E00603EBA /* FYCrashReportVersion.h in Headers */,
 				6F3205F820D46C1E00603EBA /* FYCrashReport.h in Headers */,
-				CBEE5DC31CBC197D005EAF61 /* NSString+URLEncode.h in Headers */,
-				6F3205D620D4667800603EBA /* FYCrashMonitor.h in Headers */,
 				6F32059C20D45E7400603EBA /* FYSignalInfo.h in Headers */,
 				6F3205A520D45E7400603EBA /* FYDate.h in Headers */,
 				6F32059020D45E7400603EBA /* FYDemangle_CPP.h in Headers */,
 				6F3205A920D45E7400603EBA /* FYSymbolicator.h in Headers */,
-				6F32063E20D47D0500603EBA /* FYHTTPMultipartPostBody.h in Headers */,
+				6F32070320D4886D00603EBA /* FYCrashMonitor.h in Headers */,
+				6F3206F420D4886D00603EBA /* FYCrashMonitor_Deadlock.h in Headers */,
 				6F32065020D47F0900603EBA /* FYCrashInstallationVictory.h in Headers */,
 				6F3205A220D45E7400603EBA /* FYJSONCodecObjC.h in Headers */,
 				6F3205AE20D45E7400603EBA /* FYDemangle_Swift.h in Headers */,
@@ -1142,13 +1417,9 @@
 				6F32059E20D45E7400603EBA /* FYSysCtl.h in Headers */,
 				03DE7C641C84DF9200F789BA /* StringRef.h in Headers */,
 				6F32061320D47B9100603EBA /* FYCrashReportFilterAlert.h in Headers */,
-				03DE7CC51C84DFC100F789BA /* NSMutableData+AppendUTF8.h in Headers */,
 				6F32058A20D45E7400603EBA /* FYMach.h in Headers */,
-				6F3205DC20D4667800603EBA /* FYCrashMonitor_User.h in Headers */,
-				6F3205D320D4667800603EBA /* FYCrashMonitor_Signal.h in Headers */,
 				6F32062C20D47C6100603EBA /* FYCrashReportSinkEMail.h in Headers */,
 				6F32058320D45E7400603EBA /* FYFileUtils.h in Headers */,
-				6F32063A20D47D0500603EBA /* FYCString.h in Headers */,
 				03DE7C6B1C84DFA400F789BA /* Demangle.h in Headers */,
 				03DE7C691C84DF9F00F789BA /* type_traits.h in Headers */,
 				6F32065D20D47F0900603EBA /* FYCrashInstallationEmail.h in Headers */,
@@ -1158,37 +1429,45 @@
 				6F3205F120D46C1E00603EBA /* FYSystemCapabilities.h in Headers */,
 				6F32061820D47B9100603EBA /* FYCrashReportFilterSets.h in Headers */,
 				6F32065220D47F0900603EBA /* FYCrashInstallation+Private.h in Headers */,
-				6F3205CB20D4667800603EBA /* FYCrashMonitor_AppState.h in Headers */,
 				6F3205AF20D45E7400603EBA /* FYID.h in Headers */,
 				03DE7C711C84DFA400F789BA /* Punycode.h in Headers */,
 				6F32065920D47F0900603EBA /* FYCrashInstallationQuincyHockey.h in Headers */,
+				6F3207B320D488DF00603EBA /* FYHTTPRequestSender.h in Headers */,
 				6F32065520D47F0900603EBA /* FYCrashInstallation.h in Headers */,
 				6F32065620D47F0900603EBA /* FYCrashInstallationConsole.h in Headers */,
 				6F32059F20D45E7400603EBA /* FYStackCursor_Backtrace.h in Headers */,
+				6F3207B720D488DF00603EBA /* NSMutableData+AppendUTF8.h in Headers */,
 				CB25A6071DF23D7300EC2B02 /* FYCPU_Apple.h in Headers */,
 				6F32060F20D47B9100603EBA /* FYCrashReportFilterAppleFmt.h in Headers */,
 				03DE7C9A1C84DFAB00F789BA /* NSError+SimpleConstructor.h in Headers */,
 				6F32061520D47B9100603EBA /* FYCrashReportFilterJSON.h in Headers */,
+				6F3206F720D4886D00603EBA /* FYCrashMonitor_MachException.h in Headers */,
 				6F32058820D45E7400603EBA /* FYStackCursor_SelfThread.h in Headers */,
+				6F32070620D4886D00603EBA /* FYCrashMonitorType.h in Headers */,
 				03DE7C671C84DF9F00F789BA /* Casting.h in Headers */,
 				6F3205FA20D46C1E00603EBA /* FYCrashCachedData.h in Headers */,
 				03DE7C681C84DF9F00F789BA /* Compiler.h in Headers */,
 				6F32059920D45E7400603EBA /* FYJSONCodec.h in Headers */,
+				6F3206FC20D4886D00603EBA /* FYCrashMonitor_System.h in Headers */,
 				6F32061720D47B9100603EBA /* FYCrashReportFilter.h in Headers */,
+				6F3206FB20D4886D00603EBA /* FYCrashMonitor_Signal.h in Headers */,
 				03DE7C721C84DFA400F789BA /* SwiftStrings.h in Headers */,
 				03DE7C6F1C84DFA400F789BA /* Malloc.h in Headers */,
 				6F32062E20D47C6100603EBA /* FYCrashReportSinkQuincyHockey.h in Headers */,
-				6F32063F20D47D0500603EBA /* FYHTTPRequestSender.h in Headers */,
+				6F3206F320D4886D00603EBA /* FYCrashMonitor_CPPException.h in Headers */,
+				6F3206F120D4886D00603EBA /* FYCrashMonitor_AppState.h in Headers */,
 				03DE7C631C84DF9200F789BA /* Optional.h in Headers */,
 				6F32060E20D47B9100603EBA /* FYCrashReportFilterGZip.h in Headers */,
+				6F3207AF20D488DF00603EBA /* FYCString.h in Headers */,
+				6F3206FF20D4886D00603EBA /* FYCrashMonitor_User.h in Headers */,
 				03DE7C6E1C84DFA400F789BA /* LLVM.h in Headers */,
 				6F3205A020D45E7400603EBA /* FYDebug.h in Headers */,
 				03DE7C6D1C84DFA400F789BA /* Fallthrough.h in Headers */,
-				6F3205D020D4667800603EBA /* FYCrashMonitor_Deadlock.h in Headers */,
+				6F3206F820D4886D00603EBA /* FYCrashMonitor_NSException.h in Headers */,
 				6F3205E120D46C0900603EBA /* FYCrashC.h in Headers */,
 				03DE7C621C84DF9200F789BA /* None.h in Headers */,
 				6F32057E20D45E7400603EBA /* FYObjC.h in Headers */,
-				6F3205CA20D4667800603EBA /* FYCrashMonitor_NSException.h in Headers */,
+				6F3207B120D488DF00603EBA /* FYHTTPMultipartPostBody.h in Headers */,
 				03DE7CB81C84DFBC00F789BA /* Container+DeepSearch.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1197,29 +1476,102 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F3207BD20D488E600603EBA /* FYCrashInstallation+Alert.h in Headers */,
+				6F32071720D4889400603EBA /* FYID.h in Headers */,
+				6F32078D20D488D500603EBA /* FYCrashReportSinkEMail.h in Headers */,
+				6F3206AD20D4886500603EBA /* FYCrashReportVersion.h in Headers */,
+				6F3206D820D4886C00603EBA /* FYCrashMonitorType.h in Headers */,
 				CBF53E9917EB7EA80056DA83 /* FYCrash.h in Headers */,
+				6F32073120D4889400603EBA /* FYStackCursor.h in Headers */,
+				6F32077A20D488C600603EBA /* FYCrashReportFilterStringify.h in Headers */,
 				CBC43F2B1C5AF2B10083A11B /* Compiler.h in Headers */,
 				CBC43F341C5AF2B10083A11B /* Fallthrough.h in Headers */,
+				6F3206A420D4886500603EBA /* FYCrashDoctor.h in Headers */,
+				6F3206C520D4886C00603EBA /* FYCrashMonitor_CPPException.h in Headers */,
 				CB42F4551C6D180F002FD017 /* DemangleNodes.h in Headers */,
+				6F3206C320D4886C00603EBA /* FYCrashMonitor_AppState.h in Headers */,
+				6F32072F20D4889400603EBA /* FYStackCursor_SelfThread.h in Headers */,
+				6F3206D320D4886C00603EBA /* FYCrashMonitor_Zombie.h in Headers */,
 				CBEE5DC21CBC197D005EAF61 /* NSString+URLEncode.h in Headers */,
+				6F3206CE20D4886C00603EBA /* FYCrashMonitor_System.h in Headers */,
+				6F3206AE20D4886500603EBA /* FYCrashReportWriter.h in Headers */,
+				6F32077020D488C600603EBA /* FYCrashReportFilterAppleFmt.h in Headers */,
+				6F32071920D4889400603EBA /* FYJSONCodec.h in Headers */,
 				CBC43F251C5AF2B10083A11B /* llvm-config.h in Headers */,
+				6F32073320D4889400603EBA /* FYString.h in Headers */,
 				CBC43F361C5AF2B10083A11B /* LLVM.h in Headers */,
+				6F32077620D488C600603EBA /* FYCrashReportFilterJSON.h in Headers */,
+				6F32071F20D4889400603EBA /* FYMach.h in Headers */,
+				6F3206AA20D4886500603EBA /* FYCrashReportFixer.h in Headers */,
+				6F32071A20D4889400603EBA /* FYJSONCodecObjC.h in Headers */,
 				CBF53E9117EB7EA80056DA83 /* NSError+SimpleConstructor.h in Headers */,
 				CBF53E9217EB7EA80056DA83 /* NSMutableData+AppendUTF8.h in Headers */,
+				6F32072020D4889400603EBA /* FYMachineContext_Apple.h in Headers */,
+				6F3207C220D488E600603EBA /* FYCrashInstallationEmail.h in Headers */,
+				6F3207A320D488DE00603EBA /* FYHTTPRequestSender.h in Headers */,
 				CB25A6061DF23D7300EC2B02 /* FYCPU_Apple.h in Headers */,
+				6F32072420D4889400603EBA /* FYMemory.h in Headers */,
+				6F32079F20D488DE00603EBA /* FYCString.h in Headers */,
+				6F3207C820D488E600603EBA /* FYCrashInstallationVictory.h in Headers */,
+				6F32072D20D4889400603EBA /* FYStackCursor_MachineContext.h in Headers */,
+				6F32072920D4889400603EBA /* FYSignalInfo.h in Headers */,
 				CBC43F291C5AF2B10083A11B /* Casting.h in Headers */,
+				6F32073920D4889400603EBA /* FYThread.h in Headers */,
 				CBC43F3E1C5AF2B10083A11B /* SwiftStrings.h in Headers */,
 				CBC43F231C5AF2B10083A11B /* StringRef.h in Headers */,
+				6F3206B120D4886500603EBA /* FYCrashC.h in Headers */,
 				CBC43F1F1C5AF2B10083A11B /* None.h in Headers */,
+				6F32071120D4889400603EBA /* FYDemangle_Swift.h in Headers */,
+				6F32079120D488D500603EBA /* FYCrashReportSinkStandard.h in Headers */,
+				6F32070920D4889400603EBA /* FYCPU.h in Headers */,
+				6F32072B20D4889400603EBA /* FYStackCursor_Backtrace.h in Headers */,
 				CBC43F211C5AF2B10083A11B /* Optional.h in Headers */,
+				6F3206D120D4886C00603EBA /* FYCrashMonitor_User.h in Headers */,
+				6F32071D20D4889400603EBA /* FYLogger.h in Headers */,
+				6F32077420D488C600603EBA /* FYCrashReportFilterGZip.h in Headers */,
 				CBF53E8F17EB7EA80056DA83 /* NSData+GZip.h in Headers */,
+				6F32077820D488C600603EBA /* FYCrashReportFilterSets.h in Headers */,
+				6F3206A820D4886500603EBA /* FYCrashReportFields.h in Headers */,
+				6F3206A720D4886500603EBA /* FYCrashReport.h in Headers */,
 				CBC43F2D1C5AF2B10083A11B /* type_traits.h in Headers */,
+				6F32078F20D488D500603EBA /* FYCrashReportSinkQuincyHockey.h in Headers */,
 				CBF53E8E17EB7EA80056DA83 /* FYVarArgs.h in Headers */,
+				6F32078B20D488D500603EBA /* FYCrashReportSinkConsole.h in Headers */,
+				6F32073520D4889400603EBA /* FYSymbolicator.h in Headers */,
+				6F3206C920D4886C00603EBA /* FYCrashMonitor_MachException.h in Headers */,
+				6F3207BF20D488E600603EBA /* FYCrashInstallation+Private.h in Headers */,
+				6F3206D520D4886C00603EBA /* FYCrashMonitor.h in Headers */,
+				6F3207A520D488DE00603EBA /* FYReachabilityFYCrash.h in Headers */,
+				6F3207A120D488DE00603EBA /* FYHTTPMultipartPostBody.h in Headers */,
+				6F32073720D4889400603EBA /* FYSysCtl.h in Headers */,
+				6F32071520D4889400603EBA /* FYFileUtils.h in Headers */,
 				CBC43F3C1C5AF2B10083A11B /* Punycode.h in Headers */,
+				6F32076D20D488C600603EBA /* FYCrashReportFilter.h in Headers */,
+				6F32072720D4889400603EBA /* FYObjCApple.h in Headers */,
+				6F3206A320D4886500603EBA /* FYCrashCachedData.h in Headers */,
+				6F3206AF20D4886500603EBA /* FYSystemCapabilities.h in Headers */,
+				6F3207C420D488E600603EBA /* FYCrashInstallationQuincyHockey.h in Headers */,
+				6F32070D20D4889400603EBA /* FYDebug.h in Headers */,
+				6F32076E20D488C600603EBA /* FYCrashReportFilterAlert.h in Headers */,
+				6F3207C620D488E600603EBA /* FYCrashInstallationStandard.h in Headers */,
 				CBC43F271C5AF2B10083A11B /* AlignOf.h in Headers */,
+				6F3207C020D488E600603EBA /* FYCrashInstallationConsole.h in Headers */,
+				6F3207BB20D488E600603EBA /* FYCrashInstallation.h in Headers */,
 				CBF53E8717EB7EA80056DA83 /* Container+DeepSearch.h in Headers */,
+				6F32070B20D4889400603EBA /* FYDate.h in Headers */,
+				6F32070F20D4889400603EBA /* FYDemangle_CPP.h in Headers */,
+				6F3206AC20D4886500603EBA /* FYCrashReportStore.h in Headers */,
+				6F3206C620D4886C00603EBA /* FYCrashMonitor_Deadlock.h in Headers */,
+				6F3206CD20D4886C00603EBA /* FYCrashMonitor_Signal.h in Headers */,
+				6F32071320D4889400603EBA /* FYDynamicLinker.h in Headers */,
+				6F3206CA20D4886C00603EBA /* FYCrashMonitor_NSException.h in Headers */,
+				6F32077220D488C600603EBA /* FYCrashReportFilterBasic.h in Headers */,
 				CBC43F311C5AF2B10083A11B /* Demangle.h in Headers */,
+				6F3206D620D4886C00603EBA /* FYCrashMonitorContext.h in Headers */,
+				6F32072220D4889400603EBA /* FYMachineContext.h in Headers */,
+				6F32079320D488D500603EBA /* FYCrashReportSinkVictory.h in Headers */,
 				CBC43F381C5AF2B10083A11B /* Malloc.h in Headers */,
+				6F32072620D4889400603EBA /* FYObjC.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1227,39 +1579,112 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF2BEC11CCF15AD004BADF4 /* KSCrashFramework.h in Headers */,
+				6F32077C20D488C700603EBA /* FYCrashReportFilter.h in Headers */,
+				EDF2BEC11CCF15AD004BADF4 /* FYCrashFramework.h in Headers */,
 				EDF2BEC21CCF15AD004BADF4 /* FYCrash.h in Headers */,
 				EDF2BED51CCF15AD004BADF4 /* NSString+URLEncode.h in Headers */,
+				6F32075A20D4889500603EBA /* FYObjCApple.h in Headers */,
+				6F32078920D488C700603EBA /* FYCrashReportFilterStringify.h in Headers */,
+				6F3207A720D488DF00603EBA /* FYCString.h in Headers */,
+				6F3206BC20D4886600603EBA /* FYCrashReportStore.h in Headers */,
 				EDF2BEE31CCF15AD004BADF4 /* llvm-config.h in Headers */,
+				6F3206DD20D4886D00603EBA /* FYCrashMonitor_Deadlock.h in Headers */,
+				6F3206EA20D4886D00603EBA /* FYCrashMonitor_Zombie.h in Headers */,
+				6F32075720D4889500603EBA /* FYMemory.h in Headers */,
 				EDF2BEE51CCF15AD004BADF4 /* FYVarArgs.h in Headers */,
+				6F3206E020D4886D00603EBA /* FYCrashMonitor_MachException.h in Headers */,
 				EDF2BEEB1CCF15AD004BADF4 /* AlignOf.h in Headers */,
+				6F3207CA20D488E700603EBA /* FYCrashInstallation.h in Headers */,
+				6F32073C20D4889500603EBA /* FYCPU.h in Headers */,
+				6F3207A920D488DF00603EBA /* FYHTTPMultipartPostBody.h in Headers */,
+				6F3206EC20D4886D00603EBA /* FYCrashMonitor.h in Headers */,
+				6F32077F20D488C700603EBA /* FYCrashReportFilterAppleFmt.h in Headers */,
 				EDF2BEEC1CCF15AD004BADF4 /* NSData+GZip.h in Headers */,
+				6F32076820D4889600603EBA /* FYSymbolicator.h in Headers */,
+				6F32079B20D488D600603EBA /* FYCrashReportSinkStandard.h in Headers */,
+				6F32076A20D4889600603EBA /* FYSysCtl.h in Headers */,
 				EDF2BEEE1CCF15AD004BADF4 /* StringRef.h in Headers */,
+				6F32078120D488C700603EBA /* FYCrashReportFilterBasic.h in Headers */,
+				6F32078320D488C700603EBA /* FYCrashReportFilterGZip.h in Headers */,
+				6F32079720D488D600603EBA /* FYCrashReportSinkEMail.h in Headers */,
+				6F3206ED20D4886D00603EBA /* FYCrashMonitorContext.h in Headers */,
+				6F3206B420D4886600603EBA /* FYCrashDoctor.h in Headers */,
+				6F3206DA20D4886D00603EBA /* FYCrashMonitor_AppState.h in Headers */,
 				EDF2BEEF1CCF15AD004BADF4 /* NSMutableData+AppendUTF8.h in Headers */,
+				6F32079920D488D600603EBA /* FYCrashReportSinkQuincyHockey.h in Headers */,
+				6F32076020D4889600603EBA /* FYStackCursor_MachineContext.h in Headers */,
+				6F32074A20D4889500603EBA /* FYID.h in Headers */,
 				EDF2BEF31CCF15AD004BADF4 /* Demangle.h in Headers */,
+				6F32074D20D4889500603EBA /* FYJSONCodecObjC.h in Headers */,
+				6F3206B720D4886600603EBA /* FYCrashReport.h in Headers */,
+				6F3207D520D488E700603EBA /* FYCrashInstallationStandard.h in Headers */,
+				6F32078520D488C700603EBA /* FYCrashReportFilterJSON.h in Headers */,
+				6F32079520D488D600603EBA /* FYCrashReportSinkConsole.h in Headers */,
 				EDF2BEF51CCF15AD004BADF4 /* type_traits.h in Headers */,
+				6F32074C20D4889500603EBA /* FYJSONCodec.h in Headers */,
 				EDF2BEF81CCF15AD004BADF4 /* DemangleNodes.h in Headers */,
+				6F3206DC20D4886D00603EBA /* FYCrashMonitor_CPPException.h in Headers */,
+				6F3206EF20D4886D00603EBA /* FYCrashMonitorType.h in Headers */,
+				6F3206BD20D4886600603EBA /* FYCrashReportVersion.h in Headers */,
+				6F32075220D4889500603EBA /* FYMach.h in Headers */,
+				6F3206B820D4886600603EBA /* FYCrashReportFields.h in Headers */,
 				EDF2BEFD1CCF15AD004BADF4 /* Punycode.h in Headers */,
+				6F3206B320D4886600603EBA /* FYCrashCachedData.h in Headers */,
+				6F3207CC20D488E700603EBA /* FYCrashInstallation+Alert.h in Headers */,
 				EDF2BEFE1CCF15AD004BADF4 /* NSError+SimpleConstructor.h in Headers */,
+				6F3206BE20D4886600603EBA /* FYCrashReportWriter.h in Headers */,
 				CB25A6081DF23D7300EC2B02 /* FYCPU_Apple.h in Headers */,
+				6F3206E420D4886D00603EBA /* FYCrashMonitor_Signal.h in Headers */,
+				6F3206E820D4886D00603EBA /* FYCrashMonitor_User.h in Headers */,
+				6F32075520D4889500603EBA /* FYMachineContext.h in Headers */,
+				6F32074020D4889500603EBA /* FYDebug.h in Headers */,
 				EDF2BF001CCF15AD004BADF4 /* Casting.h in Headers */,
+				6F32077D20D488C700603EBA /* FYCrashReportFilterAlert.h in Headers */,
+				6F32075020D4889500603EBA /* FYLogger.h in Headers */,
+				6F32076420D4889600603EBA /* FYStackCursor.h in Headers */,
 				EDF2BF011CCF15AD004BADF4 /* Compiler.h in Headers */,
 				EDF2BF041CCF15AD004BADF4 /* SwiftStrings.h in Headers */,
+				6F3207D720D488E700603EBA /* FYCrashInstallationVictory.h in Headers */,
+				6F32078720D488C700603EBA /* FYCrashReportFilterSets.h in Headers */,
+				6F32076220D4889600603EBA /* FYStackCursor_SelfThread.h in Headers */,
+				6F3207D320D488E700603EBA /* FYCrashInstallationQuincyHockey.h in Headers */,
+				6F3207CF20D488E700603EBA /* FYCrashInstallationConsole.h in Headers */,
+				6F32075C20D4889500603EBA /* FYSignalInfo.h in Headers */,
+				6F3207AD20D488DF00603EBA /* FYReachabilityFYCrash.h in Headers */,
+				6F32075320D4889500603EBA /* FYMachineContext_Apple.h in Headers */,
 				EDF2BF051CCF15AD004BADF4 /* Malloc.h in Headers */,
 				EDF2BF081CCF15AD004BADF4 /* Optional.h in Headers */,
+				6F3207CE20D488E700603EBA /* FYCrashInstallation+Private.h in Headers */,
+				6F3206E120D4886D00603EBA /* FYCrashMonitor_NSException.h in Headers */,
+				6F32076C20D4889600603EBA /* FYThread.h in Headers */,
+				6F32074620D4889500603EBA /* FYDynamicLinker.h in Headers */,
+				6F32079D20D488D600603EBA /* FYCrashReportSinkVictory.h in Headers */,
+				6F3206E520D4886D00603EBA /* FYCrashMonitor_System.h in Headers */,
+				6F32074820D4889500603EBA /* FYFileUtils.h in Headers */,
 				EDF2BF101CCF15AD004BADF4 /* LLVM.h in Headers */,
+				6F32074420D4889500603EBA /* FYDemangle_Swift.h in Headers */,
+				6F3207AB20D488DF00603EBA /* FYHTTPRequestSender.h in Headers */,
+				6F3206BA20D4886600603EBA /* FYCrashReportFixer.h in Headers */,
+				6F3206C120D4886600603EBA /* FYCrashC.h in Headers */,
+				6F32075E20D4889600603EBA /* FYStackCursor_Backtrace.h in Headers */,
+				6F32074220D4889500603EBA /* FYDemangle_CPP.h in Headers */,
+				6F3207D120D488E700603EBA /* FYCrashInstallationEmail.h in Headers */,
+				6F32073E20D4889500603EBA /* FYDate.h in Headers */,
 				EDF2BF131CCF15AD004BADF4 /* Fallthrough.h in Headers */,
+				6F32076620D4889600603EBA /* FYString.h in Headers */,
 				EDF2BF141CCF15AD004BADF4 /* None.h in Headers */,
+				6F32075920D4889500603EBA /* FYObjC.h in Headers */,
 				EDF2BF171CCF15AD004BADF4 /* Container+DeepSearch.h in Headers */,
+				6F3206BF20D4886600603EBA /* FYSystemCapabilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		03DE7B691C84DEF700F789BA /* KSCrash */ = {
+		03DE7B691C84DEF700F789BA /* FYCrash */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03DE7B711C84DEF800F789BA /* Build configuration list for PBXNativeTarget "KSCrash" */;
+			buildConfigurationList = 03DE7B711C84DEF800F789BA /* Build configuration list for PBXNativeTarget "FYCrash" */;
 			buildPhases = (
 				03DE7B651C84DEF700F789BA /* Sources */,
 				03DE7B661C84DEF700F789BA /* Frameworks */,
@@ -1270,14 +1695,14 @@
 			);
 			dependencies = (
 			);
-			name = KSCrash;
+			name = FYCrash;
 			productName = KSCrashFramework;
-			productReference = 03DE7B6A1C84DEF700F789BA /* KSCrash.framework */;
+			productReference = 03DE7B6A1C84DEF700F789BA /* FYCrash.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CB6D132517EB749A00BC2C04 /* KSCrashLib */ = {
+		CB6D132517EB749A00BC2C04 /* FYCrashLib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB6D134217EB749A00BC2C04 /* Build configuration list for PBXNativeTarget "KSCrashLib" */;
+			buildConfigurationList = CB6D134217EB749A00BC2C04 /* Build configuration list for PBXNativeTarget "FYCrashLib" */;
 			buildPhases = (
 				CB6D132317EB749A00BC2C04 /* Frameworks */,
 				CBF53E5517EB7E470056DA83 /* Headers */,
@@ -1288,14 +1713,14 @@
 			);
 			dependencies = (
 			);
-			name = KSCrashLib;
+			name = FYCrashLib;
 			productName = KSCrashLib;
-			productReference = CB6D132617EB749A00BC2C04 /* libKSCrashLib.a */;
+			productReference = CB6D132617EB749A00BC2C04 /* libFYCrashLib.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		CB6D133217EB749A00BC2C04 /* KSCrashTests */ = {
+		CB6D133217EB749A00BC2C04 /* FYCrashTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB6D134517EB749A00BC2C04 /* Build configuration list for PBXNativeTarget "KSCrashTests" */;
+			buildConfigurationList = CB6D134517EB749A00BC2C04 /* Build configuration list for PBXNativeTarget "FYCrashTests" */;
 			buildPhases = (
 				CB6D132F17EB749A00BC2C04 /* Sources */,
 				CB6D133017EB749A00BC2C04 /* Frameworks */,
@@ -1306,14 +1731,14 @@
 			dependencies = (
 				CB6D133817EB749A00BC2C04 /* PBXTargetDependency */,
 			);
-			name = KSCrashTests;
+			name = FYCrashTests;
 			productName = KSCrashLibTests;
-			productReference = CB6D133317EB749A00BC2C04 /* KSCrashTests.xctest */;
+			productReference = CB6D133317EB749A00BC2C04 /* FYCrashTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EDF2BE781CCF15AD004BADF4 /* KSCrash_static */ = {
+		EDF2BE781CCF15AD004BADF4 /* FYCrash_static */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDF2BF1E1CCF15AD004BADF4 /* Build configuration list for PBXNativeTarget "KSCrash_static" */;
+			buildConfigurationList = EDF2BF1E1CCF15AD004BADF4 /* Build configuration list for PBXNativeTarget "FYCrash_static" */;
 			buildPhases = (
 				EDF2BE791CCF15AD004BADF4 /* Sources */,
 				EDF2BEBD1CCF15AD004BADF4 /* Frameworks */,
@@ -1324,9 +1749,9 @@
 			);
 			dependencies = (
 			);
-			name = KSCrash_static;
+			name = FYCrash_static;
 			productName = KSCrashFramework;
-			productReference = EDF2BF211CCF15AD004BADF4 /* KSCrash.framework */;
+			productReference = EDF2BF211CCF15AD004BADF4 /* FYCrash.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1359,10 +1784,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB6D132517EB749A00BC2C04 /* KSCrashLib */,
-				CB6D133217EB749A00BC2C04 /* KSCrashTests */,
-				03DE7B691C84DEF700F789BA /* KSCrash */,
-				EDF2BE781CCF15AD004BADF4 /* KSCrash_static */,
+				CB6D132517EB749A00BC2C04 /* FYCrashLib */,
+				CB6D133217EB749A00BC2C04 /* FYCrashTests */,
+				03DE7B691C84DEF700F789BA /* FYCrash */,
+				EDF2BE781CCF15AD004BADF4 /* FYCrash_static */,
 			);
 		};
 /* End PBXProject section */
@@ -1380,7 +1805,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0C19C91DD143A6005B2F80 /* processed.json in Resources */,
+				6F3207DF20D48D0000603EBA /* FYCrashTests-Info.plist in Resources */,
+				6F3207DA20D48CC500603EBA /* FYCrash_static-Info.plist in Resources */,
 				6F32069020D4840300603EBA /* FYCrashTests-Info.plist in Resources */,
+				6F3207DD20D48CD500603EBA /* FYCrash-Info.plist in Resources */,
 				CB0C19CA1DD143A6005B2F80 /* raw.json in Resources */,
 				CB6D134917EB758A00BC2C04 /* InfoPlist.strings in Resources */,
 			);
@@ -1400,41 +1828,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F3206F920D4886D00603EBA /* FYCrashMonitor_NSException.m in Sources */,
 				6F32059120D45E7400603EBA /* FYDemangle_Swift.cpp in Sources */,
 				03DE7C6A1C84DFA400F789BA /* Demangle.cpp in Sources */,
+				6F32070520D4886D00603EBA /* FYCrashMonitorType.c in Sources */,
 				6F32058E20D45E7400603EBA /* FYStackCursor.c in Sources */,
-				6F3205CD20D4667800603EBA /* FYCrashMonitor_CPPException.cpp in Sources */,
 				6F32065320D47F0900603EBA /* FYCrashInstallationEmail.m in Sources */,
-				6F3205D920D4667800603EBA /* FYCrashMonitor_Signal.c in Sources */,
 				03DE7C9B1C84DFAB00F789BA /* NSError+SimpleConstructor.m in Sources */,
 				6F32065820D47F0900603EBA /* FYCrashInstallationConsole.m in Sources */,
+				6F3207B020D488DF00603EBA /* FYCString.m in Sources */,
 				6F32062D20D47C6100603EBA /* FYCrashReportSinkVictory.m in Sources */,
 				6F32058520D45E7400603EBA /* FYStackCursor_MachineContext.c in Sources */,
 				6F32062B20D47C6100603EBA /* FYCrashReportSinkEMail.m in Sources */,
 				6F32061620D47B9100603EBA /* FYCrashReportFilterJSON.m in Sources */,
 				6F32061220D47B9100603EBA /* FYCrashReportFilterSets.m in Sources */,
 				6F32065120D47F0900603EBA /* FYCrashInstallationStandard.m in Sources */,
-				6F32063920D47D0500603EBA /* FYReachabilityFYCrash.m in Sources */,
 				6F32065B20D47F0900603EBA /* FYCrashInstallation+Alert.m in Sources */,
+				6F3206FE20D4886D00603EBA /* FYCrashMonitor_User.c in Sources */,
 				03DE7C851C84DFAB00F789BA /* FYCPU_arm.c in Sources */,
 				6F32062F20D47C6100603EBA /* FYCrashReportSinkQuincyHockey.m in Sources */,
 				03DE7C701C84DFA400F789BA /* Punycode.cpp in Sources */,
-				6F32063B20D47D0500603EBA /* FYHTTPRequestSender.m in Sources */,
+				6F32070020D4886D00603EBA /* FYCrashMonitor_Zombie.c in Sources */,
 				6F32059220D45E7400603EBA /* FYThread.c in Sources */,
 				6F32058D20D45E7400603EBA /* FYObjC.c in Sources */,
 				6F3205AC20D45E7400603EBA /* FYMach.c in Sources */,
 				6F3205F320D46C1E00603EBA /* FYCrashReport.c in Sources */,
 				6F3205AA20D45E7400603EBA /* FYSignalInfo.c in Sources */,
+				6F3206F620D4886D00603EBA /* FYCrashMonitor_MachException.c in Sources */,
 				6F3205FC20D46C1E00603EBA /* FYCrashReportStore.c in Sources */,
 				6F32057F20D45E7400603EBA /* FYMachineContext.c in Sources */,
-				6F3205DD20D4667800603EBA /* FYCrashMonitor_MachException.c in Sources */,
-				6F3205D720D4667800603EBA /* FYCrashMonitorType.c in Sources */,
 				03DE7CD31C84DFD000F789BA /* FYCrash.m in Sources */,
+				6F32070220D4886D00603EBA /* FYCrashMonitor.c in Sources */,
 				6F3205AB20D45E7400603EBA /* FYDebug.c in Sources */,
 				6F32059620D45E7400603EBA /* FYStackCursor_SelfThread.c in Sources */,
+				6F3206FD20D4886D00603EBA /* FYCrashMonitor_System.m in Sources */,
 				6F3205A620D45E7400603EBA /* FYFileUtils.c in Sources */,
 				6F32058920D45E7400603EBA /* FYStackCursor_Backtrace.c in Sources */,
-				CBEE5DC51CBC197D005EAF61 /* NSString+URLEncode.m in Sources */,
 				6F3205A420D45E7400603EBA /* FYMemory.c in Sources */,
 				03DE7C861C84DFAB00F789BA /* FYCPU_arm64.c in Sources */,
 				6F32058720D45E7400603EBA /* FYDate.c in Sources */,
@@ -1442,32 +1871,31 @@
 				6F32063020D47C6100603EBA /* FYCrashReportSinkStandard.m in Sources */,
 				6F3205AD20D45E7400603EBA /* FYDemangle_CPP.cpp in Sources */,
 				6F32065C20D47F0900603EBA /* FYCrashInstallationVictory.m in Sources */,
-				6F3205CE20D4667800603EBA /* FYCrashMonitor_System.m in Sources */,
+				6F3207B820D488DF00603EBA /* NSMutableData+AppendUTF8.m in Sources */,
+				6F3206F520D4886D00603EBA /* FYCrashMonitor_Deadlock.m in Sources */,
 				6F32059420D45E7400603EBA /* FYLogger.c in Sources */,
 				6F32065A20D47F0900603EBA /* FYCrashInstallationQuincyHockey.m in Sources */,
 				6F3205FB20D46C1E00603EBA /* FYCrashCachedData.c in Sources */,
 				6F32065420D47F0900603EBA /* FYCrashInstallation.m in Sources */,
 				6F32059B20D45E7400603EBA /* FYSymbolicator.c in Sources */,
+				6F3207B220D488DF00603EBA /* FYHTTPMultipartPostBody.m in Sources */,
 				6F32058B20D45E7400603EBA /* FYCPU_x86_64.c in Sources */,
 				6F32061C20D47B9100603EBA /* FYCrashReportFilterAlert.m in Sources */,
 				6F3205F420D46C1E00603EBA /* FYCrashDoctor.m in Sources */,
+				6F3206F220D4886D00603EBA /* FYCrashMonitor_CPPException.cpp in Sources */,
 				6F32058420D45E7400603EBA /* FYJSONCodecObjC.m in Sources */,
 				03DE7CBC1C84DFBC00F789BA /* NSData+GZip.m in Sources */,
 				6F32062720D47C6100603EBA /* FYCrashReportSinkConsole.m in Sources */,
-				6F32063D20D47D0500603EBA /* FYHTTPMultipartPostBody.m in Sources */,
+				6F3206FA20D4886D00603EBA /* FYCrashMonitor_Signal.c in Sources */,
+				6F3207B620D488DF00603EBA /* FYReachabilityFYCrash.m in Sources */,
+				6F3207B420D488DF00603EBA /* FYHTTPRequestSender.m in Sources */,
 				6F3205E220D46C0900603EBA /* FYCrashC.c in Sources */,
 				6F3205F520D46C1E00603EBA /* FYCrashReportFixer.c in Sources */,
-				6F3205D220D4667800603EBA /* FYCrashMonitor_Zombie.c in Sources */,
-				6F3205DE20D4667800603EBA /* FYCrashMonitor.c in Sources */,
 				6F32059D20D45E7400603EBA /* FYDynamicLinker.c in Sources */,
-				6F3205C820D4667800603EBA /* FYCrashMonitor_AppState.c in Sources */,
-				6F3205D120D4667800603EBA /* FYCrashMonitor_User.c in Sources */,
-				6F3205CC20D4667800603EBA /* FYCrashMonitor_NSException.m in Sources */,
-				6F32063C20D47D0500603EBA /* FYCString.m in Sources */,
-				03DE7CC61C84DFC100F789BA /* NSMutableData+AppendUTF8.m in Sources */,
+				6F3206F020D4886D00603EBA /* FYCrashMonitor_AppState.c in Sources */,
 				6F32058620D45E7400603EBA /* FYCPU_x86_32.c in Sources */,
-				6F3205CF20D4667800603EBA /* FYCrashMonitor_Deadlock.m in Sources */,
 				6F32058120D45E7400603EBA /* FYID.c in Sources */,
+				6F3207BA20D488DF00603EBA /* NSString+URLEncode.m in Sources */,
 				6F32061120D47B9100603EBA /* FYCrashReportFilterGZip.m in Sources */,
 				03DE7CB91C84DFBC00F789BA /* Container+DeepSearch.m in Sources */,
 				6F32061920D47B9100603EBA /* FYCrashReportFilterAppleFmt.m in Sources */,
@@ -1483,17 +1911,82 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F3207BC20D488E600603EBA /* FYCrashInstallation.m in Sources */,
+				6F32070C20D4889400603EBA /* FYDebug.c in Sources */,
 				CB02648017F7CEC5003E0AED /* FYCPU_arm64.c in Sources */,
+				6F3206A520D4886500603EBA /* FYCrashDoctor.m in Sources */,
+				6F3207A220D488DE00603EBA /* FYHTTPMultipartPostBody.m in Sources */,
+				6F3206CC20D4886C00603EBA /* FYCrashMonitor_Signal.c in Sources */,
+				6F32077520D488C600603EBA /* FYCrashReportFilterGZip.m in Sources */,
+				6F3206C820D4886C00603EBA /* FYCrashMonitor_MachException.c in Sources */,
+				6F32077720D488C600603EBA /* FYCrashReportFilterJSON.m in Sources */,
+				6F3207A620D488DE00603EBA /* FYReachabilityFYCrash.m in Sources */,
+				6F32073020D4889400603EBA /* FYStackCursor.c in Sources */,
+				6F32079220D488D500603EBA /* FYCrashReportSinkStandard.m in Sources */,
+				6F32071620D4889400603EBA /* FYID.c in Sources */,
+				6F32076F20D488C600603EBA /* FYCrashReportFilterAlert.m in Sources */,
+				6F3207A020D488DE00603EBA /* FYCString.m in Sources */,
+				6F3207A420D488DE00603EBA /* FYHTTPRequestSender.m in Sources */,
+				6F32077B20D488C600603EBA /* FYCrashReportFilterStringify.m in Sources */,
 				CBC43F2F1C5AF2B10083A11B /* Demangle.cpp in Sources */,
 				CBEE5DC41CBC197D005EAF61 /* NSString+URLEncode.m in Sources */,
+				6F3206CF20D4886C00603EBA /* FYCrashMonitor_System.m in Sources */,
+				6F32072820D4889400603EBA /* FYSignalInfo.c in Sources */,
+				6F3206B020D4886500603EBA /* FYCrashC.c in Sources */,
+				6F3206A620D4886500603EBA /* FYCrashReport.c in Sources */,
 				CBF53E1A17EB765C0056DA83 /* FYCPU_arm.c in Sources */,
+				6F32070720D4889400603EBA /* FYCPU_x86_32.c in Sources */,
 				CBF53E4117EB765C0056DA83 /* NSData+GZip.m in Sources */,
+				6F32072E20D4889400603EBA /* FYStackCursor_SelfThread.c in Sources */,
+				6F3207BE20D488E600603EBA /* FYCrashInstallation+Alert.m in Sources */,
+				6F32078C20D488D500603EBA /* FYCrashReportSinkConsole.m in Sources */,
+				6F32071020D4889400603EBA /* FYDemangle_Swift.cpp in Sources */,
+				6F32072320D4889400603EBA /* FYMemory.c in Sources */,
+				6F32077120D488C600603EBA /* FYCrashReportFilterAppleFmt.m in Sources */,
+				6F3206D720D4886C00603EBA /* FYCrashMonitorType.c in Sources */,
+				6F32072A20D4889400603EBA /* FYStackCursor_Backtrace.c in Sources */,
+				6F32073420D4889400603EBA /* FYSymbolicator.c in Sources */,
 				CBC43F3A1C5AF2B10083A11B /* Punycode.cpp in Sources */,
+				6F32072520D4889400603EBA /* FYObjC.c in Sources */,
+				6F3206D420D4886C00603EBA /* FYCrashMonitor.c in Sources */,
+				6F3206CB20D4886C00603EBA /* FYCrashMonitor_NSException.m in Sources */,
+				6F3206D020D4886C00603EBA /* FYCrashMonitor_User.c in Sources */,
 				CBF53E4A17EB765C0056DA83 /* NSMutableData+AppendUTF8.m in Sources */,
+				6F3207C920D488E600603EBA /* FYCrashInstallationVictory.m in Sources */,
+				6F3207C720D488E600603EBA /* FYCrashInstallationStandard.m in Sources */,
+				6F32071220D4889400603EBA /* FYDynamicLinker.c in Sources */,
+				6F3207C520D488E600603EBA /* FYCrashInstallationQuincyHockey.m in Sources */,
+				6F3206D220D4886C00603EBA /* FYCrashMonitor_Zombie.c in Sources */,
+				6F32078E20D488D500603EBA /* FYCrashReportSinkEMail.m in Sources */,
+				6F3206C720D4886C00603EBA /* FYCrashMonitor_Deadlock.m in Sources */,
+				6F32079020D488D500603EBA /* FYCrashReportSinkQuincyHockey.m in Sources */,
+				6F32070820D4889400603EBA /* FYCPU_x86_64.c in Sources */,
+				6F32073620D4889400603EBA /* FYSysCtl.c in Sources */,
 				CBF53E4717EB765C0056DA83 /* NSError+SimpleConstructor.m in Sources */,
+				6F3206C220D4886C00603EBA /* FYCrashMonitor_AppState.c in Sources */,
+				6F32077920D488C600603EBA /* FYCrashReportFilterSets.m in Sources */,
+				6F3206C420D4886C00603EBA /* FYCrashMonitor_CPPException.cpp in Sources */,
+				6F3207C120D488E600603EBA /* FYCrashInstallationConsole.m in Sources */,
+				6F32070E20D4889400603EBA /* FYDemangle_CPP.cpp in Sources */,
+				6F32071820D4889400603EBA /* FYJSONCodec.c in Sources */,
+				6F32072120D4889400603EBA /* FYMachineContext.c in Sources */,
+				6F32079420D488D500603EBA /* FYCrashReportSinkVictory.m in Sources */,
+				6F32077320D488C600603EBA /* FYCrashReportFilterBasic.m in Sources */,
+				6F32073820D4889400603EBA /* FYThread.c in Sources */,
 				CBF53D9617EB765C0056DA83 /* Container+DeepSearch.m in Sources */,
 				CBF53DA017EB765C0056DA83 /* FYCrash.m in Sources */,
+				6F32071420D4889400603EBA /* FYFileUtils.c in Sources */,
+				6F3207C320D488E600603EBA /* FYCrashInstallationEmail.m in Sources */,
+				6F3206A920D4886500603EBA /* FYCrashReportFixer.c in Sources */,
+				6F32071C20D4889400603EBA /* FYLogger.c in Sources */,
+				6F32071B20D4889400603EBA /* FYJSONCodecObjC.m in Sources */,
+				6F32071E20D4889400603EBA /* FYMach.c in Sources */,
+				6F3206A220D4886500603EBA /* FYCrashCachedData.c in Sources */,
+				6F3206AB20D4886500603EBA /* FYCrashReportStore.c in Sources */,
+				6F32070A20D4889400603EBA /* FYDate.c in Sources */,
 				CB25A5B71DF2182A00EC2B02 /* FYCPU.c in Sources */,
+				6F32072C20D4889400603EBA /* FYStackCursor_MachineContext.c in Sources */,
+				6F32073220D4889400603EBA /* FYString.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1548,17 +2041,82 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F3207CB20D488E700603EBA /* FYCrashInstallation.m in Sources */,
+				6F32073F20D4889500603EBA /* FYDebug.c in Sources */,
 				EDF2BE7F1CCF15AD004BADF4 /* Demangle.cpp in Sources */,
+				6F3206B520D4886600603EBA /* FYCrashDoctor.m in Sources */,
+				6F3207AA20D488DF00603EBA /* FYHTTPMultipartPostBody.m in Sources */,
+				6F3206E320D4886D00603EBA /* FYCrashMonitor_Signal.c in Sources */,
+				6F32078420D488C700603EBA /* FYCrashReportFilterGZip.m in Sources */,
+				6F3206DF20D4886D00603EBA /* FYCrashMonitor_MachException.c in Sources */,
+				6F32078620D488C700603EBA /* FYCrashReportFilterJSON.m in Sources */,
+				6F3207AE20D488DF00603EBA /* FYReachabilityFYCrash.m in Sources */,
+				6F32076320D4889600603EBA /* FYStackCursor.c in Sources */,
+				6F32079C20D488D600603EBA /* FYCrashReportSinkStandard.m in Sources */,
+				6F32074920D4889500603EBA /* FYID.c in Sources */,
+				6F32077E20D488C700603EBA /* FYCrashReportFilterAlert.m in Sources */,
+				6F3207A820D488DF00603EBA /* FYCString.m in Sources */,
+				6F3207AC20D488DF00603EBA /* FYHTTPRequestSender.m in Sources */,
+				6F32078A20D488C700603EBA /* FYCrashReportFilterStringify.m in Sources */,
 				EDF2BE811CCF15AD004BADF4 /* NSError+SimpleConstructor.m in Sources */,
 				EDF2BE891CCF15AD004BADF4 /* FYCPU_arm.c in Sources */,
+				6F3206E620D4886D00603EBA /* FYCrashMonitor_System.m in Sources */,
+				6F32075B20D4889500603EBA /* FYSignalInfo.c in Sources */,
+				6F3206C020D4886600603EBA /* FYCrashC.c in Sources */,
+				6F3206B620D4886600603EBA /* FYCrashReport.c in Sources */,
 				EDF2BE8A1CCF15AD004BADF4 /* Punycode.cpp in Sources */,
+				6F32073A20D4889500603EBA /* FYCPU_x86_32.c in Sources */,
 				EDF2BE981CCF15AD004BADF4 /* FYCrash.m in Sources */,
+				6F32076120D4889600603EBA /* FYStackCursor_SelfThread.c in Sources */,
+				6F3207CD20D488E700603EBA /* FYCrashInstallation+Alert.m in Sources */,
+				6F32079620D488D600603EBA /* FYCrashReportSinkConsole.m in Sources */,
+				6F32074320D4889500603EBA /* FYDemangle_Swift.cpp in Sources */,
+				6F32075620D4889500603EBA /* FYMemory.c in Sources */,
+				6F32078020D488C700603EBA /* FYCrashReportFilterAppleFmt.m in Sources */,
+				6F3206EE20D4886D00603EBA /* FYCrashMonitorType.c in Sources */,
+				6F32075D20D4889600603EBA /* FYStackCursor_Backtrace.c in Sources */,
+				6F32076720D4889600603EBA /* FYSymbolicator.c in Sources */,
 				EDF2BEA01CCF15AD004BADF4 /* NSString+URLEncode.m in Sources */,
+				6F32075820D4889500603EBA /* FYObjC.c in Sources */,
+				6F3206EB20D4886D00603EBA /* FYCrashMonitor.c in Sources */,
+				6F3206E220D4886D00603EBA /* FYCrashMonitor_NSException.m in Sources */,
+				6F3206E720D4886D00603EBA /* FYCrashMonitor_User.c in Sources */,
 				EDF2BEA21CCF15AD004BADF4 /* FYCPU_arm64.c in Sources */,
+				6F3207D820D488E700603EBA /* FYCrashInstallationVictory.m in Sources */,
+				6F3207D620D488E700603EBA /* FYCrashInstallationStandard.m in Sources */,
+				6F32074520D4889500603EBA /* FYDynamicLinker.c in Sources */,
+				6F3207D420D488E700603EBA /* FYCrashInstallationQuincyHockey.m in Sources */,
+				6F3206E920D4886D00603EBA /* FYCrashMonitor_Zombie.c in Sources */,
+				6F32079820D488D600603EBA /* FYCrashReportSinkEMail.m in Sources */,
+				6F3206DE20D4886D00603EBA /* FYCrashMonitor_Deadlock.m in Sources */,
+				6F32079A20D488D600603EBA /* FYCrashReportSinkQuincyHockey.m in Sources */,
+				6F32073B20D4889500603EBA /* FYCPU_x86_64.c in Sources */,
+				6F32076920D4889600603EBA /* FYSysCtl.c in Sources */,
 				EDF2BEAE1CCF15AD004BADF4 /* NSData+GZip.m in Sources */,
+				6F3206D920D4886D00603EBA /* FYCrashMonitor_AppState.c in Sources */,
+				6F32078820D488C700603EBA /* FYCrashReportFilterSets.m in Sources */,
+				6F3206DB20D4886D00603EBA /* FYCrashMonitor_CPPException.cpp in Sources */,
+				6F3207D020D488E700603EBA /* FYCrashInstallationConsole.m in Sources */,
+				6F32074120D4889500603EBA /* FYDemangle_CPP.cpp in Sources */,
+				6F32074B20D4889500603EBA /* FYJSONCodec.c in Sources */,
+				6F32075420D4889500603EBA /* FYMachineContext.c in Sources */,
+				6F32079E20D488D600603EBA /* FYCrashReportSinkVictory.m in Sources */,
+				6F32078220D488C700603EBA /* FYCrashReportFilterBasic.m in Sources */,
+				6F32076B20D4889600603EBA /* FYThread.c in Sources */,
 				EDF2BEB51CCF15AD004BADF4 /* NSMutableData+AppendUTF8.m in Sources */,
 				EDF2BEB81CCF15AD004BADF4 /* Container+DeepSearch.m in Sources */,
+				6F32074720D4889500603EBA /* FYFileUtils.c in Sources */,
+				6F3207D220D488E700603EBA /* FYCrashInstallationEmail.m in Sources */,
+				6F3206B920D4886600603EBA /* FYCrashReportFixer.c in Sources */,
+				6F32074F20D4889500603EBA /* FYLogger.c in Sources */,
+				6F32074E20D4889500603EBA /* FYJSONCodecObjC.m in Sources */,
+				6F32075120D4889500603EBA /* FYMach.c in Sources */,
+				6F3206B220D4886600603EBA /* FYCrashCachedData.c in Sources */,
+				6F3206BB20D4886600603EBA /* FYCrashReportStore.c in Sources */,
+				6F32073D20D4889500603EBA /* FYDate.c in Sources */,
 				CB25A5B91DF2182A00EC2B02 /* FYCPU.c in Sources */,
+				6F32075F20D4889600603EBA /* FYStackCursor_MachineContext.c in Sources */,
+				6F32076520D4889600603EBA /* FYString.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1567,7 +2125,7 @@
 /* Begin PBXTargetDependency section */
 		CB6D133817EB749A00BC2C04 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CB6D132517EB749A00BC2C04 /* KSCrashLib */;
+			target = CB6D132517EB749A00BC2C04 /* FYCrashLib */;
 			targetProxy = CB6D133717EB749A00BC2C04 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1606,16 +2164,16 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KSCrash/KSCrash-Prefix.pch";
+				GCC_PREFIX_HEADER = "FYCrash/FYCrash-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "KSCrash/KSCrash-Info.plist";
+				INFOPLIST_FILE = "FYCrash/FYCrash-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = ../Source/Framework/module.modulemap;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.stenerud.KSCrash;
-				PRODUCT_NAME = KSCrash;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fyusion.FYCrash;
+				PRODUCT_NAME = FYCrash;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1639,16 +2197,16 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KSCrash/KSCrash-Prefix.pch";
+				GCC_PREFIX_HEADER = "FYCrash/FYCrash-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "KSCrash/KSCrash-Info.plist";
+				INFOPLIST_FILE = "FYCrash/FYCrash-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = ../Source/Framework/module.modulemap;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.stenerud.KSCrash;
-				PRODUCT_NAME = KSCrash;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fyusion.FYCrash;
+				PRODUCT_NAME = FYCrash;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1804,7 +2362,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/KSCrashLib.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KSCrash/KSCrash-Prefix.pch";
+				GCC_PREFIX_HEADER = "FYCrash/FYCrash-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1821,7 +2379,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/KSCrashLib.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KSCrash/KSCrash-Prefix.pch";
+				GCC_PREFIX_HEADER = "FYCrash/FYCrash-Prefix.pch";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "";
@@ -1838,13 +2396,13 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KSCrash/KSCrash-Prefix.pch";
+				GCC_PREFIX_HEADER = "FYCrash/FYCrash-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "KSCrashTests/KSCrashTests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.stenerud.${PRODUCT_NAME:rfc1034identifier}";
+				INFOPLIST_FILE = "FYCrashTests/FYCrashTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fyusion.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1859,9 +2417,9 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KSCrash/KSCrash-Prefix.pch";
-				INFOPLIST_FILE = "KSCrashTests/KSCrashTests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.stenerud.${PRODUCT_NAME:rfc1034identifier}";
+				GCC_PREFIX_HEADER = "FYCrash/FYCrash-Prefix.pch";
+				INFOPLIST_FILE = "FYCrashTests/FYCrashTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fyusion.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1881,17 +2439,17 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KSCrash/KSCrash-Prefix.pch";
+				GCC_PREFIX_HEADER = "FYCrash/FYCrash-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "$(SRCROOT)/KSCrash/KSCrash_static-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FYCrash/FYCrash_static-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = ../Source/Framework/module.modulemap;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.stenerud.KSCrash;
-				PRODUCT_NAME = KSCrash;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fyusion.FYCrash;
+				PRODUCT_NAME = FYCrash;
 				SKIP_INSTALL = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1915,17 +2473,17 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KSCrash/KSCrash-Prefix.pch";
+				GCC_PREFIX_HEADER = "FYCrash/FYCrash-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "$(SRCROOT)/KSCrash/KSCrash_static-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FYCrash/FYCrash_static-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = ../Source/Framework/module.modulemap;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.stenerud.KSCrash;
-				PRODUCT_NAME = KSCrash;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fyusion.FYCrash;
+				PRODUCT_NAME = FYCrash;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1936,7 +2494,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		03DE7B711C84DEF800F789BA /* Build configuration list for PBXNativeTarget "KSCrash" */ = {
+		03DE7B711C84DEF800F789BA /* Build configuration list for PBXNativeTarget "FYCrash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03DE7B6F1C84DEF800F789BA /* Debug */,
@@ -1954,7 +2512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB6D134217EB749A00BC2C04 /* Build configuration list for PBXNativeTarget "KSCrashLib" */ = {
+		CB6D134217EB749A00BC2C04 /* Build configuration list for PBXNativeTarget "FYCrashLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB6D134317EB749A00BC2C04 /* Debug */,
@@ -1963,7 +2521,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB6D134517EB749A00BC2C04 /* Build configuration list for PBXNativeTarget "KSCrashTests" */ = {
+		CB6D134517EB749A00BC2C04 /* Build configuration list for PBXNativeTarget "FYCrashTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB6D134617EB749A00BC2C04 /* Debug */,
@@ -1972,7 +2530,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDF2BF1E1CCF15AD004BADF4 /* Build configuration list for PBXNativeTarget "KSCrash_static" */ = {
+		EDF2BF1E1CCF15AD004BADF4 /* Build configuration list for PBXNativeTarget "FYCrash_static" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDF2BF1F1CCF15AD004BADF4 /* Debug */,
