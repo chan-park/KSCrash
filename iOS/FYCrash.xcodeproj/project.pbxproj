@@ -987,8 +987,7 @@
 				CBF53D1C17EB765C0056DA83 /* FYCrash.m */,
 				CB6D130017EB743A00BC2C04 /* Supporting Files */,
 			);
-			name = FYCrash;
-			path = KSCrash;
+			path = FYCrash;
 			sourceTree = "<group>";
 		};
 		CB6D130017EB743A00BC2C04 /* Supporting Files */ = {
@@ -1053,8 +1052,7 @@
 				CB0264A717FA5B13003E0AED /* XCTestCase+FYCrash.h */,
 				CB0264A817FA5B13003E0AED /* XCTestCase+FYCrash.m */,
 			);
-			name = FYCrashTests;
-			path = KSCrashTests;
+			path = FYCrashTests;
 			sourceTree = "<group>";
 		};
 		CB6D131517EB743A00BC2C04 /* Supporting Files */ = {
